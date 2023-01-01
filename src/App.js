@@ -9,10 +9,10 @@ import { Box } from '@chakra-ui/react';
 function App() {
   return (
     <div className="App">
-       <Box position="sticky" top="0">
+       <Box position="sticky" top="0" >
           <Navbar/>
        </Box>
-       <Box   border="2px solid green">
+       <Box  mt="0.8rem">
         <About/>
         <Skill/>
         <Project/>

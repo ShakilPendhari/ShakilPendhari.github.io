@@ -4,7 +4,9 @@ import { HashLink } from 'react-router-hash-link'
 import { hashlinks } from './RawMaterial'
 
 
-const Hamberger = () => {
+const Hamberger = ({ChangeHamNav}) => {
+
+
   return (
     <Flex direction="column" 
           // gap="2rem" 
@@ -21,7 +23,8 @@ const Hamberger = () => {
                         <Heading key={link.text}       
                                  flex="1" 
                                  as="h3"  
-                                 size="md">
+                                 size="md"
+                                 onClick={ChangeHamNav}>
 
                             <HashLink to={link.to}> 
                                {link.text}

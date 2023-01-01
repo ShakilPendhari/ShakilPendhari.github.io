@@ -14,26 +14,22 @@ import { useEffect, useState } from 'react';
 
 
 const Navbar = () => {
-
  const [ hamNav,ChangeHamNav ] = useToggleHook();   /*used custom hook here*/
-//  const bg = useColorModeValue('red.500', 'red.200')
  const color = useColorModeValue('white', 'gray.800');
-//  const [set, setSet] = useState(false);
-//  const handleScroll = ()=>{
-//     if(window.scrollY>300)
-//     {
-//       setSet(true);
-//     }
-//     else{
-//       setSet(false);
-//     }
-//  }
-//  useEffect(()=>{
-//     window.addEventListener("scroll",handleScroll);
-//     return ()=> window.removeEventListener("scroll",handleScroll)
-//  },[set])
 
- 
+
+
+ useEffect(()=>{
+  if(hamNav){
+    document.body.style.overflow = "hidden"
+    }
+    else{
+      document.body.style.overflow = ""
+    }
+
+ },[hamNav])
+
+
   return (
     <div>
         <Flex
@@ -125,11 +121,13 @@ const Navbar = () => {
                 </Box>                
             </Flex>
         </Flex>
-        <Box display={{
+        <Box 
+            
+             display={{
                        base:"block",
                        sm:"block",
                        md:"none"}}>
-              {hamNav && <Hamberger/>}
+              {hamNav && <Hamberger ChangeHamNav={ChangeHamNav} hamNav={hamNav}/>}
                 
         </Box>
     </div>
