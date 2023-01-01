@@ -4,6 +4,8 @@ import {  Flex, Heading, Image } from '@chakra-ui/react'
 const About = () => {
   return (
        <Flex id="about" 
+             direction={{base:"column", sm:"column",md:"row"}}
+             border="2px solid green"
             style={{width:"17rem", 
                     height:"25rem", 
                     border:"0px solid blue"}}>

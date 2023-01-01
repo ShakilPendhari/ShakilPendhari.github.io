@@ -15,7 +15,7 @@ const Theme = () => {
     {
          theme?<Box 
                    style={{...styleTheme, backgroundColor:"#234E52",
-                   border:"1px dashed red"}} 
+                   border:"2px dashed orange"}} 
                    color="yellow"
                    h="2rem"
                    onClick={()=>{toggleColorMode(); ChangeTheme()}} >

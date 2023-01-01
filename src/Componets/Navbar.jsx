@@ -7,6 +7,7 @@ import useToggleHook from '../hooks/ToggleHook';
 import Theme from './theme/Theme';
 import { style } from './RawMaterial';
 import { hashlinks } from './RawMaterial';
+import { useEffect, useState } from 'react';
 
 
 
@@ -16,17 +17,25 @@ const Navbar = () => {
 
  const [ hamNav,ChangeHamNav ] = useToggleHook();   /*used custom hook here*/
 //  const bg = useColorModeValue('red.500', 'red.200')
- const color = useColorModeValue('white', 'gray.800')
+ const color = useColorModeValue('white', 'gray.800');
+//  const [set, setSet] = useState(false);
+//  const handleScroll = ()=>{
+//     if(window.scrollY>300)
+//     {
+//       setSet(true);
+//     }
+//     else{
+//       setSet(false);
+//     }
+//  }
+//  useEffect(()=>{
+//     window.addEventListener("scroll",handleScroll);
+//     return ()=> window.removeEventListener("scroll",handleScroll)
+//  },[set])
 
  
   return (
-    <div style={{
-      // position:"fixed", 
-      //            top:"0px", 
-      //            left:"0px" , 
-                //  width:"100vw",
-      //            zIndex:"1000"
-                 }}>
+    <div>
         <Flex
              padding={{base:"0.4rem 1rem",
                        sm:"0.5rem 0rem",

@@ -1,9 +1,9 @@
 export const style = {
     boxSizing:"border-box",
     color:"white",
-    position:"sticky",
-    top:"0px",
-    left:"0px",
+    // position:"sticky",
+    // top:"0px",
+    // left:"0px",
     // border:"2px solid red",
     backgroundColor:"#3182CE",
     boxShadow:"0px 5px 10px teal",
