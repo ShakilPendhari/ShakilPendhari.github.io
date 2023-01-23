@@ -1,0 +1,19 @@
+.svg12{
+    background-color: rgb(93, 92, 92);
+    border-radius: 2rem;
+    padding:0.5rem
+}
+.svg13{
+    background-color: rgb(47, 22, 241);
+    border-radius: 2rem;
+    padding:0.5rem
+}
+.svg14{
+    background-color: rgb(156, 82, 82);
+    border-radius: 2rem;
+    padding:0.5rem
+}
+#contact:hover{
+    /* transform: scale(1, 1.1); */
+    box-shadow: 1 1 1 red;
+}

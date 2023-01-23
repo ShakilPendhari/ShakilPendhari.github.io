@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, useColorModeValue } from '@chakra-ui/react'
+import { Box, Button, Flex, Heading, Link, useColorModeValue } from '@chakra-ui/react'
 import { GiHamburgerMenu } from "react-icons/gi";
 import { HashLink } from 'react-router-hash-link';
 import Hamberger from './Hamberger';
@@ -7,10 +7,7 @@ import useToggleHook from '../hooks/ToggleHook';
 import Theme from './theme/Theme';
 import { style } from './RawMaterial';
 import { hashlinks } from './RawMaterial';
-import { useEffect, useState } from 'react';
-
-
-
+import { useEffect } from 'react';
 
 
 const Navbar = () => {
@@ -31,7 +28,7 @@ const Navbar = () => {
 
 
   return (
-    <div>
+    <div style={{zIndex:"1000"}}>
         <Flex
              padding={{base:"0.4rem 1rem",
                        sm:"0.5rem 0rem",
@@ -99,6 +96,15 @@ const Navbar = () => {
                         </Heading>
                     ))
                  }
+
+                    <a href="./Shakil-Pendhari-Resume.pdf"  
+                      //  download
+                       style={{textDecoration:"none"}}  
+                       onClick={()=>window.open('https://drive.google.com/file/d/17gxAc8lmovBKGQ7oEPSos8TkS9KqAjz2/view?usp=share_link', '_blank', 'noreferrer')} ><Heading color={color} 
+                                flex="1" 
+                                as="h3" 
+                                size="md"> Resume </Heading> </a>                              
+                                   
                  <Theme/>   {/* here is first theme */}
             </Flex>
             <Flex direction="row"
@@ -106,7 +112,7 @@ const Navbar = () => {
                   display={{ base:"Flex",
                              sm:"Flex",
                              md:"none"}} 
-                  gap="2rem"
+                  gap={{base:"0.5rem",sm:"2rem",md:"2rem"}}
                   justifyContent="center"
                   alignItems="center"  >
                 <Box >

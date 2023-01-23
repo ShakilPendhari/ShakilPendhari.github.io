@@ -5,6 +5,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: auto;
+  background-color: #ce376c; 
+}
+html{
+  /* background-color: #3785ce; */
+  height: auto;
+  background-color: #ce376c; 
 }
 
 code {

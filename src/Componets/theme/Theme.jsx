@@ -15,7 +15,7 @@ const Theme = () => {
     {
          theme?<Box 
                    style={{...styleTheme, backgroundColor:"#234E52",
-                   border:"2px dashed orange"}} 
+                   border:"1px solid orange.100"}} 
                    color="yellow"
                    h="2rem"
                    onClick={()=>{toggleColorMode(); ChangeTheme()}} >
@@ -36,7 +36,7 @@ const Theme = () => {
              onClick={()=>{toggleColorMode(); ChangeTheme()}}  
              style={styleTheme} 
              color="white"
-             border="1px dashed">
+             border="1px solid">
              <Tooltip
                  //    label="change theme"
                     placement='top'

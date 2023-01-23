@@ -1,10 +1,11 @@
-import { Flex, Heading } from '@chakra-ui/react'
+import { Flex, Heading, Link, useColorModeValue } from '@chakra-ui/react'
 import React from 'react'
 import { HashLink } from 'react-router-hash-link'
 import { hashlinks } from './RawMaterial'
 
 
 const Hamberger = ({ChangeHamNav}) => {
+  const color = useColorModeValue('white', 'gray.800');
 
 
   return (
@@ -33,6 +34,13 @@ const Hamberger = ({ChangeHamNav}) => {
                         </Heading>
                     ))
                  }
+                 <Link href="public/ShakilPendhari.pdf" 
+                      //  download 
+                       style={{textDecoration:"none"}}  
+                       onClick={()=>window.open('https://drive.google.com/file/d/17gxAc8lmovBKGQ7oEPSos8TkS9KqAjz2/view?usp=share_link', '_blank', 'noreferrer')} ><Heading 
+                                flex="1" 
+                                as="h3" 
+                                size="md"> Resume </Heading> </Link>     
     </Flex>
   )
 }

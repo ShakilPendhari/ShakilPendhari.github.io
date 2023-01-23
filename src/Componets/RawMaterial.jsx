@@ -21,6 +21,10 @@ export const styleTheme = {
 
 
  export const hashlinks = [
+  {
+    to:"#",
+    text:"Home"
+  },
    {
      to:"#about",
      text:"About"
