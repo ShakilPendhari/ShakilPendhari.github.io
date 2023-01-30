@@ -1,19 +1,48 @@
 .svg12{
-    background-color: rgb(93, 92, 92);
+    /* background-color: rgb(93, 92, 92); */
     border-radius: 2rem;
-    padding:0.5rem
+    /* padding:0.5rem; */
+    display: grid;
+    place-items: center;
+}
+.svg121{
+    background-color: rgb(83, 74, 74);
+    width: 50px;
+    border-radius: 2rem;
+    padding:0.5rem;
+    
 }
 .svg13{
-    background-color: rgb(47, 22, 241);
+    /* background-color: rgb(47, 22, 241); */
     border-radius: 2rem;
-    padding:0.5rem
+    /* padding:0.5rem */
+    display: grid;
+    place-items: center;
+}
+.svg131{
+    background-color: rgb(30, 71, 159);
+    width: 50px;
+    border-radius: 2rem;
+    padding:0.5rem;
 }
 .svg14{
-    background-color: rgb(156, 82, 82);
     border-radius: 2rem;
-    padding:0.5rem
+    display: grid;
+    place-items: center;
+}
+.svg141{
+    background-color: rgb(184, 39, 39);
+    width: 50px;
+    border-radius: 2rem;
+    padding:0.5rem;
 }
 #contact:hover{
     /* transform: scale(1, 1.1); */
     box-shadow: 1 1 1 red;
+}
+
+
+@media all and (min-width:215px) and (max-width:900px){
+    
+   
 }

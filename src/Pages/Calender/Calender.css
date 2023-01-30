@@ -1,0 +1,28 @@
+/* <footer class="" style="margin-top: 8px; font-size: 1px;">
+<div class="react-activity-calendar__count">581 contributions in the last year</div>
+<div class="react-activity-calendar__legend-colors styles_legendColors__FYXRi">
+  <span style="margin-right: 0.4em;">Less</span>
+   <svg width="12" height="12">
+    <rect width="12" height="12" fill="#ebedf0" rx="2" ry="2">
+    </rect>
+   </svg>
+  <svg width="12" height="12">
+  <rect width="12" height="12" fill="#9be9a8" rx="2" ry="2">
+</rect>
+</svg><svg width="12" height="12"><rect width="12" height="12" fill="#40c463" rx="2" ry="2"></rect></svg><svg width="12" height="12"><rect width="12" height="12" fill="#30a14e" rx="2" ry="2"></rect></svg><svg width="12" height="12"><rect width="12" height="12" fill="#216e39" rx="2" ry="2"></rect></svg><span style="margin-left: 0.4em;">More</span></div></footer> */
+
+
+
+@media all and (min-width:0px) and (max-width:480px){
+    .react-activity-calendar__footer{
+        flex-direction: column !important;
+        color:red !important;
+    }
+    .styles_footer__ltlVl{
+        flex-direction: column !important;
+        color:red !important;
+    }
+    .react-activity-calendar__count{
+        color:red !important;
+    }
+}

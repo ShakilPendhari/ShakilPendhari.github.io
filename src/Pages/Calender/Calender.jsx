@@ -3,6 +3,7 @@ import { Heading, Box } from '@chakra-ui/react'
 import React from 'react'
 import GitHubCalendar from 'react-github-calendar'
 import  Tooltip  from 'react-tooltip'
+import "./Calender.css"
 
 const calender = () => {
   return (

@@ -1,7 +1,8 @@
 .App {
   text-align: center;
   width: 100%;
-  background-color: #3785ce;
+  /* background-color: #3785ce; */
+  background-color: #34985b;
 }
 /* width */
 ::-webkit-scrollbar{

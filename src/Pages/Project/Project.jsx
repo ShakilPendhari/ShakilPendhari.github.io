@@ -1,6 +1,7 @@
 import React from 'react'
 import { Flex, Heading } from "@chakra-ui/react"
 import ProjectCard from './ProjectCard'
+import style from "./Project.module.css"
 
 
 let ProjectArray = [{
@@ -31,13 +32,13 @@ let ProjectArray = [{
 
 const Project = () => {
   return (
-    <div style={{backgroundColor:"#F56565", padding:"0.5rem 0rem 7rem"}}>
+    <div className={style.project} style={{backgroundColor:"#F56565", padding:"0.5rem 0rem 7rem"}}>
       <Heading as="h1" mb="5rem" mt="6rem">My Projects</Heading>
       <Flex direction="column" 
           id="project"
           gap="3rem">
       {
-        ProjectArray && ProjectArray.map((data)=><ProjectCard {...data}/>)
+        ProjectArray && ProjectArray.map((data)=><ProjectCard key={data.title} {...data}/>)
       }
     </Flex>
     </div>

@@ -35,7 +35,7 @@ const ProjectCard = ({information, title, techStacks, img, github,deployLink}) =
         src={img}
         borderBottomRightRadius="2rem"
         boxShadow= "rgba(0, 0, 0, 0.35) 0px 5px 15px" 
-        alt="buffer"
+        alt={title}
         />
  <Text fontSize={{base:"14px", 
                   sm:"18px",
@@ -62,9 +62,11 @@ const ProjectCard = ({information, title, techStacks, img, github,deployLink}) =
                          > { title }</Text></Flex>
       <Flex as="b" gap="0.5rem" fontSize={{base:"15px", 
                   sm:"19px",
-                  md:"1.51rem"}}><Text color="green"> Tech Stacks  </Text> :  <Text
+                  md:"1.51rem"}}><Text color="green" > Tech Stacks  </Text> :  <Text
                   fontFamily="mono, sans-serif"
-                         fontWeight="500"> { techStacks }</Text></Flex>
+                         color="grey" as="b" fontSize={{base:"15px", 
+                  sm:"19px",
+                  md:"1.51rem"}}> { techStacks }</Text></Flex>
     </Flex>
         <Flex gap="2rem">
         <a href={github}

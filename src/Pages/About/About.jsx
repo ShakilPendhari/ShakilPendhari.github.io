@@ -1,5 +1,6 @@
 import { Flex, Heading, Text } from '@chakra-ui/react'
 import React from 'react'
+import "./About.css"
 
 const About = () => {
   return (
@@ -26,6 +27,7 @@ const About = () => {
              fontWeight="700">Aspiring full Stack MERN Developer. I love to make projects which are helpful for masses and serve as a great helpful entity.</Text>
        <Flex justifyContent="center"
              gap="0.4rem"
+             margin="auto"
              alignItems="center">
        <svg
                       focusable="false" 
@@ -37,7 +39,7 @@ const About = () => {
                           d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z">
                       </path>
                   </svg>
-        <Text color="blue">shakilpp123456@gmail.com</Text>
+        <Text color="blue" width={{base:"60%",sm:"100%"}} margin="auto">shakilpp123456@gmail.com</Text>
        </Flex>
     </Flex>
   )

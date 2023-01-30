@@ -1,0 +1,10 @@
+.rotate{
+    transition: 1s;
+}
+.text{
+    color:grey;
+}
+
+.rotate:hover{
+    transform: perspective(700px) rotate3D(1,1,1,10deg) translateX(5px);
+}

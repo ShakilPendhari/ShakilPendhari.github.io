@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ChakraProvider>
     <BrowserRouter>
-      <App />
+      {App?<App/>:"hello"}
     </BrowserRouter>
   </ChakraProvider>
 );
