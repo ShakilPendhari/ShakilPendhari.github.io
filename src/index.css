@@ -7,11 +7,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
   height: auto;
   background-color: #ce376c; 
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 html{
   /* background-color: #3785ce; */
   height: auto;
-  background-color: #ce376c; 
+  /* background-color: #ce376c;  */
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
 code {

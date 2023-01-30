@@ -2,6 +2,7 @@ import { Flex, Heading, Link, useColorModeValue } from '@chakra-ui/react'
 import React from 'react'
 import { HashLink } from 'react-router-hash-link'
 import { hashlinks } from './RawMaterial'
+import  resume  from "../Componets/Shakil-Pendhari-Resume.pdf"
 
 
 const Hamberger = ({ChangeHamNav}) => {
@@ -34,8 +35,8 @@ const Hamberger = ({ChangeHamNav}) => {
                         </Heading>
                     ))
                  }
-                 <Link href="public/ShakilPendhari.pdf" 
-                      //  download 
+                 <Link href={resume} 
+                       download 
                        style={{textDecoration:"none"}}  
                        onClick={()=>window.open('https://drive.google.com/file/d/17gxAc8lmovBKGQ7oEPSos8TkS9KqAjz2/view?usp=share_link', '_blank', 'noreferrer')} ><Heading 
                                 flex="1" 

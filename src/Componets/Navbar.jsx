@@ -8,6 +8,7 @@ import Theme from './theme/Theme';
 import { style } from './RawMaterial';
 import { hashlinks } from './RawMaterial';
 import { useEffect } from 'react';
+import  resume  from "../Componets/Shakil-Pendhari-Resume.pdf"
 
 
 const Navbar = () => {
@@ -49,6 +50,7 @@ const Navbar = () => {
               >
              <HashLink   to="#">
                 <Heading 
+                textShadow="2px 2px 10px rgb(250 200 100)"
                         backgroundColor="green.500"
                         padding="0.5rem 0rem 0.5rem"
                         color="red.700"
@@ -97,13 +99,14 @@ const Navbar = () => {
                     ))
                  }
 
-                    <a href="./Shakil-Pendhari-Resume.pdf"  
-                      //  download
+                    <Link href={resume}  
+                       download={true}
+                      //  rel="noreferrer"
                        style={{textDecoration:"none"}}  
                        onClick={()=>window.open('https://drive.google.com/file/d/17gxAc8lmovBKGQ7oEPSos8TkS9KqAjz2/view?usp=share_link', '_blank', 'noreferrer')} ><Heading color={color} 
                                 flex="1" 
                                 as="h3" 
-                                size="md"> Resume </Heading> </a>                              
+                                size="md"> Resume </Heading> </Link>                              
                                    
                  <Theme/>   {/* here is first theme */}
             </Flex>

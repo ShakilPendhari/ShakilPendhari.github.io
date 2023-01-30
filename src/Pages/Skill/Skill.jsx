@@ -83,8 +83,14 @@ let SkillArrayObject = [
 
 const Skill = () => {
   return (
-    <div id="skill" style={{marginBottom:"5rem"}}>
-       <Heading as="h1">My Skills</Heading>
+    <div id="skill" style={{marginBottom:"5rem", width:"100%"}}>
+       <Heading as="h1" 
+                borderBottom={{base:"3px solid rgb(255,0,0)"}} 
+                lineHeight="3rem" 
+                width={{base:"65%",sm:"22%",md:"10%"}}  
+                m="auto"
+                fontSize={{base:"2rem",sm:"2rem",md:"2rem"}}
+                textShadow="2px 2px 10px rgb(250 200 100)">My Skills</Heading>
       
        <Grid justifyContent="space-evenly" 
                

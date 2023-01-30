@@ -42,6 +42,7 @@ const ProjectCard = ({information, title, techStacks, img, github,deployLink}) =
                   md:"1.5rem"}}
        padding="0rem 0.5rem"
        textAlign="left"
+       textShadow="2px 2px 10px rgb(140 100 150)"
        verticalAlign="middle"
        fontFamily="mono, sans-serif"
        width={{base:"100%",sm:"100%",md:"32%"}}
@@ -55,21 +56,32 @@ const ProjectCard = ({information, title, techStacks, img, github,deployLink}) =
     // direction="column"
     alignItems="center" > 
     <Flex gap="0.5rem" justifyContent="left" direction="column" >
-      <Flex as="b"  gap="0.5rem" fontSize={{base:"15px", 
-                  sm:"19px",
-                  md:"1.51rem"}}><Text color="red"> Title  </Text> :  <Text  fontFamily="mono, sans-serif"
+      <Flex as="b"  
+            gap="0.5rem" 
+            fontSize={{base:"15px", 
+                       sm:"19px",
+                       md:"1.51rem"}}
+            textShadow="2px 2px 10px green"><Text color="red"> Title  </Text> :  <Text  fontFamily="mono, sans-serif"
                          fontWeight="550"
                          > { title }</Text></Flex>
-      <Flex as="b" gap="0.5rem" fontSize={{base:"15px", 
-                  sm:"19px",
-                  md:"1.51rem"}}><Text color="green" > Tech Stacks  </Text> :  <Text
+      <Flex as="b" 
+            gap="0.5rem" 
+            fontSize={{base:"15px", 
+                       sm:"19px",
+                       md:"1.51rem"}}
+            textShadow="2px 2px 10px rgb(250 0 0)"><Text color="green" > Tech Stacks  </Text> :  <Text
                   fontFamily="mono, sans-serif"
                          color="grey" as="b" fontSize={{base:"15px", 
                   sm:"19px",
-                  md:"1.51rem"}}> { techStacks }</Text></Flex>
+                  md:"1.51rem"}}
+                  textShadow="2px 2px 10px rgb(250 0 0)"> <Text textShadow="2px 2px 10px rgb(120 120 120)">{ techStacks }</Text></Text></Flex>
     </Flex>
         <Flex gap="2rem">
-        <a href={github}
+         <Box boxShadow="0px 1px 4px 4px black" 
+              padding="0.1rem"
+              bgColor="whiteAlpha.700"
+              borderRadius="5rem">
+         <a href={github}
               >
         <Tooltip label="See Code base"  
                  placement="left-start"
@@ -78,7 +90,7 @@ const ProjectCard = ({information, title, techStacks, img, github,deployLink}) =
                  padding="0.4rem"
                  borderRadius="0.4rem"
                  backgroundColor="blue.600">
-        <svg 
+          <svg 
             viewBox="71 71 370 370" 
             transform='rotate(90deg)'
             width="35px">
@@ -87,6 +99,7 @@ const ProjectCard = ({information, title, techStacks, img, github,deployLink}) =
              </svg>
         </Tooltip>
         </a>
+         </Box>
         <Tooltip label="See Deployed app"  
                  placement="right-start"
                  color="orange"
@@ -94,7 +107,7 @@ const ProjectCard = ({information, title, techStacks, img, github,deployLink}) =
                  padding="0.4rem"
                  borderRadius="0.4rem"
                  backgroundColor="blue.600">
-        <a href={deployLink}> <Button variant="outline"
+        <a href={deployLink} style={{boxShadow:"0px 1px 2px 2px rgba(20, 20, 20, 0.7)",borderRadius:"1rem",overflow:"hidden",backgroundColor:"#FFFFFFA3"}}> <Button borderRadius="1rem" variant="outline"
                 width="5rem">Live</Button></a>
 
         </Tooltip>

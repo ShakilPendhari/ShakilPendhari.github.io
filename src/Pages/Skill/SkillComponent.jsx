@@ -12,7 +12,7 @@ let style={
     gap:"1.5rem",
     padding:"1rem",
     borderRadius:"1rem",
-    boxShadow: "8px 4px rgb(150, 150, 87)",
+    boxShadow: "1px 8px 8px 1px rgb(150, 150, 87)",
     height:"100%",
     background:"white"
    //  boxShadow: "rgba(17, 12, 46, 0.15) 0px 48px 100px 0px"

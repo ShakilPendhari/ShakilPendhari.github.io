@@ -33,7 +33,14 @@ let ProjectArray = [{
 const Project = () => {
   return (
     <div className={style.project} style={{backgroundColor:"#F56565", padding:"0.5rem 0rem 7rem"}}>
-      <Heading as="h1" mb="5rem" mt="6rem">My Projects</Heading>
+      <Heading as="h1" 
+               lineHeight="3rem"
+               borderBottom="3px solid green" 
+              //  width={{base:"10%",sm:"22%",md:"13%"}} 
+               m="5rem auto"
+                width={{base:"80%",sm:"38%",md:"12%"}}  
+                fontSize={{base:"2rem",sm:"2rem",md:"2rem"}}
+               textShadow="2px 2px 10px rgb(250 200 100)">My Projects</Heading>
       <Flex direction="column" 
           id="project"
           gap="3rem">
