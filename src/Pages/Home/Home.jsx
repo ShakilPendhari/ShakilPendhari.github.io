@@ -101,7 +101,7 @@ const Home = () => {
                                 borderRadius:"0.3rem",
                                 }}  target="_blank"
                                  onClick={()=>{
-                                 window.open('https://drive.google.com/file/d/17gxAc8lmovBKGQ7oEPSos8TkS9KqAjz2/view?usp=share_link', '_blank', 'noreferrer')
+                                 window.open('https://drive.google.com/file/d/17f-_oncPFHXPuTzaMFxDdboD2v-PFcyA/view?usp=share_link', '_blank', 'noreferrer')
                                    } }
                                   >Resume</Link>     
                    

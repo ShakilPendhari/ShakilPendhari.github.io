@@ -16,7 +16,7 @@ const calender = () => {
              width={{base:"100%",sm:"62%",md:"20%"}}  
                 fontSize={{base:"2rem",sm:"2rem",md:"2rem"}}
              textShadow="2px 2px 10px rgb(250 200 100)">Github Calender</Heading>
-    <Box w="90%" ml={{sm:"2rem",md:"12rem"}} >
+    <Box w="80%" m="auto" ml={{sm:"2rem",md:"12rem"}} >
     <GitHubCalendar 
         // blockSize={20}
         // fontSize={20}

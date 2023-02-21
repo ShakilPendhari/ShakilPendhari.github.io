@@ -27,6 +27,14 @@ let ProjectArray = [{
   img:"./orbitz.png",
   github:"https://github.com/ShakilPendhari/dazzling-wing-7781",
   deployLink:"https://dreamy-paprenjak-996346.netlify.app/"
+},
+{
+  information:"This is a clone of pepperfry.com website and it is a online furniture store, using this user can buy their desirable furniture . Login, signUp, checkout and payment page working well . I used HTML, CSS, Next.js, and Redux for building this",
+  title:"Pepperfry.com",
+  techStacks:"HTML | CSS | Next.js| Redux",
+  img:"./Home.png",
+  github:"https://github.com/capitalN/scrawny-meat-2282",
+  deployLink:"https://home-interior-pro.vercel.app/"
 }
 ]
 
