@@ -103,7 +103,7 @@ const Navbar = () => {
                        download={true}
                       //  rel="noreferrer"
                        style={{textDecoration:"none"}}  
-                       onClick={()=>window.open('https://drive.google.com/file/d/17f-_oncPFHXPuTzaMFxDdboD2v-PFcyA/view?usp=share_link', '_blank', 'noreferrer')} ><Heading color={color} 
+                       onClick={()=>window.open('https://drive.google.com/file/d/17gxAc8lmovBKGQ7oEPSos8TkS9KqAjz2/view?usp=share_link', '_blank', 'noreferrer')} ><Heading color={color} 
                                 flex="1" 
                                 as="h3" 
                                 size="md"> Resume </Heading> </Link>                              
