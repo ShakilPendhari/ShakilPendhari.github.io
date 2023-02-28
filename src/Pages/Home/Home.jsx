@@ -2,6 +2,7 @@ import React from 'react'
 import {  Box, Flex, Heading, Image, Text, Link } from '@chakra-ui/react'
 import "./Home.css"
 import { HashLink } from 'react-router-hash-link'
+import "./Home.css"
 
 import resume from "../../Componets/Shakil-Pendhari-Resume.pdf"
 
@@ -30,16 +31,18 @@ const Home = () => {
          <Flex flex="1"  style={{justifyContent:"center", 
                                 width:"100%",
                                 alignItems:"center",
-                                }}>
-              <Image boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px" style={{width:{base:"100%",
-                                    sm:"100%",
-                                    md:"15rem"}, 
+                                }}
+                             >
+              <Image boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px" style={{
+                                  
                              borderRadius:"10%", 
                              border:"2px solid",
-                             height:{base:"15rem",
+                             height:{base:"80%",
                                      sm:"21rem",
                                      md:"26rem" },
                              boxShadow:"0px 5px 15px 5px orange"}} 
+                             width={{base:"70%",sm:"70%",md:"26rem"}}
+                             margin="auto"
                              src="/myImg.jpg" 
                              alt="Shakil Pendhari"/>
          </Flex>
@@ -48,12 +51,12 @@ const Home = () => {
                flex="1">
          <Heading as="h1" 
                   textAlign="left"
-                  textShadow="2px 2px 10px rgb(250 200 200)"
+                  textShadow="2px 2px 10px rgb(250 200 100)"
                   fontFamily="Robota, sans-serif"
                   fontSize={{base:"20px", 
                             sm:"25px",
                             md:"2.05rem"}}
-                  paddingLeft="1rem">Hello👋</Heading>
+                  paddingLeft="1rem" color="white">Hello👋</Heading>
                 <Box textAlign="left" 
                      fontWeight="450"
                      fontFamily="Robota, sans-serif"
@@ -61,10 +64,11 @@ const Home = () => {
                      fontSize={{base:"15px", 
                             sm:"20px",
                             md:"1.8rem"}}
-                     paddingLeft="1rem">
-                  I'm <Text as="b" fontSize={{base:"14px", 
+                     paddingLeft="1rem" 
+                     color="white">
+                  I'm <Text as="b" color="white" fontSize={{base:"14px", 
                             sm:"22px",
-                            md:"2.3rem"}} textShadow="2px 2px 10px rgb(250 150 200)"> Shakil Pendhari</Text>
+                            md:"2.3rem"}} textShadow="2px 2px 10px red"> Shakil Pendhari</Text>
                 </Box>
                 <Text width="100%" 
                       textAlign="left"

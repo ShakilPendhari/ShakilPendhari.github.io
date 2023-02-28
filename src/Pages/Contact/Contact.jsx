@@ -5,20 +5,17 @@ import "./Contact.css"
 
 const Contact = () => {
   return (
-    <div id="contact" style={{height:"auto",
-                              padding:"4rem 0rem",
-                              backgroundColor:"#F56565", 
-                              }}
-                             
+    <div id="contact"        
                      >
       <Heading as="h1" 
-               mb="2rem"
                lineHeight="3rem"
                borderBottom="3px solid green" 
               //  width={{base:"10%",sm:"28%",md:"16%"}} 
                m="5rem auto"
                width={{base:"55%",sm:"51%",md:"13%"}}  
-                fontSize={{base:"2rem",sm:"2rem",md:"2rem"}}
+               fontSize={{base:"1.1rem",sm:"1.5rem",md:"2rem"}}
+                margin="auto"
+                mb="2rem"
                textShadow="2px 2px 10px rgb(250 200 100)">Get in Touch</Heading>
       <Text fontSize={{base:"15px", sm:"18px",md:"20px"}} 
             fontWeight="500" m="auto"

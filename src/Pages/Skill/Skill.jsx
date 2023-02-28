@@ -89,7 +89,9 @@ const Skill = () => {
                 lineHeight="3rem" 
                 width={{base:"65%",sm:"22%",md:"10%"}}  
                 m="auto"
-                fontSize={{base:"2rem",sm:"2rem",md:"2rem"}}
+                fontSize={{base:"1.1rem",sm:"1.5rem",md:"2rem"}}
+                margin="auto"
+                mb="2rem"
                 textShadow="2px 2px 10px rgb(250 200 100)">My Skills</Heading>
       
        <Grid justifyContent="space-evenly" 
@@ -97,8 +99,8 @@ const Skill = () => {
              templateColumns={{base:'repeat(1, 1fr)',
                                sm:'repeat(3, 1fr)',
                                md:'repeat(4, 1fr)'}} 
-             gap={6}
-             rowGap={10}
+             gap={{base:"10px",sm:"20px",md:"30px"}}
+            //  rowGap={10}
              padding={{base:"1rem",sm:"4rem",md:"6rem"}}
              alignItems="center">
          {

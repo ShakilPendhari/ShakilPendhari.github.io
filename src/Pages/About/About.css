@@ -1,4 +1,11 @@
 #about{
+    color:black;
+    background-color: rgb(229, 222, 208);
+}
+
+
+
+#about{
         animation-fill-mode: both;
         backface-visibility: visible;
         animation-duration: 1000ms;

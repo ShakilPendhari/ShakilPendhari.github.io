@@ -36,10 +36,11 @@ const SkillComponent = ({text,img}) => {
   return (
     <Flex
     className={style1.rotate}
+    width={{base:"60%",sm:"100%",md:"80%"}}
     style={style}
-    w={{base:"100%",sm:"100%",md:"60%"}}>
-  <Image mixBlendMode="" style={styleImg} src={img}/>
-  <Text className={style1.text} style={styletext}>{text}</Text>
+    >
+  <Image mixBlendMode="" w="100%" style={styleImg} src={img}/>
+  <Text className={style1.text} w="100%" style={styletext}>{text}</Text>
 </Flex>
   )
 }

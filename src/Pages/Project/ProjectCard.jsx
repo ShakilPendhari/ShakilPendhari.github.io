@@ -53,7 +53,7 @@ const ProjectCard = ({information, title, techStacks, img, github,deployLink}) =
     gap="1rem"
     justifyContent="space-around"
     padding="1rem"
-    // direction="column"
+    direction={{base:"column",sm:"row"}}
     alignItems="center" > 
     <Flex gap="0.5rem" justifyContent="left" direction="column" >
       <Flex as="b"  
@@ -61,22 +61,24 @@ const ProjectCard = ({information, title, techStacks, img, github,deployLink}) =
             fontSize={{base:"15px", 
                        sm:"19px",
                        md:"1.51rem"}}
-            textShadow="2px 2px 10px green"><Text color="red"> Title  </Text> :  <Text  fontFamily="mono, sans-serif"
+                       direction="row"
+            textShadow="2px 2px 10px green"><Text color="red"> Title : </Text>   <Text  fontFamily="mono, sans-serif"
                          fontWeight="550"
                          > { title }</Text></Flex>
       <Flex as="b" 
             gap="0.5rem" 
+            direction={{base:"row",sm:"row",md:"row"}}
             fontSize={{base:"15px", 
                        sm:"19px",
                        md:"1.51rem"}}
-            textShadow="2px 2px 10px rgb(250 0 0)"><Text color="green" > Tech Stacks  </Text> :  <Text
+            textShadow="2px 2px 10px rgb(250 0 0)"><Text color="green" display={{base:"none",sm:"none",md:"flex"}} > Tech Stacks : </Text>   <Text
                   fontFamily="mono, sans-serif"
                          color="grey" as="b" fontSize={{base:"15px", 
                   sm:"19px",
                   md:"1.51rem"}}
-                  textShadow="2px 2px 10px rgb(250 0 0)"> <Text textShadow="2px 2px 10px rgb(120 120 120)">{ techStacks }</Text></Text></Flex>
+                  textShadow="2px 2px 10px rgb(250 0 0)"> <Text textAlign="left" textShadow="2px 2px 10px rgb(120 120 120)">{ techStacks }</Text></Text></Flex>
     </Flex>
-        <Flex gap="2rem" direction={{base:"column",sm:"row",md:"row"}}>
+        <Flex gap="2rem" direction={{base:"row",sm:"row",md:"row"}}>
          <Box boxShadow="0px 1px 4px 4px black" 
               padding="0.1rem"
               margin="auto"
@@ -93,7 +95,6 @@ const ProjectCard = ({information, title, techStacks, img, github,deployLink}) =
                  backgroundColor="blue.600">
           <svg 
             viewBox="71 71 370 370" 
-            transform='rotate(90deg)'
             width="35px"
            >
             <path 
@@ -110,7 +111,7 @@ const ProjectCard = ({information, title, techStacks, img, github,deployLink}) =
                  borderRadius="0.4rem"
                  backgroundColor="blue.600">
         <a href={deployLink} style={{boxShadow:"0px 1px 2px 2px rgba(20, 20, 20, 0.7)",borderRadius:"1rem",overflow:"hidden",backgroundColor:"#FFFFFFA3"}}> <Button borderRadius="1rem" variant="outline"
-                width="5rem">Live</Button></a>
+                width={{base:"2rem",sm:"4rem",md:"5rem"}}>Live</Button></a>
 
         </Tooltip>
         </Flex>

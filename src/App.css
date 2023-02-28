@@ -2,7 +2,9 @@
   text-align: center;
   width: 100%;
   /* background-color: #3785ce; */
-  background-color: #34985b;
+  /* background-color: #34985b; */
+   /* background-color: #ffffff; */
+   background-color: rgb(53, 51, 51);
   margin: 0;
   padding: 0;
   box-sizing: border-box;

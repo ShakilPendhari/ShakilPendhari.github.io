@@ -8,26 +8,30 @@ const About = () => {
           marginTop="12rem"
           marginBottom="5rem"
           direction="column"
-          backgroundColor="red.400"
+          // backgroundColor="red.400"
+          backgroundColor="black"
           padding="6rem 0rem"
-          _hover={{ boxShadow:"1px 0px 0px 2px yellow", color:"white"}}
+          // _hover={{ boxShadow:"1px 0px 0px 2px yellow", color:"white"}}
           gap="1rem">
-       <Heading fontSize="2rem" as="h1" borderBottom="3px solid green" width="auto" m="auto"
-       textShadow="2px 2px 10px rgb(250 200 100)">About Me</Heading>
+       <Heading  as="h1" borderBottom="3px solid green" width="auto" m="auto"
+       textShadow="2px 2px 10px rgb(250 200 100)"
+       fontSize={{base:"1.1rem",sm:"1.5rem",md:"2rem"}}
+                margin="auto"
+                mb="2rem">About Me</Heading>
        <Text 
                  fontSize={{base:"20px", 
                             sm:"25px",
                             md:"1.5rem"}}
              fontWeight="900"
              color="green"
-             textShadow="2px 2px 10px rgb(250 200 50)">I'm Shakil Balam Pendhari</Text>
+             textShadow="2px 2px 15px rgb(250 200 50)">I'm Shakil Balam Pendhari</Text>
        <Text width="60%"
              m="auto"
              fontSize={{base:"20px", 
                             sm:"25px",
                             md:"1.2rem"}}
              textShadow="2px 2px 10px rgb(150 150 150)"
-             fontWeight="700">Aspiring full Stack MERN Developer. I love to make projects which are helpful for masses and serve as a great helpful entity.</Text>
+             fontWeight="700">Aspiring full Stack MERN Developer. I love to make projects which are helpful for masses and serve as a great helpful entity. Looking forward to working in a fastpaced environment and hope to work in a challenging environment as a specialized MERN Stack Developer</Text>
        <Flex justifyContent="center"
             //  gap="0.4rem"
              width={{base:"98%",sm:"34%",md:"15%"}}

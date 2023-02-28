@@ -14,7 +14,7 @@ const Hamberger = ({ChangeHamNav}) => {
           // gap="2rem" 
           mt="0rem" 
           p="5rem"
-          backgroundColor="whiteAlpha.900"
+          backgroundColor="white"
           h="100vh"
           justifyContent="center" 
           alignItems="center"

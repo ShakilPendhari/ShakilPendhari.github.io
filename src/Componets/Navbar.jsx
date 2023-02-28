@@ -35,6 +35,7 @@ const Navbar = () => {
                        sm:"0.5rem 0rem",
                        md:"0.5rem 3rem",
                        lg:" 0.6rem 3rem"}}
+           color="black"
              direction="row"
              style={{...style,color:color}}
              transition="all 0.3s ease-in 0.1s"
