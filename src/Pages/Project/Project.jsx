@@ -35,6 +35,14 @@ let ProjectArray = [{
   img:"./Home.png",
   github:"https://github.com/capitalN/scrawny-meat-2282",
   deployLink:"https://home-interior-pro.vercel.app/"
+},
+{
+  information:"Industrybuying.com is a leading Business e-commerce platform, selling a wide range of business and industrial products to SMEs as well as large businesses. It has over 5,000 registered sellers and more than 85,000 registered businesses - SMEs and large corporates, procuring online from Industrybuying",
+  title:"IndustryBuying.com",
+  techStacks:"HTML | CSS | ReactJS | Redux | MongoDB | NodeJS | ExpressJS",
+  img:"./IndustryBuying.png",
+  github:"https://github.com/Prashant1562/IndustryBuying-Clone",
+  deployLink:"https://soft-dogs-2567.netlify.app/"
 }
 ]
 

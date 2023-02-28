@@ -32,6 +32,7 @@ const ProjectCard = ({information, title, techStacks, img, github,deployLink}) =
  <Image width={{base:"100%",
                  sm:"100%",
                  md:"65%"}} 
+                 height={{base:"8rem",sm:"13rem",md:"17rem"}}
         src={img}
         borderBottomRightRadius="2rem"
         boxShadow= "rgba(0, 0, 0, 0.35) 0px 5px 15px" 
@@ -39,7 +40,7 @@ const ProjectCard = ({information, title, techStacks, img, github,deployLink}) =
         />
  <Text fontSize={{base:"14px", 
                   sm:"18px",
-                  md:"1.5rem"}}
+                  md:"1.3rem"}}
        padding="0rem 0.5rem"
        textAlign="left"
        textShadow="2px 2px 10px rgb(140 100 150)"
