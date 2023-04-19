@@ -85,7 +85,7 @@ const ProjectCard = ({information, title, techStacks, img, github,deployLink}) =
               margin="auto"
               bgColor="whiteAlpha.700"
               borderRadius="5rem">
-         <a href={github}
+         <a href={github} target="_blank" rel="noreferrer"
               >
         <Tooltip label="See Code base"  
                  placement="left-start"
@@ -111,7 +111,7 @@ const ProjectCard = ({information, title, techStacks, img, github,deployLink}) =
                  padding="0.4rem"
                  borderRadius="0.4rem"
                  backgroundColor="blue.600">
-        <a href={deployLink} style={{boxShadow:"0px 1px 2px 2px rgba(20, 20, 20, 0.7)",borderRadius:"1rem",overflow:"hidden",backgroundColor:"#FFFFFFA3"}}> <Button borderRadius="1rem" variant="outline"
+        <a href={deployLink} target="_blank" rel="noreferrer" style={{boxShadow:"0px 1px 2px 2px rgba(20, 20, 20, 0.7)",borderRadius:"1rem",overflow:"hidden",backgroundColor:"#FFFFFFA3"}}> <Button borderRadius="1rem" variant="outline"
                 width={{base:"2rem",sm:"4rem",md:"5rem"}}>Live</Button></a>
 
         </Tooltip>
