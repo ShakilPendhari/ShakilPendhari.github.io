@@ -35,11 +35,15 @@ let styletext={fontWeight:800,};
 const SkillComponent = ({text,img}) => {
   return (
     <Flex
+     data-aos="fade-left"
+       data-aos-delay="300"
+          data-aos-duration="10000"
+          data-aos-easing="ease-in-out"
     className={style1.rotate}
     width={{base:"60%",sm:"100%",md:"80%"}}
     style={style}
     >
-  <Image mixBlendMode="" w="100%" style={styleImg} src={img}/>
+  <Image mixBlendMode="" w="100%" style={styleImg} src={img} alt={text}/>
   <Text className={style1.text} w="100%" style={styletext}>{text}</Text>
 </Flex>
   )

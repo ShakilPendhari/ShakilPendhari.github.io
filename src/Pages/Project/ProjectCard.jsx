@@ -1,5 +1,7 @@
 import { Button, Flex, Tooltip, Image, Text, Box } from '@chakra-ui/react'
-import React from 'react'
+import React, { useEffect } from 'react'
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 let cardCss= {flexDirection:"column",
               border:"5px solid yellow",
@@ -20,7 +22,15 @@ let cardHover = {transform:"scale(1.1)",
 let lang = {color:"red"}
 
 const ProjectCard = ({information, title, techStacks, img, github,deployLink}) => {
-  return  <Flex _hover={cardHover} 
+  useEffect(() => {
+    AOS.init();
+  });
+  return  <Flex 
+   data-aos="zoom-in-up"
+       data-aos-delay="50"
+          data-aos-duration="1100"
+          data-aos-easing="ease-in-out"
+   _hover={cardHover} 
   style={cardCss}
   width={{base:"90%",sm:"90%",md:"80%"}}
   >
@@ -29,7 +39,8 @@ const ProjectCard = ({information, title, techStacks, img, github,deployLink}) =
      direction={{base:"column",
                  sm:"column",
                  md:"row"}}>
- <Image width={{base:"100%",
+ <Image 
+               width={{base:"100%",
                  sm:"100%",
                  md:"65%"}} 
                  height={{base:"8rem",sm:"13rem",md:"17rem"}}

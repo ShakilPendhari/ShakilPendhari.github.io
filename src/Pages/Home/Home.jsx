@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {  Box, Flex, Heading, Image, Text, Link } from '@chakra-ui/react'
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "./Home.css"
 import { HashLink } from 'react-router-hash-link'
 import "./Home.css"
@@ -17,6 +19,9 @@ let main={   id:"home",
 
 
 const Home = () => {
+      useEffect(() => {
+            AOS.init();
+          });
   return (
        <Flex  direction={{base:"column", 
                           sm:"column",
@@ -28,7 +33,7 @@ const Home = () => {
                        sm:"45rem",
                        md:"30rem"}}
               style={main}>
-         <Flex flex="1"  style={{justifyContent:"center", 
+         <Flex flex="1" data-aos="fade-left"  style={{justifyContent:"center", 
                                 width:"100%",
                                 alignItems:"center",
                                 }}
@@ -46,7 +51,7 @@ const Home = () => {
                              src="/myImg.jpg" 
                              alt="Shakil Pendhari"/>
          </Flex>
-         <Flex direction="column" 
+         <Flex data-aos="fade-right" direction="column" 
                mt="1rem"
                flex="1">
          <Heading as="h1" 

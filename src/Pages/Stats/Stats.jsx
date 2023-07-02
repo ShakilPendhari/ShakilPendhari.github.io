@@ -6,7 +6,10 @@ const Stats = () => {
   return (
     // streak 
     <div style={{width:"80%",margin:"auto auto 3rem auto"}} >
-      <Flex style={{ width: "40%", margin: "3rem auto" }}>
+      <Flex data-aos="fade-up"
+          data-aos-delay="20"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out" style={{ width: "40%", margin: "3rem auto" }}>
         <a href="https://github.com/ShakilPendhari">
           <img
             align="left"
@@ -17,6 +20,7 @@ const Stats = () => {
       </Flex>
  
       <Flex
+     
         style={{
           width: "60%",
         //   height: "500px",
@@ -27,7 +31,10 @@ const Stats = () => {
         alignItems="center"
         gap="2rem"
       >
-        <Box>
+        <Box  data-aos="fade-right"
+          data-aos-delay="20"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out">
         <a href="https://github.com/ShakilPendhari">  
           <img
             align="center"
@@ -36,7 +43,10 @@ const Stats = () => {
           />
         </a>
         </Box>
-        <Box>
+        <Box  data-aos="fade-left"
+          data-aos-delay="20"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out">
         <a style={{height:"100%"}} href="https://github.com/ShakilPendhari">
           <img
             align="left"

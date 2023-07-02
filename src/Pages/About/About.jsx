@@ -1,10 +1,15 @@
 import { Flex, Heading, Text,Box } from '@chakra-ui/react'
-import React from 'react'
+import React, { useEffect } from 'react'
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "./About.css"
 
 const About = () => {
+  useEffect(() => {
+    AOS.init();
+  });
   return (
-    <Flex id="about" 
+    <Flex  id="about" 
           marginTop="12rem"
           marginBottom="5rem"
           direction="column"
@@ -14,6 +19,11 @@ const About = () => {
           // _hover={{ boxShadow:"1px 0px 0px 2px yellow", color:"white"}}
           gap="1rem">
        <Heading  as="h1" borderBottom="3px solid green" width="auto" m="auto"
+      data-aos="fade-down"
+       data-aos-delay="300"
+          data-aos-duration="1500"
+          data-aos-offset="50"
+          data-aos-easing="ease-in-out"
        textShadow="2px 2px 10px rgb(250 200 100)"
        fontSize={{base:"1.1rem",sm:"1.5rem",md:"2rem"}}
                 margin="auto"
@@ -22,10 +32,18 @@ const About = () => {
                  fontSize={{base:"20px", 
                             sm:"25px",
                             md:"1.5rem"}}
+             data-aos="fade-right"
+             data-aos-delay="300"
+             data-aos-duration="10000"
+             data-aos-easing="ease-in-out"
              fontWeight="900"
              color="green"
              textShadow="2px 2px 15px rgb(250 200 50)">I'm Shakil Balam Pendhari</Text>
        <Text width="60%"
+             data-aos="fade-left"
+             data-aos-delay="300"
+             data-aos-duration="10000"
+             data-aos-easing="ease-in-out"
              m="auto"
              fontSize={{base:"20px", 
                             sm:"25px",
@@ -33,6 +51,10 @@ const About = () => {
              textShadow="2px 2px 10px rgb(150 150 150)"
              fontWeight="700">Aspiring full Stack MERN Developer. I love to make projects which are helpful for masses and serve as a great helpful entity. Looking forward to working in a fastpaced environment and hope to work in a challenging environment as a specialized MERN Stack Developer</Text>
        <Flex justifyContent="center"
+             data-aos="fade-right"
+             data-aos-delay="300"
+             data-aos-duration="10000"
+             data-aos-easing="ease-in-out" 
             //  gap="0.4rem"
              width={{base:"98%",sm:"34%",md:"15%"}}
              margin="auto"
