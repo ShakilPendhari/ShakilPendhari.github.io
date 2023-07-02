@@ -11,7 +11,7 @@ const Calender = () => {
     AOS.init();
   },[]);
   return (
-    <Box width={{ base: "95%", sm: "80%", md: "90%" }} m="auto">
+    <Box width={{ base: "95%", sm: "80%", md: "90%" }} m="auto" className="calender">
       <Heading
         data-aos="fade-down"
         data-aos-delay="300"

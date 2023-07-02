@@ -27,6 +27,7 @@ const Home = () => {
       direction={{ base: "column", sm: "column", md: "row" }}
       marginTop={{ base: "6.5rem", sm: "7.5rem", md: "6rem" }}
       height={{ base: "40rem", sm: "45rem", md: "30rem" }}
+      className="home"
       style={main}
     >
       <Flex

@@ -7,22 +7,9 @@
 .react-activity-calendar{
     color:white
 }
-[data-aos="new-animation1"] {
-    opacity: 0;
-    transition-property: transform, opacity;
-  
-    &.aos-animate {
-      opacity: 1;
-    }
-  
-    @media screen and (min-width: 768px) {
-      transform: translateX(100px);
-  
-      &.aos-animate {
-        transform: translateX(0);
-      }
-    }
-  }
+.calender{
+    overflow: hidden;
+}
 
 
 @media all and (min-width:0px) and (max-width:480px){

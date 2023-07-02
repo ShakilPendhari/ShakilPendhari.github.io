@@ -56,7 +56,7 @@ const About = () => {
         data-aos-duration="10000"
         data-aos-easing="ease-in-out"
         m="auto"
-        fontSize={{ base: "20px", sm: "25px", md: "1.2rem" }}
+        fontSize={{ base: "17px", sm: "19px", md: "1.4rem" }}
         textShadow="2px 2px 10px rgb(150 150 150)"
         fontWeight="700"
       >

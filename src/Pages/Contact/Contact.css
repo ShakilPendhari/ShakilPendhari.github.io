@@ -51,6 +51,7 @@
 color:black;
 background-color: rgb(229, 222, 208);
 height: auto;
+overflow: hidden;
 }
 
 
