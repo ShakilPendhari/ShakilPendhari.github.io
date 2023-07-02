@@ -85,14 +85,14 @@ let SkillArrayObject = [
 const Skill = () => {
   useEffect(() => {
     AOS.init();
-  });
+  },[]);
   return (
     <div id="skill" style={{ marginBottom: "5rem", width: "100%" }}>
       <Heading
         as="h1"
         data-aos="fade-down"
-        data-aos-delay="300"
-        data-aos-duration="1500"
+        data-aos-delay="200"
+        data-aos-duration="1000"
         data-aos-offset="50"
         data-aos-easing="ease-in-out"
         borderBottom={{ base: "3px solid rgb(255,0,0)" }}
