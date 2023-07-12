@@ -91,9 +91,8 @@ const Skill = () => {
       <Heading
         as="h1"
         data-aos="fade-down"
-        data-aos-delay="200"
-        data-aos-duration="1000"
-        data-aos-offset="50"
+        data-aos-delay="20"
+        data-aos-duration="700"
         data-aos-easing="ease-in-out"
         borderBottom={{ base: "3px solid rgb(255,0,0)" }}
         lineHeight="3rem"

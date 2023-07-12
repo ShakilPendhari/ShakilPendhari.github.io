@@ -24,3 +24,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+::selection{
+  color:green;
+  background-color: rgb(255, 0, 234);
+}

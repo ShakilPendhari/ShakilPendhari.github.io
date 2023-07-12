@@ -38,8 +38,8 @@ const ProjectCard = ({
   return (
     <Flex
       data-aos="zoom-in-up"
-      data-aos-delay="50"
-      data-aos-duration="700"
+      data-aos-delay="20"
+        data-aos-duration="700"
       data-aos-easing="ease-in-out"
       _hover={cardHover}
       style={cardCss}
@@ -51,17 +51,20 @@ const ProjectCard = ({
         direction={{ base: "column", sm: "column", md: "row" }}
       >
         <Image
+          flex="2.3"
           width={{ base: "100%", sm: "100%", md: "65%" }}
           height={{ base: "8rem", sm: "13rem", md: "17rem" }}
+          objectFit="cover"
           src={img}
           borderBottomRightRadius="2rem"
           boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
           alt={title}
         />
         <Text
-          fontSize={{ base: "14px", sm: "18px", md: "1.3rem" }}
+          flex="1"
+          fontSize={{ base: "14px", sm: "17px", md: "1.2rem" }}
           padding="0rem 0.5rem"
-          textAlign="left"
+          textAlign="justify"
           textShadow="2px 2px 10px rgb(140 100 150)"
           verticalAlign="middle"
           fontFamily="mono, sans-serif"
@@ -80,49 +83,65 @@ const ProjectCard = ({
         direction={{ base: "column", sm: "row" }}
         alignItems="center"
       >
-        <Flex gap="0.5rem" justifyContent="left" direction="column">
+        <Flex flex="2.3" gap="0.5rem" justifyContent="left" direction="column">
           <Flex
             as="b"
             gap="0.5rem"
-            fontSize={{ base: "15px", sm: "19px", md: "1.51rem" }}
+            fontSize={{ base: "14px", sm: "17px", md: "1.2rem" }}
             direction="row"
             textShadow="2px 2px 10px green"
           >
-            <Text color="red"> Title : </Text>{" "}
-            <Text fontFamily="mono, sans-serif" fontWeight="550">
-              {" "}
+            <Text textAlign="justify" flex="1" color="red">
+              
+              Title :
+            </Text>
+            <Text
+              flex={{ base: "1", sm: "1", md: "5" }}
+              textAlign="justify"
+              fontFamily="mono, sans-serif"
+              fontWeight="550"
+            >
               {title}
             </Text>
           </Flex>
           <Flex
+            // flex="1"
             as="b"
             gap="0.5rem"
             direction={{ base: "row", sm: "row", md: "row" }}
-            fontSize={{ base: "15px", sm: "19px", md: "1.51rem" }}
+            fontSize={{ base: "14px", sm: "17px", md: "1.2rem" }}
             textShadow="2px 2px 10px rgb(250 0 0)"
           >
             <Text
+              flex="1"
+               textAlign="justify"
               color="green"
-              display={{ base: "none", sm: "none", md: "flex" }}
+              // display={{ base: "none", sm: "none", md: "flex" }}
             >
-              {" "}
-              Tech Stacks :{" "}
-            </Text>{" "}
+              Tech Stacks :
+            </Text>
             <Text
+               flex={{ base: "1", sm: "1", md: "5" }}
+               textAlign="justify"
               fontFamily="mono, sans-serif"
               color="grey"
               as="b"
-              fontSize={{ base: "15px", sm: "19px", md: "1.51rem" }}
+              fontSize={{ base: "14px", sm: "17px", md: "1.2rem" }}
               textShadow="2px 2px 10px rgb(250 0 0)"
             >
-              {" "}
-              <Text textAlign="left" textShadow="2px 2px 10px rgb(120 120 120)">
+              <Text textAlign="justify" textShadow="2px 2px 10px rgb(120 120 120)">
                 {techStacks}
               </Text>
             </Text>
           </Flex>
         </Flex>
-        <Flex gap="2rem" direction={{ base: "row", sm: "row", md: "row" }}>
+        <Flex
+          flex={{ base: "1", sm: "1", md: "1.2" }}
+          gap="2rem"
+          direction={{ base: "row", sm: "row", md: "row" }}
+          justifyContent="center"
+          alignItems="center"
+        >
           <Box
             boxShadow="0px 1px 4px 4px black"
             padding="0.1rem"
@@ -166,7 +185,6 @@ const ProjectCard = ({
                 backgroundColor: "#FFFFFFA3",
               }}
             >
-              {" "}
               <Button
                 borderRadius="1rem"
                 variant="outline"

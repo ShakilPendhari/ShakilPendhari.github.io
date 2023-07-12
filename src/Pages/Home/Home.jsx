@@ -11,10 +11,10 @@ import resume from "../../Componets/Shakil-Pendhari-Resume.pdf";
 let main = {
   id: "home",
   width: "100%",
-  padding: "3rem 2rem",
+  // padding: "3rem 2rem",
   gap: "1rem",
   justifyContent: "center",
-  alignItems: "center",
+  alignItems: "center"
   //  border:"1px solid red"
 };
 
@@ -24,19 +24,24 @@ const Home = () => {
   },[]);
   return (
     <Flex
+    boxSizing="borderBox"
       direction={{ base: "column", sm: "column", md: "row" }}
-      marginTop={{ base: "6.5rem", sm: "7.5rem", md: "6rem" }}
-      height={{ base: "40rem", sm: "45rem", md: "30rem" }}
+      // marginTop={{ base: "6.5rem", sm: "7.5rem", md: "6rem" }}
+      // height={{ base: "40rem", sm: "45rem", md: "auto" }}
+      padding="0rem 2rem"
       className="home"
       style={main}
     >
       <Flex
         flex="1"
         data-aos="fade-left"
+        data-aos-delay="20"
+        data-aos-duration="700"
         style={{
           justifyContent: "center",
           width: "100%",
           alignItems: "center",
+          height:"100%"
         }}
       >
         <Image
@@ -49,11 +54,13 @@ const Home = () => {
           }}
           width={{ base: "70%", sm: "70%", md: "26rem" }}
           margin="auto"
+          mt={{ base: "1.7rem", sm: "1.7rem", md: "2.7rem" }}
           src="/myImg.jpg"
           alt="Shakil Pendhari"
         />
       </Flex>
-      <Flex data-aos="fade-right" direction="column" mt="1rem" flex="1">
+      <Flex  data-aos="fade-right" data-aos-delay="20"
+        data-aos-duration="700" direction="column" mt={{ base: "1.3rem", sm: "1.3rem", md: "2.3rem" }} flex="1">
         <Heading
           as="h1"
           textAlign="left"
@@ -81,23 +88,21 @@ const Home = () => {
             fontSize={{ base: "14px", sm: "22px", md: "2.3rem" }}
             textShadow="2px 2px 10px red"
           >
-            {" "}
-            Shakil Pendhari
+            
+          {" Shakil Pendhari"}
           </Text>
         </Box>
         <Text
           width="100%"
-          textAlign="left"
           fontWeight="light"
           fontFamily="Robota, sans-serif"
           className="text1"
           paddingLeft="1rem"
           textShadow="2px 2px 10px rgb(250 200 100)"
           fontSize={{ base: "15px", sm: "20px", md: "1.5rem" }}
+          textAlign="justify"
         >
-          A full-stack React Js developer trained by Masai School, Bengaluru. I
-          have a passion to create useful projects and systems which can
-          contribute in everyone's wellbeing. I go to full extent in execution.
+         Welcome to my portfolio, showcasing my expertise in full stack web development. Trained by Masai School, I have a strong command of the MERN stack, API integrations, and responsive design. I have successfully created diverse projects that blend functionality with aesthetics, demonstrating collaborative teamwork and meticulous attention to detail. Step into my world of code and innovation, where each line is crafted to leave a lasting impact.
         </Text>
 
         <Flex mt="1rem" direction="column" gap="1rem">
@@ -119,6 +124,7 @@ const Home = () => {
               borderRadius: "0.3rem",
             }}
             target="_blank"
+            textAlign="center"
             onClick={() => {
               window.open(
                 "https://drive.google.com/file/d/17gxAc8lmovBKGQ7oEPSos8TkS9KqAjz2/view?usp=share_link",

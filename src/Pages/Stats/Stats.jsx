@@ -9,7 +9,7 @@ const Stats = () => {
       <Flex
         data-aos="fade-up"
         data-aos-delay="20"
-        data-aos-duration="1000"
+        data-aos-duration="800"
         data-aos-easing="ease-in-out"
         style={{ width: "40%", margin: "3rem auto" }}
       >
@@ -36,7 +36,7 @@ const Stats = () => {
         <Box
           data-aos="fade-right"
           data-aos-delay="20"
-          data-aos-duration="1000"
+          data-aos-duration="800"
           data-aos-easing="ease-in-out"
         >
           <a href="https://github.com/ShakilPendhari">
@@ -50,7 +50,7 @@ const Stats = () => {
         <Box
           data-aos="fade-left"
           data-aos-delay="20"
-          data-aos-duration="1000"
+          data-aos-duration="800"
           data-aos-easing="ease-in-out"
         >
           <a

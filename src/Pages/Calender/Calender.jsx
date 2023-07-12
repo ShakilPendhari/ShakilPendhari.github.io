@@ -14,9 +14,8 @@ const Calender = () => {
     <Box width={{ base: "95%", sm: "80%", md: "90%" }} m="auto" className="calender">
       <Heading
         data-aos="fade-down"
-        data-aos-delay="300"
-        data-aos-duration="1500"
-        data-aos-offset="50"
+        data-aos-delay="20"
+        data-aos-duration="700"
         data-aos-easing="ease-in-out"
         as="h1"
         borderBottom={{ base: "3px solid rgb(255,0,0)" }}
@@ -33,7 +32,7 @@ const Calender = () => {
       <Box
         data-aos="fade-up"
         data-aos-anchor-placement="center-bottom"
-        data-aos-delay="200"
+        data-aos-delay="70"
         data-aos-duration="1000"
         w="80%"
         m="auto"

@@ -15,7 +15,7 @@ function App() {
        <Box position="sticky" top="0" zIndex="1000" >
           <Navbar/>
        </Box>
-       <Box  mt="0.8rem">
+       <Box >
         <Home/>
         <About/>
         <Skill/>

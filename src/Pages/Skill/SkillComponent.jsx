@@ -33,14 +33,14 @@ const SkillComponent = ({ text, img }) => {
   return (
     <Flex
       data-aos="fade-left"
-      data-aos-delay="300"
-      data-aos-duration="10000"
+      data-aos-delay="20"
+        data-aos-duration="700"
       data-aos-easing="ease-in-out"
       className={style1.rotate}
       width={{ base: "60%", sm: "100%", md: "80%" }}
       style={style}
     >
-      <Image mixBlendMode="" w="100%" style={styleImg} src={img} alt={text} />
+      <Image mixBlendMode="" w="100%" style={styleImg} src={img} alt={text}  minHeight={{ base: "10rem", sm: "12rem", md: "15rem" }} />
       <Text className={style1.text} w="100%" style={styletext}>
         {text}
       </Text>

@@ -8,49 +8,50 @@ import "aos/dist/aos.css";
 let ProjectArray = [
   {
     information:
-      "This is a clone of buffer.com website, using this user can handle their social media account. Login, signUp and pricing page working well.I used HTML, CSS and JavaScript for building this",
-    title: "buffer.com",
-    techStacks: "HTML | CSS | JavaScript",
-    img: "./buffer.png",
-    github: "https://github.com/Sunilrath101/Buffer-clone",
-    deployLink: "https://bespoke-biscotti-7e0a1f.netlify.app/",
-  },
-  {
-    information:
-      "This is a clone of zee5.com website, it is a video streaming app, it has free videos and subscription based services. I used HTML, CSS,  ReactJs  to build it and for UI I used external css library  as Chakra-Ui  and  React-Routing ",
+      "Presenting my ZEE5 project, a full stack web application that replicates the popular streaming platform. Built with React, Node.js, and the YouTube API, it offers users a seamless and immersive entertainment experience. This project demonstrates my proficiency in full stack web development and showcases my ability to create engaging and user-friendly applications.",
     title: "Zee5.com",
-    techStacks: "HTML | CSS | ReactJS | Chakra-Ui",
+    techStacks: "HTML5 | CSS3 | JavaScript | React | Redux | Axios | Node.js | Express.js | MongoDB |  RESTful APIs | ChakraUI",
     img: "./zee5.png",
     github: "https://github.com/ShakilPendhari/zee5.com",
     deployLink: "https://zee-5-clone-masaischool.netlify.app/",
   },
   {
     information:
-      "This is a clone of orbitz.com website, using this user can book hotels and vehicles. I used  HTML , CSS and  JavaScript",
-    title: "Orbitz.com",
-    techStacks: "HTML | CSS | JavaScript",
-    img: "./orbitz.png",
-    github: "https://github.com/ShakilPendhari/dazzling-wing-7781",
-    deployLink: "https://dreamy-paprenjak-996346.netlify.app/",
-  },
-  {
-    information:
-      "This is a clone of pepperfry.com website and it is a online furniture store, using this user can buy their desirable furniture . Login, signUp, checkout and payment page working well . I used HTML, CSS, Next.js, and Redux for building this",
+      "Our team's impressive creation: a collaborative Pepperfry furniture website clone using the MERN stack. With a team of five, we showcased our full stack web development expertise. Our clone offers an extensive product catalog, seamless user experience, and secure payment integration, providing a user-friendly platform for online furniture shopping.",
     title: "Pepperfry.com",
-    techStacks: "HTML | CSS | Next.js| Redux",
+    techStacks: "HTML5 | CSS3 | JavaScript | React | Redux | Axios | Node.js | Express.js | MongoDB | ChakraUI",
     img: "./Home.png",
     github: "https://github.com/capitalN/scrawny-meat-2282",
     deployLink: "https://home-interior-pro.vercel.app/",
   },
   {
     information:
-      "Industrybuying.com is a leading Business e-commerce platform, selling a wide range of business and industrial products to SMEs as well as large businesses. It has over 5,000 registered sellers and more than 85,000 registered businesses - SMEs and large corporates, procuring online from Industrybuying",
+      "A replica of the well-known B2B e-commerce platform, Industrybuying.com. With the collaborative effort of five skilled developers and implementation of the MERN stack, our clone faithfully reproduces the platform's robust functionalities. It offers businesses an efficient and secure platform to fulfill their industrial procurement needs, with a wide product inventory and seamless order management.",
     title: "IndustryBuying.com",
-    techStacks: "HTML | CSS | ReactJS | Redux | MongoDB | NodeJS | ExpressJS",
+    techStacks: "HTML5 | CSS3 | JavaScript | React | Redux | Axios | Node.js | Express.js | MongoDB | ChakraUI",
     img: "./IndustryBuying.png",
     github: "https://github.com/Prashant1562/IndustryBuying-Clone",
     deployLink: "https://soft-dogs-2567.netlify.app/",
   },
+  {
+    information:
+      "A clone of the renowned social media management platform, Buffer.com. Developed by five dedicated developers, this project utilized HTML, CSS, JavaScript, and localStorage. The clone successfully replicates Buffer's core functionalities, enabling efficient scheduling and management of social media posts, along with a seamless user experience and intuitive interface.",
+    title: "buffer.com",
+    techStacks: "HTML5 | CSS3 | JavaScript",
+    img: "./buffer.png",
+    github: "https://github.com/Sunilrath101/Buffer-clone",
+    deployLink: "https://bespoke-biscotti-7e0a1f.netlify.app/",
+  },
+  {
+    information:
+      "A clone of the renowned travel booking platform, Orbitz.com. Developed by five dedicated developers, this project utilized HTML, CSS, and JavaScript. The clone faithfully replicates Orbitz's key features, including flight and hotel search, booking management, and secure payment integration, offering users a seamless and intuitive platform for their travel arrangements.",
+    title: "Orbitz.com",
+    techStacks: "HTML5 | CSS3 | JavaScript",
+    img: "./orbitz.png",
+    github: "https://github.com/ShakilPendhari/dazzling-wing-7781",
+    deployLink: "https://dreamy-paprenjak-996346.netlify.app/",
+  }
+
 ];
 
 const Project = () => {
@@ -62,9 +63,9 @@ const Project = () => {
       <Heading
         as="h1"
         data-aos="fade-down"
-        data-aos-delay="200"
-        data-aos-duration="1000"
-        data-aos-offset="50"
+        data-aos-delay="20"
+        data-aos-duration="700"
+        // data-aos-offset="200"
         data-aos-easing="ease-in-out"
         lineHeight="3rem"
         borderBottom="3px solid green"

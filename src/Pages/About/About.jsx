@@ -11,7 +11,7 @@ const About = () => {
   return (
     <Flex
       id="about"
-      marginTop="12rem"
+      marginTop="6rem"
       marginBottom="5rem"
       direction="column"
       // backgroundColor="red.400"
@@ -26,9 +26,8 @@ const About = () => {
         width="auto"
         m="auto"
         data-aos="fade-down"
-        data-aos-delay="200"
-        data-aos-duration="1000"
-        data-aos-offset="50"
+        data-aos-delay="20"
+        data-aos-duration="700"
         data-aos-easing="ease-in-out"
         textShadow="2px 2px 10px rgb(250 200 100)"
         fontSize={{ base: "1.1rem", sm: "1.5rem", md: "2rem" }}
@@ -40,36 +39,35 @@ const About = () => {
       <Text
         fontSize={{ base: "20px", sm: "25px", md: "1.5rem" }}
         data-aos="fade-right"
-        data-aos-delay="100"
-        data-aos-duration="10000"
+         data-aos-delay="70"
+        data-aos-duration="1000"
         data-aos-easing="ease-in-out"
         fontWeight="900"
         color="green"
         textShadow="2px 2px 15px rgb(250 200 50)"
+        textAlign="center"
       >
         I'm Shakil Balam Pendhari
       </Text>
       <Text
         width="60%"
         data-aos="fade-left"
-        data-aos-delay="100"
-        data-aos-duration="10000"
+         data-aos-delay="70"
+        data-aos-duration="1000"
         data-aos-easing="ease-in-out"
         m="auto"
         fontSize={{ base: "17px", sm: "19px", md: "1.4rem" }}
         textShadow="2px 2px 10px rgb(150 150 150)"
         fontWeight="700"
+        textAlign="justify"
       >
-        Aspiring full Stack MERN Developer. I love to make projects which are
-        helpful for masses and serve as a great helpful entity. Looking forward
-        to working in a fastpaced environment and hope to work in a challenging
-        environment as a specialized MERN Stack Developer
+        As an aspiring full-stack MERN developer, I am passionate about creating projects that positively impact and serve the masses. With a strong drive to make a difference, I thrive in fast-paced environments and embrace challenges as opportunities for growth. Specializing in the MERN stack, I am eager to contribute my skills and expertise to create innovative solutions that meet the demands of today's dynamic industry. Ready to embark on a journey of continuous learning and delivering impactful results as a dedicated MERN stack developer.
       </Text>
       <Flex
         justifyContent="center"
         data-aos="fade-right"
-        data-aos-delay="100"
-        data-aos-duration="10000"
+        data-aos-delay="70"
+        data-aos-duration="1000"
         data-aos-easing="ease-in-out"
         //  gap="0.4rem"
         width={{ base: "98%", sm: "34%", md: "15%" }}
