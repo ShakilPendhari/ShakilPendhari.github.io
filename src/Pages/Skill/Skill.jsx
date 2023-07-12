@@ -87,7 +87,7 @@ const Skill = () => {
     AOS.init();
   },[]);
   return (
-    <div id="skill" style={{ marginBottom: "5rem", width: "100%" }}>
+    <div id="skill" style={{ marginBottom: "5rem", width: "100%",userSelect:"none",WebkitUserSelect:"none" }}>
       <Heading
         as="h1"
         data-aos="fade-down"

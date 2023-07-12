@@ -46,6 +46,7 @@ const About = () => {
         color="green"
         textShadow="2px 2px 15px rgb(250 200 50)"
         textAlign="center"
+        style={{userSelect:"none",WebkitUserSelect:"none"}}
       >
         I'm Shakil Balam Pendhari
       </Text>
@@ -65,35 +66,41 @@ const About = () => {
       </Text>
       <Flex
         justifyContent="center"
-        data-aos="fade-right"
+        data-aos="fade-up"
         data-aos-delay="70"
         data-aos-duration="1000"
         data-aos-easing="ease-in-out"
-        //  gap="0.4rem"
+         gap="0.4rem"
         width={{ base: "98%", sm: "34%", md: "15%" }}
         margin="auto"
         direction={{ base: "column", sm: "row" }}
         alignItems="center"
       >
-        <Box flex="1" margin="auto">
-          <svg
+        <Box margin="auto" >
+          {/* <svg
             focusable="false"
             aria-hidden="true"
-            viewBox="0 0 24 24"
+            width="70px"
+            height="70px"
+            viewBox="0 0 70 70"
             //     width="20%"
             data-testid="MailIcon"
           >
+          
             <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"></path>
-          </svg>
+          </svg> */}
+<svg xmlns="http://www.w3.org/2000/svg"  width="40" zoomAndPan="magnify" viewBox="0 -5 30 30.000001" height="40" preserveAspectRatio="xMidYMid meet" version="1.0"> <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
         </Box>
         <Text
-          flex="1"
+         
+          fontSize={{base:"1rem",sm:"1.2rem",md:"1.3rem"}}
           color="rgba(60, 60, 225, 0.8)"
-          width={{ base: "30%", sm: "100%" }}
+          width={{ base: "95%", sm: "16rem",md:"18rem" }}
           margin="auto"
+          // marginLeft="1rem"
           textShadow="2px 2px 10px rgb(150 150 150)"
         >
-          shakilpp123456@gmail.com
+       shakilpp123456@gmail.com
         </Text>
       </Flex>
     </Flex>

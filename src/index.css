@@ -28,3 +28,7 @@ code {
   color:green;
   background-color: rgb(255, 0, 234);
 }
+img,svg,h1{
+  user-select: none;
+  -webkit-user-select: none;
+}

@@ -29,7 +29,7 @@ const Navbar = () => {
 
 
   return (
-    <div style={{zIndex:"1000"}}>
+    <div style={{zIndex:"1000",userSelect:"none",WebkitUserSelect:"none"}} >
         <Flex
              padding={{base:"0.4rem 1rem",
                        sm:"0.5rem 0rem",

@@ -19,7 +19,7 @@ let ProjectArray = [
     information:
       "Our team's impressive creation: a collaborative Pepperfry furniture website clone using the MERN stack. With a team of five, we showcased our full stack web development expertise. Our clone offers an extensive product catalog, seamless user experience, and secure payment integration, providing a user-friendly platform for online furniture shopping.",
     title: "Pepperfry.com",
-    techStacks: "HTML5 | CSS3 | JavaScript | React | Redux | Axios | Node.js | Express.js | MongoDB | ChakraUI",
+    techStacks: "HTML5 | CSS3 | JavaScript | Next.js | React | Redux | Axios | Node.js | Express.js | MongoDB | ChakraUI",
     img: "./Home.png",
     github: "https://github.com/capitalN/scrawny-meat-2282",
     deployLink: "https://home-interior-pro.vercel.app/",

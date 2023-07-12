@@ -10,7 +10,7 @@ const Contact = () => {
     AOS.init();
   },[]);
   return (
-    <Box id="contact" pb="7rem">
+    <Box id="contact" pb="7rem" style={{userSelect:"none",WebkitUserSelect:"none"}}>
       <Heading
         as="h1"
         lineHeight="3rem"
@@ -110,7 +110,7 @@ const Contact = () => {
       </Flex>
       <Text
         fontWeight="700"
-        data-aos="fade-right"
+        data-aos="fade-up"
         mt="2rem"
         textShadow="2px 2px 10px rgb(250 200 100)"
       >

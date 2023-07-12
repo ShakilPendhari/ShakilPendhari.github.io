@@ -69,6 +69,7 @@ const Home = () => {
           fontSize={{ base: "20px", sm: "25px", md: "2.05rem" }}
           paddingLeft="1rem"
           color="white"
+          style={{userSelect:"none",WebkitUserSelect:"none"}}
         >
           Hello👋
         </Heading>
@@ -80,6 +81,7 @@ const Home = () => {
           fontSize={{ base: "15px", sm: "20px", md: "1.8rem" }}
           paddingLeft="1rem"
           color="white"
+          style={{userSelect:"none",WebkitUserSelect:"none"}}
         >
           I'm{" "}
           <Text
@@ -87,6 +89,7 @@ const Home = () => {
             color="white"
             fontSize={{ base: "14px", sm: "22px", md: "2.3rem" }}
             textShadow="2px 2px 10px red"
+            style={{userSelect:"none",WebkitUserSelect:"none"}}
           >
             
           {" Shakil Pendhari"}
@@ -122,6 +125,8 @@ const Home = () => {
               textDecoration: "none",
               border: "1px solid rgba(1,1,1,0.5)",
               borderRadius: "0.3rem",
+              userSelect:"none",
+              WebkitUserSelect:"none"
             }}
             target="_blank"
             textAlign="center"
@@ -143,6 +148,7 @@ const Home = () => {
             margin="0"
             direction={{ base: "column", sm: "row", md: "row" }}
             width={{ base: "5rem", sm: "6rem", md: "8rem" }}
+            style={{userSelect:"none",WebkitUserSelect:"none"}}
           >
             <a
               target="_blank"
