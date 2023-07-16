@@ -1,4 +1,4 @@
-import { Button, Flex, Tooltip, Image, Text, Box } from "@chakra-ui/react";
+import { Button, Flex, Tooltip, Image, Text, Box, Grid } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -39,7 +39,7 @@ const ProjectCard = ({
     <Flex
       data-aos="zoom-in-up"
       data-aos-delay="20"
-        data-aos-duration="700"
+      data-aos-duration="700"
       data-aos-easing="ease-in-out"
       _hover={cardHover}
       style={cardCss}
@@ -49,12 +49,13 @@ const ProjectCard = ({
         justifyContent="space-between"
         gap="1rem"
         direction={{ base: "column", sm: "column", md: "row" }}
+        flexWrap="wrap"
       >
         <Image
           flex="2.3"
           width={{ base: "100%", sm: "100%", md: "65%" }}
           height={{ base: "8rem", sm: "13rem", md: "17rem" }}
-          objectFit="cover"
+          // objectFit="cover"
           src={img}
           borderBottomRightRadius="2rem"
           boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
@@ -85,18 +86,34 @@ const ProjectCard = ({
       >
         <Flex flex="2.3" gap="0.5rem" justifyContent="left" direction="column">
           <Flex
+            justifyContent="center"
+            alignItems="center"
+            border="0.1rem solid"
+            width={{ base: "100%", sm: "63%", md: "35%" }}
+            // width="auto"
+            // flexDirection={{ base: "column", sm: "row", md: "row" }}
+            // background="cyan.300"
+            // borderRadius="10px"
+            // m="1rem 0rem"
+            boxShadow="0px 0px 4px 0px black"
+            // backgroundColor="transparent"
+            // p="1rem"
+            boxSizing="border-box"
+            m="1rem 0rem"
             as="b"
             gap="0.5rem"
+            minWidth={{ sm: "14rem", md: "16rem" }}
             fontSize={{ base: "14px", sm: "17px", md: "1.2rem" }}
-            direction="row"
             textShadow="2px 2px 10px green"
+            animation="shining 1.3s ease-in infinite alternate"
           >
-            <Text textAlign="justify" flex="1" color="red">
-              
+            <Text textAlign="justify" 
+            // flex="1" 
+            color="red">
               Title :
             </Text>
             <Text
-              flex={{ base: "1", sm: "1", md: "5" }}
+              // flex={{ base: "1", sm: "1", md: "5" }}
               textAlign="justify"
               fontFamily="mono, sans-serif"
               fontWeight="550"
@@ -111,28 +128,64 @@ const ProjectCard = ({
             direction={{ base: "row", sm: "row", md: "row" }}
             fontSize={{ base: "14px", sm: "17px", md: "1.2rem" }}
             textShadow="2px 2px 10px rgb(250 0 0)"
+            flexDirection={{ base: "column", sm: "column", md: "row" }}
+            // justifyContent="center"
+            // alignItems="center"
+            // background="yellow.400"
+            // borderRadius="10px"
+            // boxShadow="0px 0px 5px 1px green"
+            // backgroundColor="transparent"
+            // p="1rem"
           >
-            <Text
+          <Flex  flex="1" w="45%" justifyContent="center" alignItems="flex-start">
+          <Flex
               flex="1"
-               textAlign="justify"
+              textAlign="center"
               color="green"
+              border="0.1rem solid black" 
+              p="0rem 0.3rem"
+              borderRadius="4px"
+              boxShadow="0px 0px 5px grey"
+              height={{ sm: "1.7rem", md: "2rem" }}
+              minWidth={{ sm: "6.5rem", md: "8rem" }}
               // display={{ base: "none", sm: "none", md: "flex" }}
             >
               Tech Stacks :
-            </Text>
-            <Text
-               flex={{ base: "1", sm: "1", md: "5" }}
-               textAlign="justify"
+            </Flex>
+          </Flex>
+           
+            <Flex
+              flex={{ base: "1", sm: "1", md: "5" }}
+              flexWrap="wrap"
+              textAlign="justify"
               fontFamily="mono, sans-serif"
               color="grey"
               as="b"
               fontSize={{ base: "14px", sm: "17px", md: "1.2rem" }}
               textShadow="2px 2px 10px rgb(250 0 0)"
             >
-              <Text textAlign="justify" textShadow="2px 2px 10px rgb(120 120 120)">
-                {techStacks}
-              </Text>
-            </Text>
+              {techStacks &&
+                techStacks.length !== 0 &&
+                techStacks.map((el, i) => (
+                  <Text
+                    border="2px solid black"
+                    backgroundColor="yellowgreen"
+                    boxShadow="0px 0px 4px 1px grey"
+                    color="black"
+                    borderRadius="5px"
+                    p="0.1rem 0.3rem"
+                    // m="0.3rem 0.4rem"
+                    m="0rem 0.4rem 0.3rem"
+                    key={i}
+                    height="26px"
+                    textAlign="justify"
+                    fontSize="0.9rem"
+                    textShadow="2px 2px 10px rgb(120 120 120)"
+                  >
+                    {el}
+                  </Text>
+                ))}
+            </Flex>
           </Flex>
         </Flex>
         <Flex
@@ -180,13 +233,13 @@ const ProjectCard = ({
               rel="noreferrer"
               style={{
                 boxShadow: "0px 1px 2px 2px rgba(20, 20, 20, 0.7)",
-                borderRadius: "1rem",
+                borderRadius: "5px",
                 overflow: "hidden",
                 backgroundColor: "#FFFFFFA3",
+                overFlow:"hidden"
               }}
             >
               <Button
-                borderRadius="1rem"
                 variant="outline"
                 width={{ base: "2rem", sm: "4rem", md: "5rem" }}
               >
