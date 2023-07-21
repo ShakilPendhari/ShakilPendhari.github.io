@@ -7,6 +7,8 @@ import { HashLink } from "react-router-hash-link";
 import "./Home.css";
 
 import resume from "../../Componets/Shakil-Pendhari-Resume.pdf";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 let main = {
   id: "home",
@@ -44,7 +46,7 @@ const Home = () => {
           height:"100%"
         }}
       >
-        <Image
+        {/* <Image
           boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
           style={{
             borderRadius: "10%",
@@ -57,7 +59,19 @@ const Home = () => {
           mt={{ base: "1.7rem", sm: "1.7rem", md: "2.7rem" }}
           src="/MyImg.jpeg"
           alt="Shakil Pendhari"
-        />
+        /> */}
+        <LazyLoadImage
+          style={{
+              borderRadius: "10%",
+              border: "2px solid",
+              height: { base: "80%", sm: "21rem", md: "26rem" },
+              boxShadow: "0px 5px 15px 5px orange",
+            }}
+            width={{ base: "70%", sm: "70%", md: "26rem" }}
+           alt="Shakil Pendhari"
+           effect="blur"
+           src="/MyImg.jpeg" />
+);
       </Flex>
       <Flex  data-aos="fade-right" data-aos-delay="20"
         data-aos-duration="700" direction="column" mt={{ base: "1.3rem", sm: "1.3rem", md: "2.3rem" }} flex="1">
@@ -116,12 +130,12 @@ const Home = () => {
             color="whiteAlpha.700"
             boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
             bgColor="purple.600"
+            w={{base:"5rem",sm:"7rem",md:"8.6rem"}}
+            fontSize={{base:"0.8rem",sm:"1.2rem",md:"1.4rem"}}
             style={{
-              width: "9rem",
               fontWeight: "700",
               padding: "0.3rem 0rem",
               marginLeft: "1rem",
-              fontSize: "24px",
               textDecoration: "none",
               border: "1px solid rgba(1,1,1,0.5)",
               borderRadius: "0.3rem",

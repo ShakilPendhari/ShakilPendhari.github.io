@@ -14,3 +14,32 @@
 .text1{
     color:white
 }
+.lazy-load-image-background{
+    height: 28rem;
+}
+.lazy-load-image-background>img{
+    width: 100%;
+    height: 100%;
+    margin:auto;
+    /* margin-top: 2.7rem; */
+}
+
+/* tab view */
+@media all and (min-width:481px) and (max-width:768px)
+{
+    .lazy-load-image-background{
+        height: 21rem;
+        margin:auto;
+        margin-top: 1.7rem;
+    }
+}
+
+/* mobile view */
+@media all and (min-width:100px) and (max-width:480px)
+{
+    .lazy-load-image-background{
+        height: 80%;
+        margin:auto;
+        margin-top: 1.5rem;
+    }
+}
