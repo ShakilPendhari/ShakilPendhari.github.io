@@ -45,20 +45,23 @@ const ProjectCard = ({
       style={cardCss}
       width={{ base: "90%", sm: "90%", md: "80%" }}
     >
-      <Flex
+      <Box
         justifyContent="space-between"
         gap="1rem"
+        // display={{base:"flex",sm:"flex",md:"block"}}
         direction={{ base: "column", sm: "column", md: "row" }}
         flexWrap="wrap"
       >
         <Image
+          float="left"
           flex="2.3"
-          width={{ base: "100%", sm: "100%", md: "65%" }}
+          width={{ base: "100%", sm: "100%", md: "67%" }}
           height={{ base: "8rem", sm: "13rem", md: "17rem" }}
           // objectFit="cover"
           src={img}
           borderBottomRightRadius="2rem"
           boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
+          mr="1rem"
           alt={title}
         />
         <Text
@@ -69,12 +72,12 @@ const ProjectCard = ({
           textShadow="2px 2px 10px rgb(140 100 150)"
           verticalAlign="middle"
           fontFamily="mono, sans-serif"
-          width={{ base: "100%", sm: "100%", md: "32%" }}
+          // width={{ base: "100%", sm: "100%", md: "32%" }}
           fontWeight="600"
         >
           {information}
         </Text>
-      </Flex>
+      </Box>
       <Flex
         width="100%"
         m="left"
