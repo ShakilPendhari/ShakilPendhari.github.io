@@ -55,7 +55,7 @@ const Home = () => {
           width={{ base: "70%", sm: "70%", md: "26rem" }}
           margin="auto"
           mt={{ base: "1.7rem", sm: "1.7rem", md: "2.7rem" }}
-          src="/myImg.jpeg"
+          src="/MyImg.jpeg"
           alt="Shakil Pendhari"
         />
       </Flex>
