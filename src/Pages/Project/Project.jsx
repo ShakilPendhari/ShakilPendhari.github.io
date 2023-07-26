@@ -13,7 +13,7 @@ let ProjectArray = [
     techStacks: ["HTML5", "CSS3", "JavaScript", "React", "Redux", "Axios", "Node.js", "Express.js", "MongoDB",  "RESTful APIs", "ChakraUI"],
     img: "./zee5.png",
     github: "https://github.com/ShakilPendhari/zee5.com",
-    deployLink: "https://zee-5-clone-masaischool.netlify.app/",
+    deployLink: "https://zee5-clone-theta.vercel.app/",
   },
   {
     information:
