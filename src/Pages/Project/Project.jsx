@@ -41,18 +41,19 @@ let ProjectArray = [
     img: "./buffer.png",
     github: "https://github.com/Sunilrath101/Buffer-clone",
     deployLink: "https://bespoke-biscotti-7e0a1f.netlify.app/",
-  },
-  {
-    information:
-      "A clone of the renowned travel booking platform, Orbitz.com. Developed by five dedicated developers, this project utilized HTML, CSS, and JavaScript. The clone faithfully replicates Orbitz's key features, including flight and hotel search, booking management, and secure payment integration, offering users a seamless and intuitive platform for their travel arrangements.",
-    title: "Orbitz.com",
-    techStacks: ["HTML5", "CSS3", "JavaScript"],
-    img: "./orbitz.png",
-    github: "https://github.com/ShakilPendhari/dazzling-wing-7781",
-    deployLink: "https://dreamy-paprenjak-996346.netlify.app/",
   }
-
 ];
+// ,
+//   {
+//     information:
+//       "A clone of the renowned travel booking platform, Orbitz.com. Developed by five dedicated developers, this project utilized HTML, CSS, and JavaScript. The clone faithfully replicates Orbitz's key features, including flight and hotel search, booking management, and secure payment integration, offering users a seamless and intuitive platform for their travel arrangements.",
+//     title: "Orbitz.com",
+//     techStacks: ["HTML5", "CSS3", "JavaScript"],
+//     img: "./orbitz.png",
+//     github: "https://github.com/ShakilPendhari/dazzling-wing-7781",
+//     deployLink: "https://dreamy-paprenjak-996346.netlify.app/",
+//   }
+
 
 const Project = () => {
   useEffect(() => {
