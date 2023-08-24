@@ -2,6 +2,7 @@ import { Button, Flex, Tooltip, Image, Text, Box, Grid } from "@chakra-ui/react"
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import style from "./Project.module.css"
 
 let cardCss = {
   flexDirection: "column",
@@ -205,7 +206,7 @@ const ProjectCard = ({
             bgColor="whiteAlpha.700"
             borderRadius="5rem"
           >
-            <a href={github} target="_blank" rel="noreferrer">
+            <a href={github}  target="_blank" rel="noreferrer">
               <Tooltip
                 label="See Code base"
                 placement="left-start"
@@ -243,6 +244,7 @@ const ProjectCard = ({
               }}
             >
               <Button
+                className={style.live}
                 variant="outline"
                 width={{ base: "2rem", sm: "4rem", md: "5rem" }}
               >

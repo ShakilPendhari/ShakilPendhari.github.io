@@ -6,4 +6,29 @@
     padding-bottom: 3rem;
     overflow: hidden;
 }
+.live{
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.live::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:rgb(32, 109, 172);
+    transform-origin: top left;
+    transform: scale(1,0);
+    transition: all 0.3s ease-in;
+    z-index: -1;
 
+}
+.live:hover::before{
+    transform-origin: top right;
+    transform: scale(1,1);
+}
+.live:hover{
+    color:white;
+}

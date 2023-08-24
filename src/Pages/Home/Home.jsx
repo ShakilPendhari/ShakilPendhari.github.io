@@ -124,6 +124,7 @@ const Home = () => {
 
         <Flex mt="1rem" direction="column" gap="1rem">
           <Link
+            className="resumeHome"
             href={resume}
             download={true}
             fontFamily="helvetica"

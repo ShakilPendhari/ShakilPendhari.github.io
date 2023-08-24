@@ -8,8 +8,91 @@
 }
 
 .svg12{
-    width:"0.5rem"
+    width:"0.5rem";
+    position: relative;
+    z-index: 1;
 }
+.svg12::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    border:3px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.4s ease-in;
+    z-index: -1;
+
+}
+.svg12:hover::before{
+    opacity: 1;
+    top:-0.1rem;
+    left:-0.1rem;
+    right:-0.1rem;
+    bottom:-0.1rem;
+    z-index: 1;
+}
+
+.svg13{
+    width:"0.5rem";
+    position: relative;
+    z-index: 1;
+}
+.svg13::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    border:3px solid #023c76;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.4s ease-in;
+    z-index: -1;
+
+}
+.svg13:hover::before{
+    opacity: 1;
+    top:-0.1rem;
+    left:-0.1rem;
+    right:-0.1rem;
+    bottom:-0.1rem;
+    z-index: 1;
+}
+
+.svg14{
+    width:"0.5rem";
+    position: relative;
+    z-index: 1;
+}
+.svg14::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    border:3px solid rgb(145, 31, 31);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.4s ease-in;
+    z-index: -1;
+
+}
+.svg14:hover::before{
+    opacity: 1;
+    top:-0.1rem;
+    left:-0.1rem;
+    right:-0.1rem;
+    bottom:-0.1rem;
+    z-index: 1;
+}
+
+
+
 
 .text1{
     color:white
@@ -23,6 +106,34 @@
     margin:auto;
     /* margin-top: 2.7rem; */
 }
+.resumeHome{
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+.resumeHome::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+    background-color: rgb(95, 44, 5);
+    z-index: -1;
+    transform: scale(0,1);
+    transform-origin: top left;
+    transition: transform 0.4s ease-in;
+}
+.resumeHome:hover::before{
+    transform-origin: top right;
+    transform: scale(1,1);
+}
+.resumeHome:hover{
+    color:rgb(218, 240, 179)
+}
+
+
+
 
 /* tab view */
 @media all and (min-width:481px) and (max-width:768px)
