@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Heading, Text, Flex, Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import "./Contact.css";
@@ -6,11 +6,50 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const Contact = () => {
+  const ref = useRef(null);
+
   useEffect(() => {
     AOS.init();
-  },[]);
+    
+  }, []);
+
+  // useEffect(() => {
+   
+  //   window.addEventListener("scroll", handleScroll);
+
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // });
+
+  // const handleScroll = (e) => {
+  //   let options = {
+  //     root: null,
+  //     rootMargins: "0px", // top margin and bottom margin
+  //     threshold: 0, //when top of element see then it allow to do lazy loading
+  //   };
+  //   const observer = new IntersectionObserver(handleIntersect, options);
+  //   observer.observe(ref.current);
+
+  //   function handleIntersect (entries){
+  //       if(entries[0].isIntersecting)
+  //       {
+  //         let cont = document.getElementById("Contact");
+  //             cont.className = "navbutAnimationAdd"
+  //       }
+  //       else{
+  //         let cont = document.getElementById("Contact");
+  //         cont.className = "navbutAnimationRemove"
+  //         cont.classList.remove("navbutAnimationAdd")
+  //       }
+  //   }
+  // };
+  
   return (
-    <Box id="contact" pb="7rem" style={{userSelect:"none",WebkitUserSelect:"none"}}>
+    <Box
+      ref={ref}
+      id="contact"
+      pb="7rem"
+      style={{ userSelect: "none", WebkitUserSelect: "none" }}
+    >
       <Heading
         as="h1"
         lineHeight="3rem"

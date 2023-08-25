@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Box, Flex, Heading } from "@chakra-ui/react";
 import ProjectCard from "./ProjectCard";
 import style from "./Project.module.css";
@@ -56,11 +56,47 @@ let ProjectArray = [
 
 
 const Project = () => {
+  const ref = useRef(null);
+
   useEffect(() => {
     AOS.init();
-  },[]);
+    
+  }, []);
+
+
+  // useEffect(() => {
+   
+  //   window.addEventListener("scroll", handleScroll);
+
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // });
+
+  // const handleScroll = (e) => {
+  //   let options = {
+  //     root: null,
+  //     rootMargins: "0px", // top margin and bottom margin
+  //     threshold: 0, //when top of element see then it allow to do lazy loading
+  //   };
+  //   const observer = new IntersectionObserver(handleIntersect, options);
+  //   observer.observe(ref.current);
+
+  //   function handleIntersect (entries){
+  //       if(entries[0].isIntersecting)
+  //       {
+  //         let project = document.getElementById("Project");
+  //             project.className = "navbutAnimationAdd"
+  //       }
+  //       else{
+  //         let project = document.getElementById("Project");
+  //         project.className = "navbutAnimationRemove"
+  //         project.classList.remove("navbutAnimationAdd")
+  //       }
+  //   }
+  // };
+
+  
   return (
-    <Box pb="6rem" className={style.project}>
+    <Box ref = {ref} pb="6rem" className={style.project}>
       <Heading
         as="h1"
         data-aos="fade-down"

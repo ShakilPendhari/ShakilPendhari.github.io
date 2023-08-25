@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Box, Flex, Heading, Image, Text, Link } from "@chakra-ui/react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -20,12 +20,45 @@ let main = {
   //  border:"1px solid red"
 };
 
-const Home = () => {
+const Home = ({setIsIntersection,obj,isIntersection}) => {
+  let ref = useRef(null);
   useEffect(() => {
     AOS.init();
   },[]);
+  // useEffect(()=>{
+  //   window.addEventListener("scroll",handleScroll);
+
+  //   return ()=> window.removeEventListener("scroll",handleScroll)
+  // })
+
+  // const handleScroll = (e) => {
+  //   let options = {
+  //     root: null,
+  //     rootMargins: "0px", // top margin and bottom margin
+  //     threshold: 0, //when top of element see then it allow to do lazy loading
+  //   };
+  //   const observer = new IntersectionObserver(handleIntersect, options);
+  //   observer.observe(ref.current);
+
+  //   function handleIntersect (entries){
+  //       if(entries[0].isIntersecting)
+  //       {
+  //         let home = document.getElementById("Home");
+  //             home.className = "navbutAnimationAdd"
+  //       }
+  //       else{
+  //         let home = document.getElementById("Home");
+  //         home.className = "navbutAnimationRemove"
+  //         home.classList.remove("navbutAnimationAdd")
+  //       }
+  //   }
+  // }
+
+
+
   return (
     <Flex
+    ref={ref}
     boxSizing="borderBox"
       direction={{ base: "column", sm: "column", md: "row" }}
       // marginTop={{ base: "6.5rem", sm: "7.5rem", md: "6rem" }}

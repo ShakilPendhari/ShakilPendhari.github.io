@@ -24,8 +24,8 @@
     opacity: 0;
     transition: all 0.4s ease-in;
     z-index: -1;
-
 }
+
 .svg12:hover::before{
     opacity: 1;
     top:-0.1rem;
@@ -118,7 +118,7 @@
     left:0;
     right:0;
     bottom: 0;
-    background-color: rgb(95, 44, 5);
+    background-color: rgb(251, 112, 5);
     z-index: -1;
     transform: scale(0,1);
     transform-origin: top left;
@@ -129,7 +129,7 @@
     transform: scale(1,1);
 }
 .resumeHome:hover{
-    color:rgb(218, 240, 179)
+    color:rgb(24, 114, 3)
 }
 
 

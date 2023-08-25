@@ -1,15 +1,51 @@
 import { Flex, Heading, Text, Box } from "@chakra-ui/react";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./About.css";
 
 const About = () => {
+  const ref = useRef(null);
+
   useEffect(() => {
     AOS.init();
-  },[]);
+    
+  }, []);
+
+
+  // useEffect(() => {
+   
+  //   window.addEventListener("scroll", handleScroll);
+
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // });
+
+  // const handleScroll = (e) => {
+  //   let options = {
+  //     root: null,
+  //     rootMargins: "0px", // top margin and bottom margin
+  //     threshold: 0, //when top of element see then it allow to do lazy loading
+  //   };
+  //   const observer = new IntersectionObserver(handleIntersect, options);
+  //   observer.observe(ref.current);
+
+  //   function handleIntersect (entries){
+  //       if(entries[0].isIntersecting)
+  //       {
+  //         let about = document.getElementById("About");
+  //             about.className = "navbutAnimationAdd"
+  //       }
+  //       else{
+  //         let about = document.getElementById("About");
+  //         about.className = "navbutAnimationRemove"
+  //         about.classList.remove("navbutAnimationAdd")
+  //       }
+  //   }
+  // }
+
   return (
     <Flex
+      ref = {ref}
       id="about"
       marginTop="6rem"
       marginBottom="5rem"

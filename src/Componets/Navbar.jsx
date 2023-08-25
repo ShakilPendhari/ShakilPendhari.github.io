@@ -32,7 +32,7 @@ const Navbar = () => {
 
   return (
     <div
-      style={{ zIndex: "1000", userSelect: "none", WebkitUserSelect: "none" }}
+      style={{ zIndex: "1000", userSelect: "none", WebkitUserSelect: "none", transition:"all 0.6s ease-in" }}
     >
       <Flex
         padding={{
@@ -81,7 +81,7 @@ const Navbar = () => {
           {hashlinks?.map((link) => (
             <Heading color={color} key={link.text} flex="1" as="h3" size="md">
               <HashLink to={link.to}>
-                <span className={stylee.navbarText}>{link.text}</span>
+                <span id={link.text} className={stylee.navbarText}>{link.text}</span>
               </HashLink>
             </Heading>
           ))}
