@@ -74,10 +74,14 @@ const Home = ({setIsIntersection,obj,isIntersection}) => {
         data-aos-duration="700"
         style={{
           justifyContent: "center",
-          width: "100%",
+          // width: "100%",
           alignItems: "center",
-          height:"100%"
+          // height:"100%"
         }}
+        width={{base:"60%",md:"100%"}}
+        height={{base:"60%",md:"100%"}}
+        minW="5.5rem"
+        minH="12.4rem"
       >
         {/* <Image
           boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
@@ -97,14 +101,14 @@ const Home = ({setIsIntersection,obj,isIntersection}) => {
           style={{
               borderRadius: "10%",
               border: "2px solid",
-              height: { base: "80%", sm: "21rem", md: "26rem" },
+              // height: { base: "70%", sm: "21rem", md: "26rem" },
+              // float:"left",
               boxShadow: "0px 5px 15px 5px orange",
             }}
-            width={{ base: "70%", sm: "70%", md: "26rem" }}
+            // width={{ base: "50%", sm: "70%", md: "26rem" }}
            alt="Shakil Pendhari"
            effect="blur"
            src="/MyImg.jpeg" />
-);
       </Flex>
       <Flex  data-aos="fade-right" data-aos-delay="20"
         data-aos-duration="700" direction="column" mt={{ base: "1.3rem", sm: "1.3rem", md: "2.3rem" }} flex="1">

@@ -149,7 +149,7 @@
 @media all and (min-width:100px) and (max-width:480px)
 {
     .lazy-load-image-background{
-        height: 80%;
+        height: 40% !important;
         margin:auto;
         margin-top: 1.5rem;
     }
