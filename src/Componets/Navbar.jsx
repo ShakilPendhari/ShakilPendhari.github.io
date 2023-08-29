@@ -18,7 +18,7 @@ import { useEffect } from "react";
 import resume from "../Componets/Shakil-Pendhari-Resume.pdf";
 import stylee from "./Navbar.module.css";
 
-const Navbar = () => {
+const Navbar = ({ theme, ChangeTheme }) => {
   const [hamNav, ChangeHamNav] = useToggleHook(); /*used custom hook here*/
   const color = useColorModeValue("white", "gray.800");
 
@@ -32,7 +32,12 @@ const Navbar = () => {
 
   return (
     <div
-      style={{ zIndex: "1000", userSelect: "none", WebkitUserSelect: "none", transition:"all 0.6s ease-in" }}
+      style={{
+        zIndex: "1000",
+        userSelect: "none",
+        WebkitUserSelect: "none",
+        transition: "all 0.6s ease-in",
+      }}
     >
       <Flex
         padding={{
@@ -41,9 +46,11 @@ const Navbar = () => {
           md: "0.5rem 3rem",
           lg: " 0.6rem 3rem",
         }}
-        color="black"
+        // color="black"
         direction="row"
-        style={{ ...style, color: color }}
+        // style={{ ...style, color: color }}
+        // style={style}
+        className={!theme ? stylee.navbarLight : stylee.navbarDark}
         transition="all 0.3s ease-in 0.1s"
         alignItems="center"
       >
@@ -55,9 +62,8 @@ const Navbar = () => {
         >
           <HashLink to="#">
             <Heading
-              className={stylee.logo}
+              className={!theme?stylee.logo:stylee.logoDark}
               padding="0.5rem 0rem 0.5rem"
-              color="red.700"
               w={{ base: "2.2rem", sm: "3rem", md: "3.3rem", lg: "3.6rem" }}
               h={{ base: "2.2rem", sm: "3rem", md: "3.3rem", lg: "3.6rem" }}
               borderRadius="2rem"
@@ -79,10 +85,18 @@ const Navbar = () => {
           alignItems="center"
         >
           {hashlinks?.map((link) => (
-            <Heading color={color} key={link.text} flex="1" as="h3" size="md">
+            <Heading 
+              // color={color}
+              // className={!theme?"WhiteColor":"DarkColor"}
+              key={link.text} flex="1" as="h3" size="md">
               <HashLink to={link.to}>
-                <span id={link.text} className={stylee.navbarText}>{link.text}</span>
+                <span id={link.text} className={`${!theme?stylee.navbarText:stylee.navbarTextDark}`}>
+                  {link.text}
+                </span>
               </HashLink>
+              {
+                console.log(theme)
+              }
             </Heading>
           ))}
           <Link
@@ -98,12 +112,15 @@ const Navbar = () => {
               )
             }
           >
-            <Heading color={color} flex="1" as="h3" size="md">
+            <Heading 
+              // className={`${!theme?"WhiteColor":"DarkColor"}`}
+              flex="1" as="h3" size="md">
               {" "}
-              <span className={stylee.navbarText}>Resume</span>{" "}
+              <span className={!theme?stylee.navbarText:stylee.navbarTextDark}>Resume</span>{" "}
             </Heading>{" "}
           </Link>
-          <Theme /> {/* here is first theme */}
+          <Theme theme={theme} ChangeTheme={ChangeTheme} />{" "}
+          {/* here is first theme */}
         </Flex>
         <Flex
           direction="row"
@@ -114,13 +131,14 @@ const Navbar = () => {
           alignItems="center"
         >
           <Box>
-            <Theme /> {/* here is second theme */}
+            <Theme theme={theme} ChangeTheme={ChangeTheme} />{" "}
+            {/* here is second theme */}
           </Box>
           <Box flex="1" onClick={ChangeHamNav}>
             {!hamNav ? (
-              <GiHamburgerMenu style={{ height: "27px", width: "27px" }} />
+              <GiHamburgerMenu   style={{ height: "27px", width: "27px",color:"white" }} />
             ) : (
-              <ImCross style={{ color: "red" }} />
+              <ImCross  style={{ color: "red" }} />
             )}
           </Box>
         </Flex>
@@ -132,7 +150,7 @@ const Navbar = () => {
           md: "none",
         }}
       >
-        {hamNav && <Hamberger ChangeHamNav={ChangeHamNav} hamNav={hamNav} />}
+        {hamNav && <Hamberger theme={theme}  ChangeHamNav={ChangeHamNav} hamNav={hamNav} />}
       </Box>
     </div>
   );

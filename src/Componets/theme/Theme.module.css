@@ -1,0 +1,21 @@
+
+/* theme.jsx */
+
+.MoonLight {
+    padding: 0.25rem 0.5rem;
+    border-radius: 50%;
+    background-color: #234E52;
+    border: 1px solid orange;
+    color: yellow;
+    height: 2rem;
+}
+
+.SunDark {
+    background-color: black;
+    padding: 0.25rem 0.5rem;
+    border-radius: 50%;
+    color:white;
+    border: 1px solid;
+    height: 2rem;
+}
+

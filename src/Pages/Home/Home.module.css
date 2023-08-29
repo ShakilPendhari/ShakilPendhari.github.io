@@ -1,0 +1,38 @@
+.text1{
+    word-spacing:0.2px;
+}
+
+
+.text1{
+    color:white
+}
+
+.resumeHome{
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+.resumeHome::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+    background-color: rgb(251, 112, 5);
+    z-index: -1;
+    transform: scale(0,1);
+    transform-origin: top left;
+    transition: transform 0.4s ease-in;
+}
+.resumeHome:hover::before{
+    transform-origin: top right;
+    transform: scale(1,1);
+}
+.resumeHome:hover{
+    color:rgb(24, 114, 3)
+}
+
+
+
+

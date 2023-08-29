@@ -1,0 +1,16 @@
+.About{
+    color:black ;
+    background-color: rgb(229, 222, 208) ;
+    overflow: hidden ;
+}
+.AboutDark{
+    color:rgb(255, 255, 255) ;
+    background-color: rgb(9, 23, 27) ;
+    overflow: hidden ;
+}
+.mailSvg{
+    color:white;
+}
+.email{
+    color:var(--navBackgroundColor)
+}

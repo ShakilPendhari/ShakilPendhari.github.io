@@ -5,8 +5,7 @@ import { hashlinks } from "./RawMaterial";
 import resume from "../Componets/Shakil-Pendhari-Resume.pdf";
 import stylee from "./Navbar.module.css";
 
-const Hamberger = ({ ChangeHamNav }) => {
-  const color = useColorModeValue("white", "gray.800");
+const Hamberger = ({ ChangeHamNav,theme }) => {
 
   return (
     <Flex
@@ -14,7 +13,7 @@ const Hamberger = ({ ChangeHamNav }) => {
       // gap="2rem"
       mt="0rem"
       p="5rem"
-      backgroundColor="white"
+      backgroundColor={theme?"rgb(50,50,50)":"#754141"}
       h="100vh"
       justifyContent="center"
       alignItems="center"
@@ -28,7 +27,7 @@ const Hamberger = ({ ChangeHamNav }) => {
           size="md"
           onClick={ChangeHamNav}
         >
-          <HashLink className={stylee.navbarText} to={link.to}>{link.text}</HashLink>
+          <HashLink className={!theme?stylee.navbarText:stylee.navbarTextDark}  to={link.to}>{link.text}</HashLink>
         </Heading>
       ))}
       <Link
@@ -43,7 +42,7 @@ const Hamberger = ({ ChangeHamNav }) => {
           )
         }
       >
-        <Heading flex="1" as="h3" size="md" className={stylee.navbarText}>
+        <Heading  flex="1" as="h3" size="md" className={!theme?stylee.navbarText:stylee.navbarTextDark} >
           Resume
         </Heading>
       </Link>

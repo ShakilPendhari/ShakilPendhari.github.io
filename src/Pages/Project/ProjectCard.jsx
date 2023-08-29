@@ -32,6 +32,7 @@ const ProjectCard = ({
   img,
   github,
   deployLink,
+  theme
 }) => {
   useEffect(() => {
     AOS.init();
@@ -239,7 +240,7 @@ const ProjectCard = ({
                 boxShadow: "0px 1px 2px 2px rgba(20, 20, 20, 0.7)",
                 borderRadius: "5px",
                 overflow: "hidden",
-                backgroundColor: "#FFFFFFA3",
+                backgroundColor: !theme?"#FFFFFFA3":"black",
                 overFlow:"hidden"
               }}
             >
@@ -247,6 +248,7 @@ const ProjectCard = ({
                 className={style.live}
                 variant="outline"
                 width={{ base: "2rem", sm: "4rem", md: "5rem" }}
+                color={!theme?"black":"white"}
               >
                 Live
               </Button>

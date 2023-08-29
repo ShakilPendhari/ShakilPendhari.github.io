@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Heading, Text, Flex, Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import "./Contact.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import style from "./Contact.module.css"
 
-const Contact = () => {
+const Contact = ({theme}) => {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -47,6 +47,7 @@ const Contact = () => {
     <Box
       ref={ref}
       id="contact"
+      className={!theme?style.Contact:style.ContactDark}
       pb="7rem"
       style={{ userSelect: "none", WebkitUserSelect: "none" }}
     >
@@ -56,7 +57,7 @@ const Contact = () => {
         borderBottom="3px solid green"
         //  width={{base:"10%",sm:"28%",md:"16%"}}
         width={{ base: "55%", sm: "51%", md: "13%" }}
-        fontSize={{ base: "1.1rem", sm: "1.5rem", md: "2rem" }}
+        fontSize={{ base: "1.3rem", sm: "1.6rem", md: "2rem" }}
         data-aos="fade-down"
         data-aos-delay="20"
         data-aos-duration="700"
@@ -108,7 +109,7 @@ const Contact = () => {
           rel="noreferrer"
           w="0.5rem"
           href="https://github.com/ShakilPendhari"
-          className="svg12"
+          className={!theme?"svg12":"svg12Dark"}
         >
           <svg viewBox="71 71 370 370" className="svg121">
             <path
@@ -121,7 +122,7 @@ const Contact = () => {
           target="_blank"
           rel="noreferrer"
           href="https://www.linkedin.com/in/shakil-pendhari-b00351245/"
-          className="svg13"
+          className={!theme?"svg13":"svg13Dark"}
         >
           <svg viewBox="0 0 512 512" className="svg131">
             <path
@@ -134,7 +135,7 @@ const Contact = () => {
           target="_blank"
           rel="noreferrer"
           href="mailto:shakilpp123456@gmail.com"
-          className="svg14"
+          className={!theme?"svg14":"svg14Dark"}
         >
           <svg
             focusable="false"

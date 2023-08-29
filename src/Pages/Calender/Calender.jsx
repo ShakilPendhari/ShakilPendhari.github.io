@@ -22,7 +22,7 @@ const Calender = () => {
         lineHeight="3rem"
         //  width={{base:"20%",sm:"38%",md:"23%"}}
         width={{ base: "50%", sm: "62%", md: "20%" }}
-        fontSize={{ base: "1.1rem", sm: "1.5rem", md: "2rem" }}
+        fontSize={{ base: "1.3rem", sm: "1.6rem", md: "2rem" }}
         margin="auto"
         m="4rem auto"
         textShadow="2px 2px 10px rgb(250 200 100)"

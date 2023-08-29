@@ -55,7 +55,7 @@ let ProjectArray = [
 //   }
 
 
-const Project = () => {
+const Project = ({theme}) => {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -96,7 +96,7 @@ const Project = () => {
 
   
   return (
-    <Box ref = {ref} pb="6rem" className={style.project}>
+    <Box id="project" ref = {ref} pb="6rem" className={!theme?style.project:style.projectDark}>
       <Heading
         as="h1"
         data-aos="fade-down"
@@ -108,16 +108,16 @@ const Project = () => {
         borderBottom="3px solid green"
         //  width={{base:"10%",sm:"22%",md:"13%"}}
         width={{ base: "80%", sm: "38%", md: "12%" }}
-        fontSize={{ base: "1.1rem", sm: "1.5rem", md: "2rem" }}
+        fontSize={{ base: "1.3rem", sm: "1.6rem", md: "2rem" }}
         m="4rem auto"
         textShadow="2px 2px 10px rgb(250 200 100)"
       >
         My Projects
       </Heading>
-      <Flex direction="column" id="project" gap="3rem">
+      <Flex direction="column"  gap="3rem">
         {ProjectArray &&
           ProjectArray.map((data) => (
-            <ProjectCard key={data.title} {...data} />
+            <ProjectCard theme={theme} key={data.title} {...data} />
           ))}
       </Flex>
     </Box>

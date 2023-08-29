@@ -1,0 +1,84 @@
+#contact:hover {
+    /* transform: scale(1, 1.1); */
+    box-shadow: 1 1 1 red;
+}
+
+#contact {
+    color: black;
+    background-color: rgb(229, 222, 208);
+    height: auto;
+    overflow: hidden;
+}
+
+.Contact {
+    color: black;
+    background-color: rgb(229, 222, 208);
+    height: auto;
+    overflow: hidden;
+}
+
+.ContactDark {
+    color: rgb(255, 255, 255);
+    background-color: rgb(9, 23, 27);
+    height: auto;
+    overflow: hidden;
+}
+
+
+@media all and (min-width:215px) and (max-width:900px) {
+    .svg12 {
+        /* background-color: rgb(93, 92, 92); */
+        border-radius: 2rem;
+        padding: 0.4rem;
+        display: grid;
+        place-items: center;
+        box-shadow: "5px 5px 5px green"
+    }
+
+    .svg121 {
+        background-color: rgb(2, 0, 0);
+        width: 50px;
+        border-radius: 2rem;
+        box-shadow: "5px 5px 5px green";
+        padding: 0.5rem;
+
+    }
+
+    .svg13 {
+        /* background-color: rgb(47, 22, 241); */
+        border-radius: 2rem;
+        padding: 0.4rem;
+        display: grid;
+        place-items: center;
+        box-shadow: rgba(171, 171, 212, 0.25) 0px 0px 0px -20px, rgba(164, 126, 126, 0.3) 0px 30px 60px -30px, rgba(4, 55, 105, 0.35) 0px -2px 6px 0px inset;
+    }
+
+    .svg131 {
+        background-color: rgb(30, 71, 159);
+        width: 50px;
+        border-radius: 2rem;
+        padding: 0.5rem;
+        box-shadow: rgba(171, 171, 212, 0.25) 0px 50px 100px -20px, rgba(164, 126, 126, 0.3) 0px 30px 60px -30px, rgba(4, 55, 105, 0.35) 0px -2px 6px 0px inset;
+    }
+
+    .svg14 {
+        border-radius: 2rem;
+        display: grid;
+        padding: 0.4rem;
+        place-items: center;
+        box-shadow: rgba(171, 171, 212, 0.25) 0px 50px 100px -20px, rgba(164, 126, 126, 0.3) 0px 30px 60px -30px, rgba(4, 55, 105, 0.35) 0px -2px 6px 0px inset;
+    }
+
+    .svg141 {
+        background-color: rgb(184, 39, 39);
+        width: 50px;
+        border-radius: 2rem;
+        padding: 0.5rem;
+    }
+
+    #contact:hover {
+        /* transform: scale(1, 1.1); */
+        box-shadow: 1 1 1 red;
+    }
+
+}

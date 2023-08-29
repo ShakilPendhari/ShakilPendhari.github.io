@@ -140,7 +140,7 @@ const Skill = () => {
         lineHeight="3rem"
         width={{ base: "65%", sm: "22%", md: "10%" }}
         m="auto"
-        fontSize={{ base: "1.1rem", sm: "1.5rem", md: "2rem" }}
+        fontSize={{ base: "1.3rem", sm: "1.6rem", md: "2rem" }}
         margin="auto"
         mb="2rem"
         textShadow="2px 2px 10px rgb(250 200 100)"

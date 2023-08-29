@@ -2,13 +2,10 @@ import React, { useEffect, useRef } from "react";
 import { Box, Flex, Heading, Image, Text, Link } from "@chakra-ui/react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import "./Home.css";
-import { HashLink } from "react-router-hash-link";
-import "./Home.css";
-
 import resume from "../../Componets/Shakil-Pendhari-Resume.pdf";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import 'react-lazy-load-image-component/src/effects/blur.css';
+import "react-lazy-load-image-component/src/effects/blur.css";
+import style from "./Home.module.css"
 
 let main = {
   id: "home",
@@ -16,15 +13,15 @@ let main = {
   // padding: "3rem 2rem",
   gap: "1rem",
   justifyContent: "center",
-  alignItems: "center"
+  alignItems: "center",
   //  border:"1px solid red"
 };
 
-const Home = ({setIsIntersection,obj,isIntersection}) => {
+const Home = ({ setIsIntersection, obj, isIntersection, theme }) => {
   let ref = useRef(null);
   useEffect(() => {
     AOS.init();
-  },[]);
+  }, []);
   // useEffect(()=>{
   //   window.addEventListener("scroll",handleScroll);
 
@@ -44,27 +41,23 @@ const Home = ({setIsIntersection,obj,isIntersection}) => {
   //       if(entries[0].isIntersecting)
   //       {
   //         let home = document.getElementById("Home");
-  //             home.className = "navbutAnimationAdd"
+  //             home.className {style.}= "navbutAnimationAdd"
   //       }
   //       else{
   //         let home = document.getElementById("Home");
-  //         home.className = "navbutAnimationRemove"
+  //         home.className {style.}= "navbutAnimationRemove"
   //         home.classList.remove("navbutAnimationAdd")
   //       }
   //   }
   // }
 
-
-
   return (
     <Flex
-    ref={ref}
-    boxSizing="borderBox"
+      ref={ref}
+      boxSizing="borderBox"
       direction={{ base: "column", sm: "column", md: "row" }}
-      // marginTop={{ base: "6.5rem", sm: "7.5rem", md: "6rem" }}
-      // height={{ base: "40rem", sm: "45rem", md: "auto" }}
       padding="0rem 2rem"
-      className="home"
+      className={style.home}
       style={main}
     >
       <Flex
@@ -78,8 +71,8 @@ const Home = ({setIsIntersection,obj,isIntersection}) => {
           alignItems: "center",
           // height:"100%"
         }}
-        width={{base:"60%",md:"100%"}}
-        height={{base:"60%",md:"100%"}}
+        width={{ base: "60%", md: "100%" }}
+        height={{ base: "60%", md: "100%" }}
         minW="5.5rem"
         minH="12.4rem"
       >
@@ -98,20 +91,33 @@ const Home = ({setIsIntersection,obj,isIntersection}) => {
           alt="Shakil Pendhari"
         /> */}
         <LazyLoadImage
-          style={{
-              borderRadius: "10%",
-              border: "2px solid",
-              // height: { base: "70%", sm: "21rem", md: "26rem" },
-              // float:"left",
-              boxShadow: "0px 5px 15px 5px orange",
-            }}
-            // width={{ base: "50%", sm: "70%", md: "26rem" }}
-           alt="Shakil Pendhari"
-           effect="blur"
-           src="/MyImg.jpeg" />
+          style={
+            !theme
+              ? {
+                  borderRadius: "10%",
+                  border: "2px solid",
+                  boxShadow: "0px 5px 15px 5px pink",
+                }
+              : {
+                  borderRadius: "10%",
+                  border: "2px solid",
+                  boxShadow: "0px 5px 15px 5px orange",
+                }
+          }
+          // width={{ base: "50%", sm: "70%", md: "26rem" }}
+          alt="Shakil Pendhari"
+          effect="blur"
+          src="/MyImg.jpeg"
+        />
       </Flex>
-      <Flex  data-aos="fade-right" data-aos-delay="20"
-        data-aos-duration="700" direction="column" mt={{ base: "1.3rem", sm: "1.3rem", md: "2.3rem" }} flex="1">
+      <Flex
+        data-aos="fade-right"
+        data-aos-delay="20"
+        data-aos-duration="700"
+        direction="column"
+        mt={{ base: "1.3rem", sm: "1.3rem", md: "2.3rem" }}
+        flex="1"
+      >
         <Heading
           as="h1"
           textAlign="left"
@@ -120,7 +126,7 @@ const Home = ({setIsIntersection,obj,isIntersection}) => {
           fontSize={{ base: "20px", sm: "25px", md: "2.05rem" }}
           paddingLeft="1rem"
           color="white"
-          style={{userSelect:"none",WebkitUserSelect:"none"}}
+          style={{ userSelect: "none", WebkitUserSelect: "none" }}
         >
           Hello👋
         </Heading>
@@ -132,7 +138,7 @@ const Home = ({setIsIntersection,obj,isIntersection}) => {
           fontSize={{ base: "15px", sm: "20px", md: "1.8rem" }}
           paddingLeft="1rem"
           color="white"
-          style={{userSelect:"none",WebkitUserSelect:"none"}}
+          style={{ userSelect: "none", WebkitUserSelect: "none" }}
         >
           I'm{" "}
           <Text
@@ -140,36 +146,41 @@ const Home = ({setIsIntersection,obj,isIntersection}) => {
             color="white"
             fontSize={{ base: "14px", sm: "22px", md: "2.3rem" }}
             textShadow="2px 2px 10px red"
-            style={{userSelect:"none",WebkitUserSelect:"none"}}
+            style={{ userSelect: "none", WebkitUserSelect: "none" }}
           >
-            
-          {" Shakil Pendhari"}
+            {" Shakil Pendhari"}
           </Text>
         </Box>
         <Text
           width="100%"
           fontWeight="light"
           fontFamily="Robota, sans-serif"
-          className="text1"
+          className={style.text1}
           paddingLeft="1rem"
           textShadow="2px 2px 10px rgb(250 200 100)"
           fontSize={{ base: "15px", sm: "20px", md: "1.5rem" }}
           textAlign="justify"
         >
-         Welcome to my portfolio, showcasing my expertise in full stack web development. Trained by Masai School, I have a strong command of the MERN stack, API integrations, and responsive design. I have successfully created diverse projects that blend functionality with aesthetics, demonstrating collaborative teamwork and meticulous attention to detail. Step into my world of code and innovation, where each line is crafted to leave a lasting impact.
+          Welcome to my portfolio, showcasing my expertise in full stack web
+          development. Trained by Masai School, I have a strong command of the
+          MERN stack, API integrations, and responsive design. I have
+          successfully created diverse projects that blend functionality with
+          aesthetics, demonstrating collaborative teamwork and meticulous
+          attention to detail. Step into my world of code and innovation, where
+          each line is crafted to leave a lasting impact.
         </Text>
 
         <Flex mt="1rem" direction="column" gap="1rem">
           <Link
-            className="resumeHome"
+            className={style.resumeHome}
             href={resume}
             download={true}
             fontFamily="helvetica"
             color="whiteAlpha.700"
             boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
             bgColor="purple.600"
-            w={{base:"5rem",sm:"7rem",md:"8.6rem"}}
-            fontSize={{base:"0.8rem",sm:"1.2rem",md:"1.4rem"}}
+            w={{ base: "5rem", sm: "7rem", md: "8.6rem" }}
+            fontSize={{ base: "0.8rem", sm: "1.2rem", md: "1.4rem" }}
             style={{
               fontWeight: "700",
               padding: "0.3rem 0rem",
@@ -177,8 +188,8 @@ const Home = ({setIsIntersection,obj,isIntersection}) => {
               textDecoration: "none",
               border: "1px solid rgba(1,1,1,0.5)",
               borderRadius: "0.3rem",
-              userSelect:"none",
-              WebkitUserSelect:"none"
+              userSelect: "none",
+              WebkitUserSelect: "none",
             }}
             target="_blank"
             textAlign="center"
@@ -200,13 +211,13 @@ const Home = ({setIsIntersection,obj,isIntersection}) => {
             margin="0"
             direction={{ base: "column", sm: "row", md: "row" }}
             width={{ base: "5rem", sm: "6rem", md: "8rem" }}
-            style={{userSelect:"none",WebkitUserSelect:"none"}}
+            style={{ userSelect: "none", WebkitUserSelect: "none" }}
           >
             <a
               target="_blank"
               rel="noreferrer"
               href="https://github.com/ShakilPendhari"
-              className="svg12"
+              className={!theme?"svg12":"svg12Dark"}
             >
               <svg viewBox="71 71 370 370" className="svg121">
                 <path
@@ -219,7 +230,7 @@ const Home = ({setIsIntersection,obj,isIntersection}) => {
               target="_blank"
               rel="noreferrer"
               href="https://www.linkedin.com/in/shakil-pendhari-b00351245/"
-              className="svg13"
+              className={!theme?"svg13":"svg13Dark"}
             >
               <svg viewBox="0 0 512 512" width="50px" className="svg131">
                 <path
@@ -232,7 +243,7 @@ const Home = ({setIsIntersection,obj,isIntersection}) => {
               target="_blank"
               rel="noreferrer"
               href="mailto:shakilpp123456@gmail.com"
-              className="svg14"
+              className={!theme?"svg14":"svg14Dark"}
             >
               <svg
                 focusable="false"
