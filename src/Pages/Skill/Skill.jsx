@@ -82,7 +82,7 @@ let SkillArrayObject = [
   },
 ];
 
-const Skill = () => {
+const Skill = ({theme}) => {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -144,6 +144,7 @@ const Skill = () => {
         margin="auto"
         mb="2rem"
         textShadow="2px 2px 10px rgb(250 200 100)"
+        color={!theme?"black":"white"}
       >
         My Skills
       </Heading>

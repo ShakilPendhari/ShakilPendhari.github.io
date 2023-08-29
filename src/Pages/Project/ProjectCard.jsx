@@ -43,8 +43,8 @@ const ProjectCard = ({
       data-aos-delay="20"
       data-aos-duration="700"
       data-aos-easing="ease-in-out"
-      _hover={cardHover}
-      style={cardCss}
+      // _hover={cardHover}
+      className={!theme?style.cardStyleLight:style.cardStyleDark}
       width={{ base: "90%", sm: "90%", md: "80%" }}
     >
       <Box
@@ -146,7 +146,7 @@ const ProjectCard = ({
           <Flex
               flex="1"
               textAlign="center"
-              color="green"
+              color={!theme?"green":"pink"}
               border="0.1rem solid black" 
               p="0rem 0.3rem"
               borderRadius="4px"
@@ -174,9 +174,9 @@ const ProjectCard = ({
                 techStacks.map((el, i) => (
                   <Text
                     border="2px solid black"
-                    backgroundColor="yellowgreen"
+                    backgroundColor={!theme?"yellowgreen":"rgb(196, 250, 120)"}
                     boxShadow="0px 0px 4px 1px grey"
-                    color="black"
+                    color={!theme?"black":"rgb(110,20,200)"}
                     borderRadius="5px"
                     p="0.1rem 0.3rem"
                     // m="0.3rem 0.4rem"

@@ -46,7 +46,7 @@ const About = ({theme}) => {
   return (
     <Flex
       ref = {ref}
-      id={style.about}
+      id="about"
       className={!theme?style.About:style.AboutDark}
       marginTop="6rem"
       marginBottom="5rem"
