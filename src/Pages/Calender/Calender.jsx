@@ -18,16 +18,21 @@ const Calender = ({theme}) => {
         data-aos-duration="700"
         data-aos-easing="ease-in-out"
         as="h1"
-        borderBottom={{ base: "3px solid rgb(255,0,0)" }}
+        // borderBottom={{ base: "3px solid rgb(255,0,0)" }}
         lineHeight="3rem"
         //  width={{base:"20%",sm:"38%",md:"23%"}}
-        width={{ base: "50%", sm: "62%", md: "20%" }}
+        // width={{ base: "50%", sm: "62%", md: "20%" }}
         fontSize={{ base: "1.3rem", sm: "1.6rem", md: "2rem" }}
         margin="auto"
         m="4rem auto"
         textShadow="2px 2px 10px rgb(250 200 100)"
+        
       >
-        Github Calender
+        <span style={{boxShadow:"0px 0px 3px grey",
+        padding:"0.2rem 0.8rem",
+        borderTopLeftRadius:"5px",
+        borderTopRightRadius:"5px",
+        borderBottom:`3px solid ${!theme?"#3182CE":"#8B54F8"}`}}>Github Calender</span>
       </Heading>
       <Box
         data-aos="fade-up"

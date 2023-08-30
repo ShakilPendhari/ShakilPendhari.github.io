@@ -1,8 +1,16 @@
-import { Button, Flex, Tooltip, Image, Text, Box, Grid } from "@chakra-ui/react";
+import {
+  Button,
+  Flex,
+  Tooltip,
+  Image,
+  Text,
+  Box,
+  Grid,
+} from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import style from "./Project.module.css"
+import style from "./Project.module.css";
 
 let cardCss = {
   flexDirection: "column",
@@ -32,7 +40,7 @@ const ProjectCard = ({
   img,
   github,
   deployLink,
-  theme
+  theme,
 }) => {
   useEffect(() => {
     AOS.init();
@@ -44,7 +52,7 @@ const ProjectCard = ({
       data-aos-duration="700"
       data-aos-easing="ease-in-out"
       // _hover={cardHover}
-      className={!theme?style.cardStyleLight:style.cardStyleDark}
+      className={!theme ? style.cardStyleLight : style.cardStyleDark}
       width={{ base: "90%", sm: "90%", md: "80%" }}
     >
       <Box
@@ -58,7 +66,7 @@ const ProjectCard = ({
           float="left"
           flex="2.3"
           width={{ base: "100%", sm: "100%", md: "67%" }}
-          height={{ base: "8rem", sm: "13rem", md: "17rem" }}
+          height={{ base: "8rem", sm: "13rem", md: "18.5rem" }}
           // objectFit="cover"
           src={img}
           borderBottomRightRadius="2rem"
@@ -76,6 +84,7 @@ const ProjectCard = ({
           fontFamily="mono, sans-serif"
           // width={{ base: "100%", sm: "100%", md: "32%" }}
           fontWeight="600"
+          color={!theme ? "black" : "white"}
         >
           {information}
         </Text>
@@ -93,7 +102,8 @@ const ProjectCard = ({
           <Flex
             justifyContent="center"
             alignItems="center"
-            border="0.1rem solid"
+            // border={`0.1rem solid ${!theme?"black":"white"}`}
+            color={`${!theme?"black":"white"}`}
             width={{ base: "100%", sm: "63%", md: "35%" }}
             // width="auto"
             // flexDirection={{ base: "column", sm: "row", md: "row" }}
@@ -112,9 +122,11 @@ const ProjectCard = ({
             textShadow="2px 2px 10px green"
             animation="shining 1.3s ease-in infinite alternate"
           >
-            <Text textAlign="justify" 
-            // flex="1" 
-            color="red">
+            <Text
+              textAlign="justify"
+              // flex="1"
+              color={`${!theme?"#3182CE":"#8B54F8"}`}
+            >
               Title :
             </Text>
             <Text
@@ -122,6 +134,7 @@ const ProjectCard = ({
               textAlign="justify"
               fontFamily="mono, sans-serif"
               fontWeight="550"
+              color={!theme ? "black" : "rgb(110,20,200)"}
             >
               {title}
             </Text>
@@ -132,7 +145,7 @@ const ProjectCard = ({
             gap="0.5rem"
             direction={{ base: "row", sm: "row", md: "row" }}
             fontSize={{ base: "14px", sm: "17px", md: "1.2rem" }}
-            textShadow="2px 2px 10px rgb(250 0 0)"
+            // textShadow="2px 2px 10px rgb(250 0 0)"
             flexDirection={{ base: "column", sm: "column", md: "row" }}
             // justifyContent="center"
             // alignItems="center"
@@ -142,23 +155,28 @@ const ProjectCard = ({
             // backgroundColor="transparent"
             // p="1rem"
           >
-          <Flex  flex="1" w="45%" justifyContent="center" alignItems="flex-start">
-          <Flex
+            <Flex
               flex="1"
-              textAlign="center"
-              color={!theme?"green":"pink"}
-              border="0.1rem solid black" 
-              p="0rem 0.3rem"
-              borderRadius="4px"
-              boxShadow="0px 0px 5px grey"
-              height={{ sm: "1.7rem", md: "2rem" }}
-              minWidth={{ sm: "6.5rem", md: "8rem" }}
-              // display={{ base: "none", sm: "none", md: "flex" }}
+              w="45%"
+              justifyContent="center"
+              alignItems="flex-start"
             >
-              Tech Stacks :
+              <Flex
+                flex="1"
+                textAlign="center"
+                color={`${!theme?"#3182CE":"#8B54F8"}`}
+                border="0.1rem solid black"
+                p="0rem 0.3rem"
+                borderRadius="4px"
+                boxShadow="0px 0px 5px grey"
+                height={{ sm: "1.7rem", md: "2rem" }}
+                minWidth={{ sm: "6.5rem", md: "8rem" }}
+                // display={{ base: "none", sm: "none", md: "flex" }}
+              >
+                Tech Stacks :
+              </Flex>
             </Flex>
-          </Flex>
-           
+
             <Flex
               flex={{ base: "1", sm: "1", md: "5" }}
               flexWrap="wrap"
@@ -174,9 +192,11 @@ const ProjectCard = ({
                 techStacks.map((el, i) => (
                   <Text
                     border="2px solid black"
-                    backgroundColor={!theme?"yellowgreen":"rgb(196, 250, 120)"}
+                    backgroundColor={
+                      !theme ? "yellowgreen" : "rgb(196, 250, 120)"
+                    }
                     boxShadow="0px 0px 4px 1px grey"
-                    color={!theme?"black":"rgb(110,20,200)"}
+                    color={!theme ? "black" : "rgb(110,20,200)"}
                     borderRadius="5px"
                     p="0.1rem 0.3rem"
                     // m="0.3rem 0.4rem"
@@ -207,7 +227,7 @@ const ProjectCard = ({
             bgColor="whiteAlpha.700"
             borderRadius="5rem"
           >
-            <a href={github}  target="_blank" rel="noreferrer">
+            <a href={github} target="_blank" rel="noreferrer">
               <Tooltip
                 label="See Code base"
                 placement="left-start"
@@ -240,15 +260,15 @@ const ProjectCard = ({
                 boxShadow: "0px 1px 2px 2px rgba(20, 20, 20, 0.7)",
                 borderRadius: "5px",
                 overflow: "hidden",
-                backgroundColor: !theme?"#FFFFFFA3":"black",
-                overFlow:"hidden"
+                backgroundColor: !theme ? "#FFFFFFA3" : "black",
+                overFlow: "hidden",
               }}
             >
               <Button
                 className={style.live}
                 variant="outline"
                 width={{ base: "2rem", sm: "4rem", md: "5rem" }}
-                color={!theme?"black":"white"}
+                color={!theme ? "black" : "white"}
               >
                 Live
               </Button>

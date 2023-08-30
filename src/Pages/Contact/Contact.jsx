@@ -54,9 +54,9 @@ const Contact = ({theme}) => {
       <Heading
         as="h1"
         lineHeight="3rem"
-        borderBottom="3px solid green"
+        // borderBottom="3px solid green"
         //  width={{base:"10%",sm:"28%",md:"16%"}}
-        width={{ base: "55%", sm: "51%", md: "13%" }}
+        // width={{ base: "55%", sm: "51%", md: "13%" }}
         fontSize={{ base: "1.3rem", sm: "1.6rem", md: "2rem" }}
         data-aos="fade-down"
         data-aos-delay="20"
@@ -66,7 +66,12 @@ const Contact = ({theme}) => {
         pt="2rem"
         textShadow="2px 2px 10px rgb(250 200 100)"
       >
-        Get in Touch
+        
+        <span style={{boxShadow:"0px 0px 3px grey",
+        padding:"0.2rem 0.8rem",
+        borderTopLeftRadius:"5px",
+        borderTopRightRadius:"5px",
+        borderBottom:`3px solid ${!theme?"#3182CE":"#8B54F8"}`}}>Get in Touch</span>
       </Heading>
       <Text
         fontSize={{ base: "15px", sm: "18px", md: "20px" }}

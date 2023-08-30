@@ -2,20 +2,25 @@
 /* theme.jsx */
 
 .MoonLight {
-    padding: 0.25rem 0.5rem;
-    border-radius: 50%;
-    background-color: #234E52;
-    border: 1px solid orange;
-    color: yellow;
-    height: 2rem;
-}
-
-.SunDark {
     background-color: black;
     padding: 0.25rem 0.5rem;
     border-radius: 50%;
     color:white;
     border: 1px solid;
     height: 2rem;
+    cursor: pointer;
+}
+
+.SunDark {
+    padding: 0.25rem 0.5rem;
+    border-radius: 50%;
+    /* background-color: #234E52;
+    border: 1px solid orange;
+    color: yellow; */
+    background: linear-gradient(45deg,rgb(181, 150, 244),rgb(139, 84, 248));
+    border: 1px solid rgb(212, 188, 3);
+    color: rgb(248, 231, 104);
+    height: 2rem;
+    cursor: pointer;
 }
 

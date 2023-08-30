@@ -36,7 +36,7 @@ const Navbar = ({ theme, ChangeTheme }) => {
         zIndex: "1000",
         userSelect: "none",
         WebkitUserSelect: "none",
-        transition: "all 0.6s ease-in",
+        transition: "all 0.3s ease-in",
       }}
     >
       <Flex
@@ -94,9 +94,9 @@ const Navbar = ({ theme, ChangeTheme }) => {
                   {link.text}
                 </span>
               </HashLink>
-              {
+              {/* {
                 console.log(theme)
-              }
+              } */}
             </Heading>
           ))}
           <Link

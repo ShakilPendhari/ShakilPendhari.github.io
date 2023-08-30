@@ -5,11 +5,11 @@ import "aos/dist/aos.css";
 import resume from "../../Componets/Shakil-Pendhari-Resume.pdf";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import style from "./Home.module.css"
+import style from "./Home.module.css";
 
 let main = {
   id: "home",
-  width: "100%",
+  // width: "100%",
   // padding: "3rem 2rem",
   gap: "1rem",
   justifyContent: "center",
@@ -57,20 +57,24 @@ const Home = ({ setIsIntersection, obj, isIntersection, theme }) => {
       boxSizing="borderBox"
       direction={{ base: "column", sm: "column", md: "row" }}
       padding="0rem 2rem"
-      className={style.home}
+      // className={style.home}
       style={main}
+      width="82%"
+      m="1.5rem auto"
+      borderBottom={`3px solid ${!theme ? "#3182CE" : "#8B54F8"}`}
+      borderTopLeftRadius="5px"
+      borderTopRightRadius="5px"
+      overflow="hidden"
+      boxShadow={`0px 2px 6px ${!theme ? "#3182CE" : "#8B54F8"}`}
+      p={{base:"1rem",sm:"1rem",md:"2rem 2.3rem 3.4rem"}}
     >
       <Flex
         flex="1"
         data-aos="fade-left"
         data-aos-delay="20"
         data-aos-duration="700"
-        style={{
-          justifyContent: "center",
-          // width: "100%",
-          alignItems: "center",
-          // height:"100%"
-        }}
+        justifyContent="flex-start"
+        alignItems="center"
         width={{ base: "60%", md: "100%" }}
         height={{ base: "60%", md: "100%" }}
         minW="5.5rem"
@@ -97,11 +101,13 @@ const Home = ({ setIsIntersection, obj, isIntersection, theme }) => {
                   borderRadius: "10%",
                   border: "2px solid",
                   boxShadow: "0px 5px 15px 5px pink",
+                  // minWidth:"17.06rem"
                 }
               : {
                   borderRadius: "10%",
                   border: "2px solid",
                   boxShadow: "0px 5px 15px 5px orange",
+                  // minWidth:"17.06rem"
                 }
           }
           // width={{ base: "50%", sm: "70%", md: "26rem" }}
@@ -116,7 +122,8 @@ const Home = ({ setIsIntersection, obj, isIntersection, theme }) => {
         data-aos-duration="700"
         direction="column"
         mt={{ base: "1.3rem", sm: "1.3rem", md: "2.3rem" }}
-        flex="1"
+        flex="2"
+        // minW="20.05rem"
       >
         <Heading
           as="h1"
@@ -124,13 +131,13 @@ const Home = ({ setIsIntersection, obj, isIntersection, theme }) => {
           textShadow="2px 2px 10px rgb(250 200 100)"
           fontFamily="Robota, sans-serif"
           fontSize={{ base: "20px", sm: "25px", md: "2.05rem" }}
-          paddingLeft="1rem"
+          // paddingLeft="1rem"
           color="white"
           style={{ userSelect: "none", WebkitUserSelect: "none" }}
         >
           Hello👋
         </Heading>
-        <Box
+        {/* <Box
           textAlign="left"
           fontWeight="450"
           fontFamily="Robota, sans-serif"
@@ -150,16 +157,17 @@ const Home = ({ setIsIntersection, obj, isIntersection, theme }) => {
           >
             {" Shakil Pendhari"}
           </Text>
-        </Box>
+        </Box> */}
         <Text
           width="100%"
           fontWeight="light"
           fontFamily="Robota, sans-serif"
           className={style.text1}
-          paddingLeft="1rem"
+          // paddingLeft="1rem"
           textShadow="2px 2px 10px rgb(250 200 100)"
-          fontSize={{ base: "15px", sm: "20px", md: "1.5rem" }}
+          // fontSize={{ base: "15px", sm: "20px", md: "1.5rem" }}
           textAlign="justify"
+          fontSize={{ base: "15px", sm: "19px", md: "1.4rem" }}
         >
           Welcome to my portfolio, showcasing my expertise in full stack web
           development. Trained by Masai School, I have a strong command of the
@@ -170,7 +178,15 @@ const Home = ({ setIsIntersection, obj, isIntersection, theme }) => {
           each line is crafted to leave a lasting impact.
         </Text>
 
-        <Flex mt="1rem" direction="column" gap="1rem">
+        <Flex
+          // width="95%"
+          // m="auto"
+          // border="1px solid red"
+          mt="1rem"
+          // direction={{ base: "row", sm: "row", md: "column" }}
+          direction="column"
+          gap="1rem"
+        >
           <Link
             className={style.resumeHome}
             href={resume}
@@ -178,13 +194,14 @@ const Home = ({ setIsIntersection, obj, isIntersection, theme }) => {
             fontFamily="helvetica"
             color="whiteAlpha.700"
             boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
-            bgColor="purple.600"
+            // bgColor="purple.600"
+            bgColor={`${!theme ? "#3182CE" : "#8B54F8"}`}
             w={{ base: "5rem", sm: "7rem", md: "8.6rem" }}
             fontSize={{ base: "0.8rem", sm: "1.2rem", md: "1.4rem" }}
             style={{
               fontWeight: "700",
               padding: "0.3rem 0rem",
-              marginLeft: "1rem",
+              // marginLeft: "1rem",
               textDecoration: "none",
               border: "1px solid rgba(1,1,1,0.5)",
               borderRadius: "0.3rem",
@@ -206,7 +223,7 @@ const Home = ({ setIsIntersection, obj, isIntersection, theme }) => {
 
           <Flex
             className="svg"
-            paddingLeft="1rem"
+            // paddingLeft="1rem"
             gap="0.5rem"
             margin="0"
             direction={{ base: "column", sm: "row", md: "row" }}
@@ -217,7 +234,7 @@ const Home = ({ setIsIntersection, obj, isIntersection, theme }) => {
               target="_blank"
               rel="noreferrer"
               href="https://github.com/ShakilPendhari"
-              className={!theme?"svg12":"svg12Dark"}
+              className={!theme ? "svg12" : "svg12Dark"}
             >
               <svg viewBox="71 71 370 370" className="svg121">
                 <path
@@ -230,7 +247,7 @@ const Home = ({ setIsIntersection, obj, isIntersection, theme }) => {
               target="_blank"
               rel="noreferrer"
               href="https://www.linkedin.com/in/shakil-pendhari-b00351245/"
-              className={!theme?"svg13":"svg13Dark"}
+              className={!theme ? "svg13" : "svg13Dark"}
             >
               <svg viewBox="0 0 512 512" width="50px" className="svg131">
                 <path
@@ -243,7 +260,7 @@ const Home = ({ setIsIntersection, obj, isIntersection, theme }) => {
               target="_blank"
               rel="noreferrer"
               href="mailto:shakilpp123456@gmail.com"
-              className={!theme?"svg14":"svg14Dark"}
+              className={!theme ? "svg14" : "svg14Dark"}
             >
               <svg
                 focusable="false"

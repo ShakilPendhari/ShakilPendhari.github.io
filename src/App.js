@@ -26,12 +26,19 @@ function App() {
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollYVal, setLastScrollYVal] = useState(0);
 
+  // useEffect(() => {
+  //   // console.log(isIntersection)
+  //   window.addEventListener("scroll", handleScoll);
+
+  //   return () => window.removeEventListener("scroll", handleScoll);
+  // }, [lastScrollYVal]);
+
   useEffect(() => {
     // console.log(isIntersection)
     window.addEventListener("scroll", handleScoll);
 
     return () => window.removeEventListener("scroll", handleScoll);
-  }, [lastScrollYVal]);
+  });
 
   const handleScoll = () => {
     let CurrentScrollY = Math.floor(window.scrollY);

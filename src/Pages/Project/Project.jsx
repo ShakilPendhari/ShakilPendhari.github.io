@@ -105,14 +105,19 @@ const Project = ({theme}) => {
         // data-aos-offset="200"
         data-aos-easing="ease-in-out"
         lineHeight="3rem"
-        borderBottom="3px solid green"
+        // borderBottom="3px solid green"
         //  width={{base:"10%",sm:"22%",md:"13%"}}
-        width={{ base: "80%", sm: "38%", md: "12%" }}
+        // width={{ base: "80%", sm: "38%", md: "12%" }}
         fontSize={{ base: "1.3rem", sm: "1.6rem", md: "2rem" }}
         m="4rem auto"
         textShadow="2px 2px 10px rgb(250 200 100)"
+        
       >
-        My Projects
+       <span style={{boxShadow:"0px 0px 3px grey",
+        padding:"0.2rem 0.8rem",
+        borderTopLeftRadius:"5px",
+        borderTopRightRadius:"5px",
+        borderBottom:`3px solid ${!theme?"#3182CE":"#8B54F8"}`}}> My Projects</span>
       </Heading>
       <Flex direction="column"  gap="3rem">
         {ProjectArray &&

@@ -15,13 +15,13 @@ const Theme = ({ theme, ChangeTheme }) => {
   return (
     <Box flex="0.3">
       {theme ? (
-        <Box className={themeNav.MoonLight} onClick={handleDarkMode}>
+        <Box className={themeNav.SunDark} onClick={handleDarkMode}>
           <Box mt="0.2rem">
             <BsFillSunFill />
           </Box>
         </Box>
       ) : (
-        <Box className={themeNav.SunDark} onClick={handleDarkMode}>
+        <Box className={themeNav.MoonLight} onClick={handleDarkMode}>
           <MoonIcon mt="-0.3rem" boxsize="1.05rem" />
         </Box>
       )}

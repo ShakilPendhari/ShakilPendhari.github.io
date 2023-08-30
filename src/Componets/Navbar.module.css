@@ -48,11 +48,12 @@
     /* width: 99%; */
     right: 0;
     z-index: 1000;
-    transition: top 0.6s ease-in-out;
+    transition: top 0.2s ease-in-out;
 }
 
 .navHidden {
     top: -6rem;
+    /* transition: top 0.4s ease-in-out; */
 }
 
 
@@ -146,7 +147,7 @@
     border: 2px dashed var(--logoBorderLight);
     display: none;
     transform: rotate(0deg);
-    transition: all 0.8s ease-in;
+    /* transition: all 0.8s ease-in; */
     animation: rotate 5s linear infinite alternate;
 }
 
@@ -157,15 +158,18 @@
 
 .logoDark {
     position: relative;
-    box-shadow: 0px 0px 8px var(--logoBoxShodowDark);
-    text-shadow: 2px 2px 10px var(--logotextShowdoDark);
+    /* box-shadow: 0px 0px 8px var(--logoBoxShodowDark); */
+    box-shadow: 0px 1px 8px 2px rgb(212, 188, 3);
+    /* text-shadow: 2px 2px 10px var(--logotextShowdoDark); */
+    text-shadow: 2px 2px 10px rgb(238, 103, 103);
     z-index: 1;
     color:var(--logoColorDark)
 }
 
 .logoDark::before {
     content: "";
-    background-color: var(--logoBackgroundDark);
+    /* background-color: var(--logoBackgroundDark); */
+    background-color: var(--textColorDark);
     position: absolute;
     border-radius: 50%;
     top: 0;
