@@ -11,7 +11,10 @@
 
 .appLight{
   /* background-color:rgb(162, 129, 129) ; */
-  background-color: #353333;;
+  /* background-color: #353333;; */
+  /* background-color: #a0f5f0; */
+  /* background:linear-gradient(45deg,rgb(0, 0, 0),rgb(0, 0, 0)); */
+  background: rgb(192, 189, 169);
 }
 .appDark{
   background-color: rgb(0, 0, 0);

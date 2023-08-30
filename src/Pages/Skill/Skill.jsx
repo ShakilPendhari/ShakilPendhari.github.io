@@ -274,6 +274,7 @@ const Skill = ({ theme }) => {
         mb="2rem"
         textShadow="2px 2px 10px rgb(250 200 100)"
         color={!theme ? "black" : "white"}
+        background={!theme ? "rgb(206, 241, 247)" : "black"}
       >
         My Skills
       </Heading>
@@ -300,14 +301,16 @@ const Skill = ({ theme }) => {
             fontSize={{ base: "1.1rem", sm: "1.4rem", md: "1.8rem" }}
             borderBottom={`2px solid ${!theme ? "#3182CE" : "#8B54F8"}`}
             width="max-content"
-            color={!theme ? "white" : "#d6d5a9"}
             margin="2rem auto 1rem"
+            color={!theme ? "black" : "white"}
+            background={!theme ? "rgb(206, 241, 247)" : "black"}
           >
             Skills
           </Text>
         </Box>
         <Grid
           justifyContent="space-evenly"
+          background={!theme ? "rgb(206, 241, 247)" : "black"}
           templateColumns={{
             base: "repeat(1, 1fr)",
             sm: "repeat(3, 1fr)",
@@ -353,13 +356,15 @@ const Skill = ({ theme }) => {
             fontSize={{ base: "1.1rem", sm: "1.4rem", md: "1.8rem" }}
             borderBottom={`2px solid ${!theme ? "#3182CE" : "#8B54F8"}`}
             width="max-content"
-            color={!theme ? "white" : "#d6d5a9"}
             margin="2rem auto 1rem"
+            color={!theme ? "black" : "white"}
+            background={!theme ? "rgb(206, 241, 247)" : "black"}
           >
             Tools
           </Text>
         </Box>
         <Grid
+          background={!theme ? "rgb(206, 241, 247)" : "black"}
           justifyContent="space-evenly"
           templateColumns={{
             base: "repeat(1, 1fr)",

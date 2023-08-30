@@ -6,12 +6,18 @@ import "./Calender.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const Calender = ({theme}) => {
+const Calender = ({ theme }) => {
   useEffect(() => {
     AOS.init();
-  },[]);
+  }, []);
   return (
-    <Box color={!theme?"black":"white"} width={{ base: "95%", sm: "80%", md: "90%" }} m="auto" className="calender" style={{userSelect:"none",WebkitUserSelect:"none"}}>
+    <Box
+      color={!theme ? "black" : "white"}
+      width={{ base: "95%", sm: "80%", md: "90%" }}
+      m="auto"
+      className="calender"
+      style={{ userSelect: "none", WebkitUserSelect: "none" }}
+    >
       <Heading
         data-aos="fade-down"
         data-aos-delay="20"
@@ -26,13 +32,20 @@ const Calender = ({theme}) => {
         margin="auto"
         m="4rem auto"
         textShadow="2px 2px 10px rgb(250 200 100)"
-        
       >
-        <span style={{boxShadow:"0px 0px 3px grey",
-        padding:"0.2rem 0.8rem",
-        borderTopLeftRadius:"5px",
-        borderTopRightRadius:"5px",
-        borderBottom:`3px solid ${!theme?"#3182CE":"#8B54F8"}`}}>Github Calender</span>
+        <span
+          style={{
+            boxShadow: "0px 0px 3px grey",
+            padding: "0.2rem 0.8rem",
+            borderTopLeftRadius: "5px",
+            borderTopRightRadius: "5px",
+            borderBottom: `3px solid ${!theme ? "#3182CE" : "#8B54F8"}`,
+            color: `${!theme ? "black" : "white"}`,
+            background: `${!theme ? "rgb(206, 241, 247)" : "black"}`,
+          }}
+        >
+          Github Calender
+        </span>
       </Heading>
       <Box
         data-aos="fade-up"

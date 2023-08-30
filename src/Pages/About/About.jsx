@@ -70,6 +70,7 @@ const About = ({ theme }) => {
         borderTopLeftRadius="5px"
         borderTopRightRadius="5px"
         // color={!theme?"black":"white"}
+        background={!theme?"rgb(206, 241, 247)":"black"}
       >
         About Me
       </Heading>
@@ -88,6 +89,7 @@ const About = ({ theme }) => {
         justifyContent="space-evenly"
         flexDir={{ base: "column", sm: "column", md: "row" }}
         p={{base:"1rem",sm:"1rem",md:"2rem 2.3rem 3.4rem"}}
+        background={!theme?"rgb(206, 241, 247)":"black"}
       >
         <Box
           zIndex="10"

@@ -3,18 +3,17 @@ import { Heading, Text, Flex, Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import style from "./Contact.module.css"
+import style from "./Contact.module.css";
 
-const Contact = ({theme}) => {
+const Contact = ({ theme }) => {
   const ref = useRef(null);
 
   useEffect(() => {
     AOS.init();
-    
   }, []);
 
   // useEffect(() => {
-   
+
   //   window.addEventListener("scroll", handleScroll);
 
   //   return () => window.removeEventListener("scroll", handleScroll);
@@ -42,12 +41,12 @@ const Contact = ({theme}) => {
   //       }
   //   }
   // };
-  
+
   return (
     <Box
       ref={ref}
       id="contact"
-      className={!theme?style.Contact:style.ContactDark}
+      className={!theme ? style.Contact : style.ContactDark}
       pb="7rem"
       style={{ userSelect: "none", WebkitUserSelect: "none" }}
     >
@@ -66,12 +65,19 @@ const Contact = ({theme}) => {
         pt="2rem"
         textShadow="2px 2px 10px rgb(250 200 100)"
       >
-        
-        <span style={{boxShadow:"0px 0px 3px grey",
-        padding:"0.2rem 0.8rem",
-        borderTopLeftRadius:"5px",
-        borderTopRightRadius:"5px",
-        borderBottom:`3px solid ${!theme?"#3182CE":"#8B54F8"}`}}>Get in Touch</span>
+        <span
+          style={{
+            boxShadow: "0px 0px 3px grey",
+            padding: "0.2rem 0.8rem",
+            borderTopLeftRadius: "5px",
+            borderTopRightRadius: "5px",
+            borderBottom: `3px solid ${!theme ? "#3182CE" : "#8B54F8"}`,
+            color: `${!theme ? "black" : "white"}`,
+            background: `${!theme ? "rgb(206, 241, 247)" : "black"}`,
+          }}
+        >
+          Get in Touch
+        </span>
       </Heading>
       <Text
         fontSize={{ base: "15px", sm: "18px", md: "20px" }}
@@ -114,7 +120,7 @@ const Contact = ({theme}) => {
           rel="noreferrer"
           w="0.5rem"
           href="https://github.com/ShakilPendhari"
-          className={!theme?"svg12":"svg12Dark"}
+          className={!theme ? "svg12" : "svg12Dark"}
         >
           <svg viewBox="71 71 370 370" className="svg121">
             <path
@@ -127,7 +133,7 @@ const Contact = ({theme}) => {
           target="_blank"
           rel="noreferrer"
           href="https://www.linkedin.com/in/shakil-pendhari-b00351245/"
-          className={!theme?"svg13":"svg13Dark"}
+          className={!theme ? "svg13" : "svg13Dark"}
         >
           <svg viewBox="0 0 512 512" className="svg131">
             <path
@@ -140,7 +146,7 @@ const Contact = ({theme}) => {
           target="_blank"
           rel="noreferrer"
           href="mailto:shakilpp123456@gmail.com"
-          className={!theme?"svg14":"svg14Dark"}
+          className={!theme ? "svg14" : "svg14Dark"}
         >
           <svg
             focusable="false"

@@ -21,7 +21,8 @@ const obj = {
 };
 
 function App() {
-  const [theme, ChangeTheme] = useToggleHook();
+  // const [theme, ChangeTheme] = useToggleHook();
+  const [ theme, setTheme ] = useState(true);
   const [isIntersection, setIsIntersection] = useState(obj);
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollYVal, setLastScrollYVal] = useState(0);
@@ -50,6 +51,10 @@ function App() {
     // console.log("ScrollY",Math.floor(window.scrollY))
     setLastScrollYVal(CurrentScrollY);
   };
+
+  const ChangeTheme = ()=>{
+    setTheme(!theme);
+  }
 
   return (
     <div className={`App ${!theme ? "appLight" : "appDark"}`}>

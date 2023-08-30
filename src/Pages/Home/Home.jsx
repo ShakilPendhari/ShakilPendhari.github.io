@@ -58,6 +58,8 @@ const Home = ({ setIsIntersection, obj, isIntersection, theme }) => {
       direction={{ base: "column", sm: "column", md: "row" }}
       padding="0rem 2rem"
       // className={style.home}
+      // background={!theme?"white":"black"}
+      background={!theme?"rgb(206, 241, 247)":"black"}
       style={main}
       width="82%"
       m="1.5rem auto"
@@ -132,7 +134,7 @@ const Home = ({ setIsIntersection, obj, isIntersection, theme }) => {
           fontFamily="Robota, sans-serif"
           fontSize={{ base: "20px", sm: "25px", md: "2.05rem" }}
           // paddingLeft="1rem"
-          color="white"
+          color={!theme?"black":"white"}
           style={{ userSelect: "none", WebkitUserSelect: "none" }}
         >
           Hello👋
@@ -162,12 +164,12 @@ const Home = ({ setIsIntersection, obj, isIntersection, theme }) => {
           width="100%"
           fontWeight="light"
           fontFamily="Robota, sans-serif"
-          className={style.text1}
           // paddingLeft="1rem"
           textShadow="2px 2px 10px rgb(250 200 100)"
           // fontSize={{ base: "15px", sm: "20px", md: "1.5rem" }}
           textAlign="justify"
           fontSize={{ base: "15px", sm: "19px", md: "1.4rem" }}
+          color={!theme?"black":"white"}
         >
           Welcome to my portfolio, showcasing my expertise in full stack web
           development. Trained by Masai School, I have a strong command of the
@@ -192,7 +194,8 @@ const Home = ({ setIsIntersection, obj, isIntersection, theme }) => {
             href={resume}
             download={true}
             fontFamily="helvetica"
-            color="whiteAlpha.700"
+            // color="whiteAlpha.700"
+            color={!theme?"black":"white"}
             boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
             // bgColor="purple.600"
             bgColor={`${!theme ? "#3182CE" : "#8B54F8"}`}
