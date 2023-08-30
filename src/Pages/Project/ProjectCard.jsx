@@ -219,11 +219,12 @@ const ProjectCard = ({
           direction={{ base: "row", sm: "row", md: "row" }}
           justifyContent="center"
           alignItems="center"
+          w="100%"
         >
           <Box
             boxShadow="0px 1px 4px 4px black"
             padding="0.1rem"
-            margin="auto"
+            // margin="auto"
             bgColor="whiteAlpha.700"
             borderRadius="5rem"
           >
