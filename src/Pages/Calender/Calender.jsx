@@ -37,8 +37,8 @@ const Calender = ({ theme }) => {
           style={{
             boxShadow: "0px 0px 3px grey",
             padding: "0.2rem 0.8rem",
-            borderTopLeftRadius: "5px",
-            borderTopRightRadius: "5px",
+            borderTopLeftRadius: "10px",
+            borderTopRightRadius: "10px",
             borderBottom: `3px solid ${!theme ? "#3182CE" : "#8B54F8"}`,
             color: `${!theme ? "black" : "white"}`,
             background: `${!theme ? "rgb(206, 241, 247)" : "black"}`,

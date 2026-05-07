@@ -171,13 +171,11 @@ const Home = ({ setIsIntersection, obj, isIntersection, theme }) => {
           fontSize={{ base: "15px", sm: "19px", md: "1.4rem" }}
           color={!theme?"black":"white"}
         >
-          Welcome to my portfolio, showcasing my expertise in full stack web
-          development. Trained by Masai School, I have a strong command of the
-          MERN stack, API integrations, and responsive design. I have
-          successfully created diverse projects that blend functionality with
-          aesthetics, demonstrating collaborative teamwork and meticulous
-          attention to detail. Step into my world of code and innovation, where
-          each line is crafted to leave a lasting impact.
+          Full Stack Developer (SDE-1) with 2.7+ years of production experience
+          at BOSC Tech Labs. I build scalable SaaS platforms end-to-end — from
+          database schema design to AWS deployment. Currently building
+          CricVision, a live multi-tenant SaaS platform serving 500+ users. Open
+          to remote Full Stack Developer roles.
         </Text>
 
         <Flex

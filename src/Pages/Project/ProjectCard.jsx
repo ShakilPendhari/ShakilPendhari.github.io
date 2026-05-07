@@ -103,7 +103,7 @@ const ProjectCard = ({
             justifyContent="center"
             alignItems="center"
             // border={`0.1rem solid ${!theme?"black":"white"}`}
-            color={`${!theme?"black":"white"}`}
+            color={`${!theme ? "black" : "white"}`}
             width={{ base: "100%", sm: "63%", md: "35%" }}
             // width="auto"
             // flexDirection={{ base: "column", sm: "row", md: "row" }}
@@ -125,7 +125,7 @@ const ProjectCard = ({
             <Text
               textAlign="justify"
               // flex="1"
-              color={`${!theme?"#3182CE":"#8B54F8"}`}
+              color={`${!theme ? "#3182CE" : "#8B54F8"}`}
             >
               Title :
             </Text>
@@ -164,7 +164,7 @@ const ProjectCard = ({
               <Flex
                 flex="1"
                 textAlign="center"
-                color={`${!theme?"#3182CE":"#8B54F8"}`}
+                color={`${!theme ? "#3182CE" : "#8B54F8"}`}
                 border="0.1rem solid black"
                 p="0rem 0.3rem"
                 borderRadius="4px"
@@ -227,8 +227,14 @@ const ProjectCard = ({
             // margin="auto"
             bgColor="whiteAlpha.700"
             borderRadius="5rem"
+            display={"none"}
           >
-            <a href={github} target="_blank" rel="noreferrer">
+            <a
+              href={github}
+              target="_blank"
+              rel="noreferrer"
+              // style={{ display: github ? "block" : "none" }}
+            >
               <Tooltip
                 label="See Code base"
                 placement="left-start"

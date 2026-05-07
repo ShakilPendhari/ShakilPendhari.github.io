@@ -8,6 +8,75 @@ import "aos/dist/aos.css";
 let ProjectArray = [
   {
     information:
+      "Live multi-tenant SaaS platform serving 500+ users across cricket academies. Built subdomain-based tenant isolation (academy.cricvision.ai), per-tenant Firebase Auth middleware, 13+ table MySQL schema covering academies, users, batches, attendance, fees, and performance tracking. Full AWS infrastructure deployed with on-demand TLS via Caddy + Cloudflare.",
+    title: "CricVision",
+    techStacks: [
+      "React.js",
+      "Next.js",
+      "Node.js",
+      "TS.ED",
+      "MySQL",
+      "AWS (EC2/RDS/S3/CloudFront)",
+      "Firebase Auth",
+      "Caddy",
+    ],
+    // img: "https://cricvision.ai/favicon.ico", // Using favicon as placeholder
+    img: "https://app.cricvision.ai/logo/cricvision-logo.png", // Using favicon as placeholder
+    github: "",
+    deployLink: "https://cricvision.ai",
+  },
+  {
+    information:
+      "Built full product end-to-end — frontend, backend, admin panel, and landing page. Integrated OpenAI and Gemini APIs for automated project documentation and workflow generation. Deployed on AWS EC2 with Caddy reverse proxy.",
+    title: "Foundersmate",
+    techStacks: [
+      "React.js",
+      "Next.js",
+      "Node.js",
+      "Express.js",
+      "OpenAI API",
+      "Gemini API",
+      "AWS",
+      "Caddy",
+    ],
+    // img: "https://foundersmate.ai/favicon.ico", // Using favicon as placeholder
+    img: "https://app.foundersmate.ai/logo.svg", // Using favicon as placeholder
+    github: "",
+    deployLink: "https://foundersmate.ai",
+  },
+  {
+    information:
+      "Designed and built complete platform from scratch. Architecture supports 300+ concurrent users targeting 5,000+ total users. Integrated Spotify API for real-time music data and optimized API calls with TanStack Query to reduce redundant fetches.",
+    title: "Corral",
+    techStacks: [
+      "React.js",
+      "Supabase",
+      "Spotify API",
+      "Firebase",
+      "TanStack Query",
+      "Zustand",
+    ],
+    img: "https://app.corral.social/assets/corral_dutch_white-B6IzgXL3.png",
+    github: "",
+    deployLink: "https://corral.social",
+  },
+  {
+    information:
+      "Built React frontend and NestJS backend with AWS Lambda authentication. Integrated Stripe payment gateway with secure checkout flow and managed PostgreSQL database on RDS.",
+    title: "Tap4Change",
+    techStacks: [
+      "React.js",
+      "NestJS",
+      "AWS (Lambda, EC2, S3, RDS)",
+      "PostgreSQL",
+      "Stripe",
+    ],
+    img: "https://tap4change.org/_next/static/media/Tap4ChangeLatestBlack.36eec654.svg",
+    github: "",
+    deployLink: "https://tap4change.org",
+  },
+  {
+    information:
       "Presenting my ZEE5 project, a full stack web application that replicates the popular streaming platform. Built with React, Node.js, and the YouTube API, it offers users a seamless and immersive entertainment experience. This project demonstrates my proficiency in full stack web development and showcases my ability to create engaging and user-friendly applications.",
     title: "Zee5.com",
     techStacks: [
@@ -152,11 +221,11 @@ const Project = ({ theme }) => {
           style={{
             boxShadow: "0px 0px 3px grey",
             padding: "0.2rem 0.8rem",
-            borderTopLeftRadius: "5px",
-            borderTopRightRadius: "5px",
+            borderTopLeftRadius: "10px",
+            borderTopRightRadius: "10px",
             borderBottom: `3px solid ${!theme ? "#3182CE" : "#8B54F8"}`,
-            color:`${!theme ? "black" : "white"}`,
-            background:`${!theme?"rgb(206, 241, 247)":"black"}`
+            color: `${!theme ? "black" : "white"}`,
+            background: `${!theme ? "rgb(206, 241, 247)" : "black"}`,
           }}
         >
           {" "}

@@ -67,18 +67,18 @@ const About = ({ theme }) => {
         boxShadow="0px 0px 3px grey"
         borderBottom={`3px solid ${!theme ? "#3182CE" : "#8B54F8"}`}
         p="0.2rem 0.8rem"
-        borderTopLeftRadius="5px"
-        borderTopRightRadius="5px"
+        borderTopLeftRadius="10px"
+        borderTopRightRadius="10px"
         // color={!theme?"black":"white"}
-        background={!theme?"rgb(206, 241, 247)":"black"}
+        background={!theme ? "rgb(206, 241, 247)" : "black"}
       >
         About Me
       </Heading>
       <Box
         display={{ base: "flex", md: "flex" }}
         borderBottom={`3px solid ${!theme ? "#3182CE" : "#8B54F8"}`}
-        borderTopLeftRadius="5px"
-        borderTopRightRadius="5px"
+        borderTopLeftRadius="10px"
+        borderTopRightRadius="10px"
         boxShadow={`0px 2px 6px ${!theme ? "#3182CE" : "#8B54F8"}`}
         overflow="hidden"
         gap={{ base: "1rem", sm: "2rem", md: "4rem" }}
@@ -88,8 +88,8 @@ const About = ({ theme }) => {
         m="auto"
         justifyContent="space-evenly"
         flexDir={{ base: "column", sm: "column", md: "row" }}
-        p={{base:"1rem",sm:"1rem",md:"2rem 2.3rem 3.4rem"}}
-        background={!theme?"rgb(206, 241, 247)":"black"}
+        p={{ base: "1rem", sm: "1rem", md: "2rem 2.3rem 3.4rem" }}
+        background={!theme ? "rgb(206, 241, 247)" : "black"}
       >
         <Box
           zIndex="10"
@@ -127,15 +127,28 @@ const About = ({ theme }) => {
             textAlign="justify"
             color={!theme ? "black" : "rgb(230, 215, 215)"}
           >
-            As an aspiring full-stack MERN developer, I am passionate about
-            creating projects that positively impact and serve the masses. With
-            a strong drive to make a difference, I thrive in fast-paced
-            environments and embrace challenges as opportunities for growth.
-            Specializing in the MERN stack, I am eager to contribute my skills
-            and expertise to create innovative solutions that meet the demands
-            of today's dynamic industry. Ready to embark on a journey of
-            continuous learning and delivering impactful results as a dedicated
-            MERN stack developer.
+            <br/>I'm a Full Stack Developer with 2.7+ years of experience building
+            production SaaS platforms from the ground up. <br/> I got into software
+            development chasing better opportunities — but somewhere along the
+            way, something shifted. I realized there's nothing quite like
+            shipping a feature and watching real users actually use it. That
+            feeling of solving a real problem through code became the thing that
+            keeps me going.<br/> I work across the full stack — crafting clean,
+            responsive UIs with React and Next.js, designing structured backend
+            systems with Node.js and NestJS, optimizing database queries that
+            actually need to perform under load, and deploying everything on AWS
+            with proper CI/CD pipelines. I don't like leaving loose ends. If I
+            build it, I own it end to end. <br/> Over the past 2.7 years at BOSC Tech
+            Labs, I've shipped 5+ live products across SaaS, fintech, and
+            consumer domains. My most significant work is CricVision — a
+            multi-tenant SaaS platform I co-built as the sole frontend and
+            backend engineer, now live with 500+ users across cricket academies. <br/>
+            I use AI to write faster — but I review every line before it ships.
+            Architecture decisions, production deployments, what goes live and
+            what doesn't — that's always my call. <br/> When I'm not building, I'm on
+            the badminton court. It keeps me sharp — both the reflexes and the
+            mindset. I'm currently open to any location Full Stack Developer roles
+            where I can build real things with real impact.
           </Text>
           <Flex
             m={{ base: "0.4rem auto", sm: "0.6rem auto", md: "1rem auto" }}
@@ -198,7 +211,7 @@ const About = ({ theme }) => {
             </Text>
           </Flex>
         </Box>
-        <Image
+        {/* <Image
           // float="right"
           width={{ base: "90%", sm: "50%", md: "30%" }}
           // border="1px solid red"
@@ -206,7 +219,7 @@ const About = ({ theme }) => {
           objectFit="content"
           height="100%"
           src="https://camo.githubusercontent.com/97d0c0c4209208d8ec9573c7e213e05872a9f59b703868647b559b77af601cc6/68747470733a2f2f692e70696e696d672e636f6d2f6f726967696e616c732f65382f66342f35332f65386634353334363961336563393765636433353464663436356437333931332e676966"
-        />
+        /> */}
       </Box>
     </Flex>
   );
