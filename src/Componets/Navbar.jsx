@@ -17,6 +17,7 @@ import { hashlinks } from "./RawMaterial";
 import { useEffect } from "react";
 import resume from "../Componets/Shakil-Pendhari-Resume.pdf";
 import stylee from "./Navbar.module.css";
+import { RESUME } from "../constants";
 
 const Navbar = ({ theme, ChangeTheme }) => {
   const [hamNav, ChangeHamNav] = useToggleHook(); /*used custom hook here*/
@@ -62,7 +63,7 @@ const Navbar = ({ theme, ChangeTheme }) => {
         >
           <HashLink to="#">
             <Heading
-              className={!theme?stylee.logo:stylee.logoDark}
+              className={!theme ? stylee.logo : stylee.logoDark}
               padding="0.5rem 0rem 0.5rem"
               w={{ base: "2.2rem", sm: "3rem", md: "3.3rem", lg: "3.6rem" }}
               h={{ base: "2.2rem", sm: "3rem", md: "3.3rem", lg: "3.6rem" }}
@@ -85,12 +86,19 @@ const Navbar = ({ theme, ChangeTheme }) => {
           alignItems="center"
         >
           {hashlinks?.map((link) => (
-            <Heading 
+            <Heading
               // color={color}
               // className={!theme?"WhiteColor":"DarkColor"}
-              key={link.text} flex="1" as="h3" size="md">
+              key={link.text}
+              flex="1"
+              as="h3"
+              size="md"
+            >
               <HashLink to={link.to}>
-                <span id={link.text} className={`${!theme?stylee.navbarText:stylee.navbarTextDark}`}>
+                <span
+                  id={link.text}
+                  className={`${!theme ? stylee.navbarText : stylee.navbarTextDark}`}
+                >
                   {link.text}
                 </span>
               </HashLink>
@@ -104,19 +112,20 @@ const Navbar = ({ theme, ChangeTheme }) => {
             download={true}
             //  rel="noreferrer"
             style={{ textDecoration: "none" }}
-            onClick={() =>
-              window.open(
-                "https://drive.google.com/file/d/17gxAc8lmovBKGQ7oEPSos8TkS9KqAjz2/view?usp=share_link",
-                "_blank",
-                "noreferrer"
-              )
-            }
+            onClick={() => window.open(RESUME, "_blank", "noreferrer")}
           >
-            <Heading 
+            <Heading
               // className={`${!theme?"WhiteColor":"DarkColor"}`}
-              flex="1" as="h3" size="md">
+              flex="1"
+              as="h3"
+              size="md"
+            >
               {" "}
-              <span className={!theme?stylee.navbarText:stylee.navbarTextDark}>Resume</span>{" "}
+              <span
+                className={!theme ? stylee.navbarText : stylee.navbarTextDark}
+              >
+                Resume
+              </span>{" "}
             </Heading>{" "}
           </Link>
           <Theme theme={theme} ChangeTheme={ChangeTheme} />{" "}
@@ -136,9 +145,11 @@ const Navbar = ({ theme, ChangeTheme }) => {
           </Box>
           <Box flex="1" onClick={ChangeHamNav}>
             {!hamNav ? (
-              <GiHamburgerMenu   style={{ height: "27px", width: "27px",color:"white" }} />
+              <GiHamburgerMenu
+                style={{ height: "27px", width: "27px", color: "white" }}
+              />
             ) : (
-              <ImCross  style={{ color: "red" }} />
+              <ImCross style={{ color: "red" }} />
             )}
           </Box>
         </Flex>
@@ -150,7 +161,13 @@ const Navbar = ({ theme, ChangeTheme }) => {
           md: "none",
         }}
       >
-        {hamNav && <Hamberger theme={theme}  ChangeHamNav={ChangeHamNav} hamNav={hamNav} />}
+        {hamNav && (
+          <Hamberger
+            theme={theme}
+            ChangeHamNav={ChangeHamNav}
+            hamNav={hamNav}
+          />
+        )}
       </Box>
     </div>
   );

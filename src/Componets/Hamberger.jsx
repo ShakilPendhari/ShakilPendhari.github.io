@@ -4,16 +4,16 @@ import { HashLink } from "react-router-hash-link";
 import { hashlinks } from "./RawMaterial";
 import resume from "../Componets/Shakil-Pendhari-Resume.pdf";
 import stylee from "./Navbar.module.css";
+import { RESUME } from "../constants";
 
-const Hamberger = ({ ChangeHamNav,theme }) => {
-
+const Hamberger = ({ ChangeHamNav, theme }) => {
   return (
     <Flex
       direction="column"
       // gap="2rem"
       mt="0rem"
       p="5rem"
-      backgroundColor={theme?"rgb(50,50,50)":"#754141"}
+      backgroundColor={theme ? "rgb(50,50,50)" : "#754141"}
       h="100vh"
       justifyContent="center"
       alignItems="center"
@@ -27,22 +27,26 @@ const Hamberger = ({ ChangeHamNav,theme }) => {
           size="md"
           onClick={ChangeHamNav}
         >
-          <HashLink className={!theme?stylee.navbarText:stylee.navbarTextDark}  to={link.to}>{link.text}</HashLink>
+          <HashLink
+            className={!theme ? stylee.navbarText : stylee.navbarTextDark}
+            to={link.to}
+          >
+            {link.text}
+          </HashLink>
         </Heading>
       ))}
       <Link
         href={resume}
         download
         style={{ textDecoration: "none" }}
-        onClick={() =>
-          window.open(
-            "https://drive.google.com/file/d/17gxAc8lmovBKGQ7oEPSos8TkS9KqAjz2/view?usp=share_link",
-            "_blank",
-            "noreferrer"
-          )
-        }
+        onClick={() => window.open(RESUME, "_blank", "noreferrer")}
       >
-        <Heading  flex="1" as="h3" size="md" className={!theme?stylee.navbarText:stylee.navbarTextDark} >
+        <Heading
+          flex="1"
+          as="h3"
+          size="md"
+          className={!theme ? stylee.navbarText : stylee.navbarTextDark}
+        >
           Resume
         </Heading>
       </Link>

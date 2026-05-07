@@ -6,6 +6,7 @@ import resume from "../../Componets/Shakil-Pendhari-Resume.pdf";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import style from "./Home.module.css";
+import { RESUME } from "../../constants";
 
 let main = {
   id: "home",
@@ -59,7 +60,7 @@ const Home = ({ setIsIntersection, obj, isIntersection, theme }) => {
       padding="0rem 2rem"
       // className={style.home}
       // background={!theme?"white":"black"}
-      background={!theme?"rgb(206, 241, 247)":"black"}
+      background={!theme ? "rgb(206, 241, 247)" : "black"}
       style={main}
       width="82%"
       m="1.5rem auto"
@@ -68,7 +69,7 @@ const Home = ({ setIsIntersection, obj, isIntersection, theme }) => {
       borderTopRightRadius="5px"
       overflow="hidden"
       boxShadow={`0px 2px 6px ${!theme ? "#3182CE" : "#8B54F8"}`}
-      p={{base:"1rem",sm:"1rem",md:"2rem 2.3rem 3.4rem"}}
+      p={{ base: "1rem", sm: "1rem", md: "2rem 2.3rem 3.4rem" }}
     >
       <Flex
         flex="1"
@@ -134,7 +135,7 @@ const Home = ({ setIsIntersection, obj, isIntersection, theme }) => {
           fontFamily="Robota, sans-serif"
           fontSize={{ base: "20px", sm: "25px", md: "2.05rem" }}
           // paddingLeft="1rem"
-          color={!theme?"black":"white"}
+          color={!theme ? "black" : "white"}
           style={{ userSelect: "none", WebkitUserSelect: "none" }}
         >
           Hello👋
@@ -169,7 +170,7 @@ const Home = ({ setIsIntersection, obj, isIntersection, theme }) => {
           // fontSize={{ base: "15px", sm: "20px", md: "1.5rem" }}
           textAlign="justify"
           fontSize={{ base: "15px", sm: "19px", md: "1.4rem" }}
-          color={!theme?"black":"white"}
+          color={!theme ? "black" : "white"}
         >
           Full Stack Developer (SDE-1) with 2.7+ years of production experience
           at BOSC Tech Labs. I build scalable SaaS platforms end-to-end — from
@@ -193,7 +194,7 @@ const Home = ({ setIsIntersection, obj, isIntersection, theme }) => {
             download={true}
             fontFamily="helvetica"
             // color="whiteAlpha.700"
-            color={!theme?"black":"white"}
+            color={!theme ? "black" : "white"}
             boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
             // bgColor="purple.600"
             bgColor={`${!theme ? "#3182CE" : "#8B54F8"}`}
@@ -212,11 +213,7 @@ const Home = ({ setIsIntersection, obj, isIntersection, theme }) => {
             target="_blank"
             textAlign="center"
             onClick={() => {
-              window.open(
-                "https://drive.google.com/file/d/17gxAc8lmovBKGQ7oEPSos8TkS9KqAjz2/view?usp=share_link",
-                "_blank",
-                "noreferrer"
-              );
+              window.open(RESUME, "_blank", "noreferrer");
             }}
           >
             Resume
