@@ -29,7 +29,7 @@ const Contact = () => {
           </Text>
         </Box>
 
-        <Flex className={style.contactGrid}>
+        <Box className={style.contactGrid}>
           <a href="mailto:shakilpp123456@gmail.com">
             <FaEnvelope />
             <span>shakilpp123456@gmail.com</span>
@@ -46,7 +46,7 @@ const Contact = () => {
             <FaLinkedinIn />
             <span>LinkedIn</span>
           </a>
-        </Flex>
+        </Box>
       </MotionBox>
     </Box>
   );
