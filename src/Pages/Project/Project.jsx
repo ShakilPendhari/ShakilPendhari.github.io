@@ -112,7 +112,7 @@ let ProjectArray = [
     ],
     img: "./task_tracker.png",
     github: "https://github.com/ShakilPendhari/Task-analysor",
-    deployLink: "https://task.shakilpendhari.com/",
+    deployLink: "https://task-tracker.shakilpendhari.com/",
   },
   {
     information:
