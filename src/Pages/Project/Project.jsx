@@ -6,7 +6,7 @@ import style from "./Project.module.css";
 let ProjectArray = [
   {
     information:
-      "Live multi-tenant SaaS platform serving 500+ users across cricket academies. Built subdomain-based tenant isolation (academy.cricvision.ai), per-tenant Firebase Auth middleware, 13+ table MySQL schema covering academies, users, batches, attendance, fees, and performance tracking. Full AWS infrastructure deployed with on-demand TLS via Caddy + Cloudflare.",
+      "Live multi-tenant SaaS platform serving 5000+ users across cricket academies. Built subdomain-based tenant isolation (academy.cricvision.ai), per-tenant Firebase Auth middleware, 13+ table MySQL schema covering academies, users, batches, attendance, fees, and performance tracking. Full AWS infrastructure deployed with on-demand TLS via Caddy + Cloudflare.",
     title: "CricVision",
     techStacks: [
       "React.js",

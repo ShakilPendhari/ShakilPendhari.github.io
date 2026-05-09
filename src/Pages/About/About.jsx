@@ -36,7 +36,7 @@ const About = ({ theme }) => {
           </Text>
           <Text>
             My strongest work is CricVision, a multi-tenant cricket academy
-            platform serving 500+ users. I co-built it end to end, including
+            platform serving 5000+ users. I co-built it end to end, including
             subdomain tenant isolation, Firebase Auth middleware, MySQL schema
             design, and AWS infrastructure.
           </Text>

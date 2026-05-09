@@ -46,7 +46,7 @@ const Home = ({ theme }) => {
           I build production SaaS platforms end-to-end, from clean interfaces
           and backend architecture to database design, AWS deployment, and
           CI/CD. Currently building CricVision, a multi-tenant cricket academy
-          platform serving 500+ users.
+          platform serving 5000+ users.
         </Text>
 
         <Flex className={style.actions}>
