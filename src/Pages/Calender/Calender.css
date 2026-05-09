@@ -1,85 +1,26 @@
-.css-1s8gg76{
-    margin: auto !important;
-} 
-.react-activity-calendar{
-    margin: auto !important;
-}
-.react-activity-calendar{
-    color:white
-}
-.calender{
-    overflow: hidden;
+.calender {
+  padding: 2rem 0 3rem;
+  overflow: hidden;
 }
 
-
-@media all and (min-width:0px) and (max-width:480px){
-    .react-activity-calendar__footer{
-        flex-direction: column !important;
-        color:rgb(231, 245, 100) !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        box-sizing: border-box !important;
-        font-size: 8px !important;
-    }
-    .styles_footer__ltlVl{
-        flex-direction: column !important;
-        color:rgb(231, 245, 100) !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        box-sizing: border-box !important;
-        font-size: 8px !important;
-    }
-    .react-activity-calendar__count{
-        color:rgb(231, 245, 100) !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        box-sizing: border-box !important;
-        text-align: center !important;
-        font-size: 8px !important;
-    }
-    .styles_legendColors__FYXRi>svg{
-        width: 10px;
-        height: 10px;
-    }
-    .styles_legendColors__FYXRi{
-        text-align: center !important;
-    }
-    .react-activity-calendar__legend-colors{
-       width: 99%;
-       display: flex;
-       align-items: center;
-       justify-content: center;
-
-    }
+.calendar-panel {
+  padding: clamp(1rem, 3vw, 1.5rem);
+  border-radius: 24px;
+  overflow-x: auto;
 }
 
-@media all and (min-width:481px) and (max-width:768px){
-    .react-activity-calendar__footer{
-        flex-direction: row !important;
-        color:rgb(17, 0, 255) !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        box-sizing: border-box !important;
-        font-size: 13px !important;
-    }
-    .styles_footer__ltlVl{
-        flex-direction: row !important;
-        color:rgb(17, 0, 255) !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        box-sizing: border-box !important;
-        font-size: 13px !important;
-    }
-    .react-activity-calendar__count{
-        color:rgb(17, 0, 255) !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        box-sizing: border-box !important;
-        font-size: 13px !important;
-    }
-  
-    .styles_legendColors__FYXRi>svg{
-        width: 13px;
-        height: 13px;
-    }
+.react-activity-calendar {
+  min-width: 760px;
+  margin: auto !important;
+}
+
+.react-activity-calendar__footer,
+.styles_footer__ltlVl {
+  color: inherit !important;
+}
+
+@media (max-width: 768px) {
+  .calendar-panel {
+    width: min(100% - 24px, 1120px);
+  }
 }

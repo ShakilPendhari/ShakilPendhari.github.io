@@ -1,4 +1,4 @@
-import { Flex, Heading, Link, useColorModeValue } from "@chakra-ui/react";
+import { Flex, Heading, Link } from "@chakra-ui/react";
 import React from "react";
 import { HashLink } from "react-router-hash-link";
 import { hashlinks } from "./RawMaterial";
@@ -13,7 +13,7 @@ const Hamberger = ({ ChangeHamNav, theme }) => {
       // gap="2rem"
       mt="0rem"
       p="5rem"
-      backgroundColor={theme ? "rgb(50,50,50)" : "#754141"}
+      backgroundColor={theme ? "rgba(8,17,31,0.96)" : "rgba(255,255,255,0.96)"}
       h="100vh"
       justifyContent="center"
       alignItems="center"

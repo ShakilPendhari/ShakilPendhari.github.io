@@ -1,9 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { Box, Flex, Heading } from "@chakra-ui/react";
 import ProjectCard from "./ProjectCard";
 import style from "./Project.module.css";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 let ProjectArray = [
   {
@@ -200,80 +198,19 @@ let ProjectArray = [
 //   }
 
 const Project = ({ theme }) => {
-  const ref = useRef(null);
-
-  useEffect(() => {
-    AOS.init();
-  }, []);
-
-  // useEffect(() => {
-
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // });
-
-  // const handleScroll = (e) => {
-  //   let options = {
-  //     root: null,
-  //     rootMargins: "0px", // top margin and bottom margin
-  //     threshold: 0, //when top of element see then it allow to do lazy loading
-  //   };
-  //   const observer = new IntersectionObserver(handleIntersect, options);
-  //   observer.observe(ref.current);
-
-  //   function handleIntersect (entries){
-  //       if(entries[0].isIntersecting)
-  //       {
-  //         let project = document.getElementById("Project");
-  //             project.className = "navbutAnimationAdd"
-  //       }
-  //       else{
-  //         let project = document.getElementById("Project");
-  //         project.className = "navbutAnimationRemove"
-  //         project.classList.remove("navbutAnimationAdd")
-  //       }
-  //   }
-  // };
-
   return (
     <Box
       id="project"
-      ref={ref}
-      pb="6rem"
-      className={!theme ? style.project : style.projectDark}
+      className={style.project}
     >
       <Heading
         as="h1"
-        data-aos="fade-down"
-        data-aos-delay="20"
-        data-aos-duration="700"
-        // data-aos-offset="200"
-        data-aos-easing="ease-in-out"
-        lineHeight="3rem"
-        // borderBottom="3px solid green"
-        //  width={{base:"10%",sm:"22%",md:"13%"}}
-        // width={{ base: "80%", sm: "38%", md: "12%" }}
-        fontSize={{ base: "1.3rem", sm: "1.6rem", md: "2rem" }}
-        m="4rem auto"
-        textShadow="2px 2px 10px rgb(250 200 100)"
+        className="section-heading"
+        fontSize={{ base: "1.1rem", md: "1.35rem" }}
       >
-        <span
-          style={{
-            boxShadow: "0px 0px 3px grey",
-            padding: "0.2rem 0.8rem",
-            borderTopLeftRadius: "10px",
-            borderTopRightRadius: "10px",
-            borderBottom: `3px solid ${!theme ? "#3182CE" : "#8B54F8"}`,
-            color: `${!theme ? "black" : "white"}`,
-            background: `${!theme ? "rgb(206, 241, 247)" : "black"}`,
-          }}
-        >
-          {" "}
-          My Projects
-        </span>
+        My Projects
       </Heading>
-      <Flex direction="column" gap="3rem">
+      <Flex className="section-shell" direction="column" gap="1.25rem">
         {ProjectArray &&
           ProjectArray.map((data) => (
             <ProjectCard theme={theme} key={data.title} {...data} />

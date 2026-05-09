@@ -1,16 +1,91 @@
-.About{
-    color:black ;
-    background-color: rgb(229, 222, 208) ;
-    overflow: hidden ;
+.section {
+  padding: 6rem 0 4rem;
 }
-.AboutDark{
-    color:rgb(255, 255, 255) ;
-    background-color: rgb(9, 23, 27) ;
-    overflow: hidden ;
+
+.panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+  gap: clamp(1.2rem, 4vw, 2.5rem);
+  padding: clamp(1.25rem, 4vw, 2.75rem);
+  border-radius: 26px;
+  text-align: left;
 }
-.mailSvg{
-    color:white;
+
+.story {
+  display: grid;
+  gap: 1rem;
+  color: var(--muted-dark);
+  font-size: clamp(1rem, 1.6vw, 1.08rem);
+  line-height: 1.85;
+  font-weight: 500;
 }
-.email{
-    color:var(--navBackgroundColor)
+
+:global(.appLight) .story {
+  color: var(--muted-light);
+}
+
+.kicker {
+  color: inherit;
+  font-size: clamp(1.45rem, 3vw, 2.2rem);
+  line-height: 1.18;
+  font-weight: 900;
+}
+
+.emailRow {
+  width: max-content;
+  max-width: 100%;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 0.4rem;
+  padding: 0.75rem 0.95rem;
+  border-radius: 999px;
+  color: #14b8a6;
+  background: rgba(20, 184, 166, 0.1);
+  border: 1px solid rgba(20, 184, 166, 0.22);
+  font-weight: 850;
+  overflow-wrap: anywhere;
+}
+
+.highlights {
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.highlightCard {
+  display: grid;
+  gap: 0.4rem;
+  padding: 1rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+:global(.appLight) .highlightCard {
+  background: rgba(255, 255, 255, 0.68);
+  border-color: rgba(17, 24, 39, 0.08);
+}
+
+.highlightCard svg {
+  color: #f59e0b;
+  font-size: 1.25rem;
+}
+
+.highlightCard strong {
+  font-size: 1rem;
+}
+
+.highlightCard span {
+  color: var(--muted-dark);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+:global(.appLight) .highlightCard span {
+  color: var(--muted-light);
+}
+
+@media (max-width: 800px) {
+  .panel {
+    grid-template-columns: 1fr;
+  }
 }

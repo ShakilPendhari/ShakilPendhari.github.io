@@ -10,7 +10,6 @@ import Calender from "./Pages/Calender/Calender";
 import Stats from "./Pages/Stats/Stats";
 import { useEffect, useState } from "react";
 import navbarStyle from "./Componets/Navbar.module.css";
-import useToggleHook from "./hooks/ToggleHook";
 
 const obj = {
   Home: false,
@@ -22,39 +21,25 @@ const obj = {
 
 function App() {
   // const [theme, ChangeTheme] = useToggleHook();
-  const [ theme, setTheme ] = useState(true);
+  const [theme, setTheme] = useState(true);
   const [isIntersection, setIsIntersection] = useState(obj);
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollYVal, setLastScrollYVal] = useState(0);
 
-  // useEffect(() => {
-  //   // console.log(isIntersection)
-  //   window.addEventListener("scroll", handleScoll);
-
-  //   return () => window.removeEventListener("scroll", handleScoll);
-  // }, [lastScrollYVal]);
-
   useEffect(() => {
-    // console.log(isIntersection)
+    const handleScoll = () => {
+      const currentScrollY = Math.floor(window.scrollY);
+      setShowNavbar(currentScrollY <= lastScrollYVal || currentScrollY < 80);
+      setLastScrollYVal(currentScrollY);
+    };
+
     window.addEventListener("scroll", handleScoll);
-
     return () => window.removeEventListener("scroll", handleScoll);
-  });
+  }, [lastScrollYVal]);
 
-  const handleScoll = () => {
-    let CurrentScrollY = Math.floor(window.scrollY);
-    if (CurrentScrollY > lastScrollYVal) {
-      setShowNavbar(false);
-    } else {
-      setShowNavbar(true);
-    }
-    // console.log("ScrollY",Math.floor(window.scrollY))
-    setLastScrollYVal(CurrentScrollY);
-  };
-
-  const ChangeTheme = ()=>{
+  const ChangeTheme = () => {
     setTheme(!theme);
-  }
+  };
 
   return (
     <div className={`App ${!theme ? "appLight" : "appDark"}`}>
@@ -65,7 +50,7 @@ function App() {
       >
         <Navbar theme={theme} ChangeTheme={ChangeTheme} />
       </Box>
-      <Box pt={{ base: "3rem", sm: "5rem" }}>
+      <Box pt={{ base: "4.5rem", sm: "5.5rem" }}>
         <Home
           theme={theme}
           setIsIntersection={setIsIntersection}

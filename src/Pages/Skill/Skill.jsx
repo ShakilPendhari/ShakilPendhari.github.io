@@ -1,8 +1,7 @@
-import { Heading, Grid, Flex, Text, Box } from "@chakra-ui/react";
-import React, { useEffect, useRef } from "react";
+import { Heading, Text, Box } from "@chakra-ui/react";
+import React from "react";
 import SkillComponent from "./SkillComponent";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import style from "./Skill.module.css";
 
 // let SkillArrayObject = [
 //   {
@@ -327,198 +326,33 @@ let ToolsArrayObject = [
 ];
 
 const Skill = ({ theme }) => {
-  const ref = useRef(null);
-
-  useEffect(() => {
-    AOS.init();
-  }, []);
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // });
-
-  // const handleScroll = (e) => {
-  //   let options = {
-  //     root: null,
-  //     rootMargins: "0px", // top margin and bottom margin
-  //     threshold: 0, //when top of element see then it allow to do lazy loading
-  //   };
-  //   const observer = new IntersectionObserver(handleIntersect, options);
-  //   observer.observe(ref.current);
-
-  //   function handleIntersect (entries){
-  //       if(entries[0].isIntersecting)
-  //       {
-  //         let skill = document.getElementById("Skill");
-  //             skill.className = "navbutAnimationAdd"
-  //       }
-  //       else{
-  //         let skill = document.getElementById("Skill");
-  //         skill.className = "navbutAnimationRemove"
-  //         skill.classList.remove("navbutAnimationAdd")
-  //       }
-  //   }
-  // }
-
   return (
-    <div
-      ref={ref}
-      id="skill"
-      style={{
-        marginBottom: "5rem",
-        width: "100%",
-        userSelect: "none",
-        WebkitUserSelect: "none",
-      }}
-    >
+    <Box id="skill" className={style.section} style={{ userSelect: "none", WebkitUserSelect: "none" }}>
       <Heading
         as="h1"
-        data-aos="fade-down"
-        data-aos-delay="20"
-        data-aos-duration="700"
-        data-aos-easing="ease-in-out"
-        borderBottom={`3px solid ${!theme ? "#3182CE" : "#8B54F8"}`}
-        lineHeight="3rem"
-        // width={{ base: "65%", sm: "22%", md: "10%" }}
-        width="max-content"
-        m="auto"
-        fontSize={{ base: "1.3rem", sm: "1.6rem", md: "2rem" }}
-        boxShadow="0px 0px 3px grey"
-        p="0.2rem 0.8rem"
-        borderTopLeftRadius="10px"
-        borderTopRightRadius="10px"
-        margin="auto"
-        mb="2rem"
-        textShadow="2px 2px 10px rgb(250 200 100)"
-        color={!theme ? "black" : "white"}
-        background={!theme ? "rgb(206, 241, 247)" : "black"}
+        className="section-heading"
+        fontSize={{ base: "1.1rem", md: "1.35rem" }}
       >
         My Skills
       </Heading>
 
-      <Flex flexDir="column">
-        <Box
-          position="sticky"
-          top="0rem"
-          left="0rem"
-          textAlign="left"
-          width="81%"
-          m="auto"
-          data-aos="fade-right"
-          data-aos-delay="20"
-          data-aos-duration="700"
-          data-aos-easing="ease-in-out"
-        >
-          {/* <Text
-            boxShadow="0px 0px 6px grey"
-            p="0.2rem 0.4rem"
-            fontWeight="500"
-            borderTopLeftRadius="2px"
-            borderTopRightRadius="2px"
-            fontSize={{ base: "1.1rem", sm: "1.4rem", md: "1.8rem" }}
-            borderBottom={`2px solid ${!theme ? "#3182CE" : "#8B54F8"}`}
-            width="max-content"
-            margin="2rem auto 1rem"
-            color={!theme ? "black" : "white"}
-            background={!theme ? "rgb(206, 241, 247)" : "black"}
-          >
-            Skills
-          </Text> */}
-        </Box>
-        <Grid
-          justifyContent="space-evenly"
-          background={!theme ? "rgb(206, 241, 247)" : "black"}
-          templateColumns={{
-            base: "repeat(1, 1fr)",
-            sm: "repeat(3, 1fr)",
-            md: "repeat(3, 1fr)",
-          }}
-          gap={{ base: "10px", sm: "20px", md: "0rem" }}
-          rowGap={{ base: "10px", sm: "20px", md: "5rem" }}
-          //  rowGap={10}
-          width="82%"
-          m="auto"
-          padding={{ base: "1rem", sm: "2rem", md: "2rem" }}
-          alignItems="center"
-          borderBottom={`3px solid ${!theme ? "#3182CE" : "#8B54F8"}`}
-          borderTopLeftRadius="5px"
-          borderTopRightRadius="5px"
-          boxShadow={`0px 2px 6px ${!theme ? "#3182CE" : "#8B54F8"}`}
-          overflow="hidden"
-        >
+      <Box className={style.group}>
+        <Box className={`${style.grid} glass-panel`}>
           {SkillArrayObject?.map((data) => (
             <SkillComponent key={data.id} {...data} />
           ))}
-        </Grid>
-      </Flex>
-      <Flex flexDir="column">
-        <Box
-          position="sticky"
-          top="0rem"
-          left="0rem"
-          textAlign="left"
-          width="81%"
-          m="2rem auto 0rem"
-          data-aos="fade-right"
-          data-aos-delay="20"
-          data-aos-duration="700"
-          data-aos-easing="ease-in-out"
-        >
-          <Text
-            boxShadow="0px 0px 6px grey"
-            fontWeight="500"
-            p="0.2rem 0.4rem"
-            borderTopLeftRadius="7px"
-            borderTopRightRadius="7px"
-            fontSize={{ base: "1.1rem", sm: "1.4rem", md: "1.8rem" }}
-            borderBottom={`2px solid ${!theme ? "#3182CE" : "#8B54F8"}`}
-            width="max-content"
-            margin="2rem auto 1rem"
-            color={!theme ? "black" : "white"}
-            background={!theme ? "rgb(206, 241, 247)" : "black"}
-          >
-            Tools
-          </Text>
         </Box>
-        <Grid
-          background={!theme ? "rgb(206, 241, 247)" : "black"}
-          justifyContent="space-evenly"
-          templateColumns={{
-            base: "repeat(1, 1fr)",
-            sm: "repeat(3, 1fr)",
-            md: "repeat(3, 1fr)",
-          }}
-          gap={{ base: "10px", sm: "20px", md: "0rem" }}
-          rowGap={{ base: "10px", sm: "20px", md: "5rem" }}
-          //  rowGap={10}
-          width="82%"
-          m="auto"
-          padding={{ base: "1rem", sm: "2rem", md: "2rem" }}
-          alignItems="center"
-          borderBottom={`3px solid ${!theme ? "#3182CE" : "#8B54F8"}`}
-          borderTopLeftRadius="5px"
-          borderTopRightRadius="5px"
-          boxShadow={`0px 2px 6px ${!theme ? "#3182CE" : "#8B54F8"}`}
-          overflow="hidden"
-          // justifyContent="space-evenly"
-          // templateColumns={{
-          //   base: "repeat(1, 1fr)",
-          //   sm: "repeat(3, 1fr)",
-          //   md: "repeat(3, 1fr)",
-          // }}
-          // gap={{ base: "10px", sm: "20px", md: "30px" }}
-          // //  rowGap={10}
-          // padding={{ base: "1rem", sm: "4rem", md: "6rem" }}
-          // alignItems="center"
-        >
+      </Box>
+
+      <Box className={style.group}>
+        <Text className={style.groupTitle}>Tools & Integrations</Text>
+        <Box className={`${style.grid} glass-panel`}>
           {ToolsArrayObject?.map((data) => (
             <SkillComponent key={data.id} {...data} />
           ))}
-        </Grid>
-      </Flex>
-    </div>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 
