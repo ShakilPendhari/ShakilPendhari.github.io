@@ -22,7 +22,7 @@ let ProjectArray = [
     // img: "https://app.cricvision.ai/logo/cricvision-logo.png", // Using favicon as placeholder
     img: "./cricvision.png", // Using favicon as placeholder
     github: "",
-    deployLink: "https://cricvision.ai",
+    deployLink: "https://app.cricvision.ai",
   },
   {
     information:
