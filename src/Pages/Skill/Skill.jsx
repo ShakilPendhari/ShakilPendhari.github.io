@@ -239,6 +239,13 @@ let SkillArrayObject = [
     id: "22",
   },
   {
+    text: "Google Cloud Platform",
+    img: "https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg",
+    border: "#4285f4",
+    boxShowdo: "#90caf9",
+    id: "27",
+  },
+  {
     text: "Docker",
     img: "https://www.vectorlogo.zone/logos/docker/docker-icon.svg",
     border: "#2496ed",

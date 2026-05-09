@@ -22,7 +22,7 @@ const Stats = () => {
         </a>
       </Flex>
 
-      <Flex
+      {/* <Flex
         style={{
           width: "60%",
           //   height: "500px",
@@ -64,7 +64,7 @@ const Stats = () => {
             />
           </a>
         </Box>
-      </Flex>
+      </Flex> */}
     </div>
   );
 };

@@ -139,7 +139,7 @@ const About = ({ theme }) => {
             actually need to perform under load, and deploying everything on AWS
             with proper CI/CD pipelines. I don't like leaving loose ends. If I
             build it, I own it end to end. <br/> Over the past 2.7 years at BOSC Tech
-            Labs, I've shipped 5+ live products across SaaS, fintech, and
+            Labs, I've shipped 7+ live products across SaaS, fintech, and
             consumer domains. My most significant work is CricVision — a
             multi-tenant SaaS platform I co-built as the sole frontend and
             backend engineer, now live with 500+ users across cricket academies. <br/>

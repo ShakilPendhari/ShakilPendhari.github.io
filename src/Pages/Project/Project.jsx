@@ -21,7 +21,8 @@ let ProjectArray = [
       "Caddy",
     ],
     // img: "https://cricvision.ai/favicon.ico", // Using favicon as placeholder
-    img: "https://app.cricvision.ai/logo/cricvision-logo.png", // Using favicon as placeholder
+    // img: "https://app.cricvision.ai/logo/cricvision-logo.png", // Using favicon as placeholder
+    img: "./cricvision.png", // Using favicon as placeholder
     github: "",
     deployLink: "https://cricvision.ai",
   },
@@ -40,7 +41,8 @@ let ProjectArray = [
       "Caddy",
     ],
     // img: "https://foundersmate.ai/favicon.ico", // Using favicon as placeholder
-    img: "https://app.foundersmate.ai/logo.svg", // Using favicon as placeholder
+    // img: "https://app.foundersmate.ai/logo.svg", // Using favicon as placeholder
+    img: "./foundersmate.png", // Using favicon as placeholder
     github: "",
     deployLink: "https://foundersmate.ai",
   },
@@ -56,7 +58,8 @@ let ProjectArray = [
       "TanStack Query",
       "Zustand",
     ],
-    img: "https://app.corral.social/assets/corral_dutch_white-B6IzgXL3.png",
+    // img: "https://app.corral.social/assets/corral_dutch_white-B6IzgXL3.png",
+    img: "./corral.png",
     github: "",
     deployLink: "https://corral.social",
   },
@@ -71,30 +74,47 @@ let ProjectArray = [
       "PostgreSQL",
       "Stripe",
     ],
-    img: "https://tap4change.org/_next/static/media/Tap4ChangeLatestBlack.36eec654.svg",
+    // img: "https://tap4change.org/_next/static/media/Tap4ChangeLatestBlack.36eec654.svg",
+    img: "./tap4change.png",
     github: "",
     deployLink: "https://tap4change.org",
   },
   {
     information:
-      "Presenting my ZEE5 project, a full stack web application that replicates the popular streaming platform. Built with React, Node.js, and the YouTube API, it offers users a seamless and immersive entertainment experience. This project demonstrates my proficiency in full stack web development and showcases my ability to create engaging and user-friendly applications.",
-    title: "Zee5.com",
+      "A real-time collaboration platform designed specifically for developers. It features room-based chat, instant messaging via Socket.io, and secure code snippet sharing with syntax highlighting. The application uses a modern glassmorphic UI and is built for scalability with a Dockerized backend deployed on Google Cloud Platform and a React frontend on Vercel.",
+    title: "Chat App",
     techStacks: [
-      "HTML5",
-      "CSS3",
-      "JavaScript",
       "React",
-      "Redux",
-      "Axios",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
       "Node.js",
-      "Express.js",
+      "Express",
       "MongoDB",
-      "RESTful APIs",
-      "ChakraUI",
+      "Socket.io",
+      "Docker",
+      "GCP",
+      "PWA"
     ],
-    img: "./zee5.png",
-    github: "https://github.com/ShakilPendhari/zee5.com",
-    deployLink: "https://zee5-clone-theta.vercel.app/",
+    img: "./chat_app.png",
+    github: "https://github.com/ShakilPendhari/communicate-each-others",
+    deployLink: "https://chat.shakilpendhari.com/",
+  },
+  {
+    information:
+      "A high-performance task management application built with React 19 and Supabase. This PWA-enabled app offers offline support, real-time data synchronization, and an intuitive user interface for organizing daily tasks. It leverages modern web technologies to ensure a fast, reliable, and installable experience on any device.",
+    title: "Task Tracker",
+    techStacks: [
+      "React 19",
+      "Vite",
+      "Vanilla CSS",
+      "Supabase",
+      "PostgreSQL",
+      "PWA",
+    ],
+    img: "./task_tracker.png",
+    github: "https://github.com/ShakilPendhari/Task-analysor",
+    deployLink: "https://task.shakilpendhari.com/",
   },
   {
     information:
@@ -136,6 +156,27 @@ let ProjectArray = [
     img: "./IndustryBuying.png",
     github: "https://github.com/Prashant1562/IndustryBuying-Clone",
     deployLink: "https://soft-dogs-2567.netlify.app/",
+  },
+  {
+    information:
+      "Presenting my ZEE5 project, a full stack web application that replicates the popular streaming platform. Built with React, Node.js, and the YouTube API, it offers users a seamless and immersive entertainment experience. This project demonstrates my proficiency in full stack web development and showcases my ability to create engaging and user-friendly applications.",
+    title: "Zee5.com",
+    techStacks: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "React",
+      "Redux",
+      "Axios",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "RESTful APIs",
+      "ChakraUI",
+    ],
+    img: "./zee5.png",
+    github: "https://github.com/ShakilPendhari/zee5.com",
+    deployLink: "https://zee5-clone-theta.vercel.app/",
   },
   {
     information:
