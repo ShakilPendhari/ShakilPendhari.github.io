@@ -23,6 +23,7 @@ let ProjectArray = [
     img: "./cricvision.png", // Using favicon as placeholder
     github: "",
     deployLink: "https://app.cricvision.ai",
+    show:true
   },
   {
     information:
@@ -43,6 +44,7 @@ let ProjectArray = [
     img: "./foundersmate.png", // Using favicon as placeholder
     github: "",
     deployLink: "https://foundersmate.ai",
+    show:true
   },
   {
     information:
@@ -60,6 +62,7 @@ let ProjectArray = [
     img: "./corral.png",
     github: "",
     deployLink: "https://corral.social",
+    show:true
   },
   {
     information:
@@ -76,6 +79,7 @@ let ProjectArray = [
     img: "./tap4change.png",
     github: "",
     deployLink: "https://tap4change.org",
+    show:true
   },
   {
     information:
@@ -97,6 +101,7 @@ let ProjectArray = [
     img: "./chat_app.png",
     github: "https://github.com/ShakilPendhari/communicate-each-others",
     deployLink: "https://chat.shakilpendhari.com/",
+    show:true
   },
   {
     information:
@@ -113,6 +118,7 @@ let ProjectArray = [
     img: "./task_tracker.png",
     github: "https://github.com/ShakilPendhari/Task-analysor",
     deployLink: "https://task-tracker.shakilpendhari.com/",
+    show:true
   },
   {
     information:
@@ -134,6 +140,7 @@ let ProjectArray = [
     img: "./Home.png",
     github: "https://github.com/capitalN/scrawny-meat-2282",
     deployLink: "https://home-interior-pro.vercel.app/",
+    show:false
   },
   {
     information:
@@ -154,6 +161,7 @@ let ProjectArray = [
     img: "./IndustryBuying.png",
     github: "https://github.com/Prashant1562/IndustryBuying-Clone",
     deployLink: "https://soft-dogs-2567.netlify.app/",
+    show:false
   },
   {
     information:
@@ -175,6 +183,7 @@ let ProjectArray = [
     img: "./zee5.png",
     github: "https://github.com/ShakilPendhari/zee5.com",
     deployLink: "https://zee5-clone-theta.vercel.app/",
+    show:false
   },
   {
     information:
@@ -184,18 +193,9 @@ let ProjectArray = [
     img: "./buffer.png",
     github: "https://github.com/Sunilrath101/Buffer-clone",
     deployLink: "https://bespoke-biscotti-7e0a1f.netlify.app/",
+    show:false
   },
 ];
-// ,
-//   {
-//     information:
-//       "A clone of the renowned travel booking platform, Orbitz.com. Developed by five dedicated developers, this project utilized HTML, CSS, and JavaScript. The clone faithfully replicates Orbitz's key features, including flight and hotel search, booking management, and secure payment integration, offering users a seamless and intuitive platform for their travel arrangements.",
-//     title: "Orbitz.com",
-//     techStacks: ["HTML5", "CSS3", "JavaScript"],
-//     img: "./orbitz.png",
-//     github: "https://github.com/ShakilPendhari/dazzling-wing-7781",
-//     deployLink: "https://dreamy-paprenjak-996346.netlify.app/",
-//   }
 
 const Project = ({ theme }) => {
   return (

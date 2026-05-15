@@ -5,28 +5,29 @@
 
 .card {
   display: grid;
-  grid-template-columns: minmax(280px, 0.95fr) minmax(0, 1.05fr);
-  gap: 1.4rem;
+  grid-template-columns: 50% 50%;
+  gap: 0;
   width: 100%;
-  padding: clamp(0.8rem, 2vw, 1.1rem);
+  height: 420px;
+  padding: 0;
   border-radius: 24px;
   text-align: left;
   overflow: hidden;
 }
 
 .media {
-  min-height: 270px;
-  border-radius: 18px;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .media img {
   width: 100%;
   height: 100%;
-  min-height: 270px;
-  object-fit: cover;
-  object-position: top center;
+  object-fit: fill;
+  object-position: center;
   transition: transform 0.55s ease;
 }
 
@@ -36,9 +37,9 @@
 
 .cardBody {
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   gap: 1.2rem;
-  padding: clamp(0.4rem, 2vw, 0.8rem);
+  padding: clamp(1.5rem, 5vw, 2.5rem);
 }
 
 .cardEyebrow {

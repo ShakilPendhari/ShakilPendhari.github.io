@@ -13,6 +13,7 @@ const ProjectCard = ({
   img,
   github,
   deployLink,
+  show = true,
 }) => {
   return (
     <MotionFlex
@@ -21,6 +22,7 @@ const ProjectCard = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.18 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
+      style={{ display: show ? "grid" : "none" }}
     >
       <Box className={style.media}>
         <Image src={img} alt={title} />
