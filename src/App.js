@@ -6,8 +6,8 @@ import Project from "./Pages/Project/Project";
 import Contact from "./Pages/Contact/Contact";
 import { Box } from "@chakra-ui/react";
 import About from "./Pages/About/About";
-import Calender from "./Pages/Calender/Calender";
-import Stats from "./Pages/Stats/Stats";
+// import Calender from "./Pages/Calender/Calender";
+// import Stats from "./Pages/Stats/Stats";
 import { useEffect, useState } from "react";
 import navbarStyle from "./Componets/Navbar.module.css";
 
@@ -75,8 +75,8 @@ function App() {
           obj={obj}
           isIntersection={isIntersection}
         />
-        <Calender theme={theme} />
-        <Stats theme={theme} />
+        {/* <Calender theme={theme} />
+        <Stats theme={theme} /> */}
         <Contact
           theme={theme}
           setIsIntersection={setIsIntersection}
