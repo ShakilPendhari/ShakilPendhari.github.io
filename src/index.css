@@ -18,6 +18,10 @@
   --muted-dark: #a8b3c7;
   --muted-light: #556070;
   --accent: #14b8a6;
+  --accent-color: var(--accent);
+  --primary-color: var(--accent);
+  --background-color: var(--bg-dark);
+  --text-color: var(--text-dark);
   --accent-2: #f59e0b;
   --accent-3: #6366f1;
   --border-dark: rgba(148, 163, 184, 0.18);
@@ -74,6 +78,11 @@ body::before {
     radial-gradient(circle at 88% 14%, rgba(245, 158, 11, 0.16), transparent 24rem),
     linear-gradient(135deg, #ffffff, var(--bg-light) 55%, #eef4fb);
   color: var(--text-light);
+}
+
+.appLight {
+  --background-color: var(--bg-light);
+  --text-color: var(--text-light);
 }
 
 code {
@@ -189,7 +198,7 @@ a {
   height: 100%;
 }
 
-.lazy-load-image-background > img {
+.lazy-load-image-background>img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -206,6 +215,7 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {

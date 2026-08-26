@@ -10,6 +10,7 @@ import About from "./Pages/About/About";
 // import Stats from "./Pages/Stats/Stats";
 import { useEffect, useState } from "react";
 import navbarStyle from "./Componets/Navbar.module.css";
+import CanvasBackground from "./Componets/CanvasBackground/CanvasBackground";
 
 const obj = {
   Home: false,
@@ -43,6 +44,7 @@ function App() {
 
   return (
     <div className={`App ${!theme ? "appLight" : "appDark"}`}>
+      <CanvasBackground />
       <Box
         className={`${navbarStyle.navShow} ${
           showNavbar ? "" : navbarStyle.navHidden
