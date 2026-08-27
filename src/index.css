@@ -146,14 +146,14 @@ a {
 
 .glass-panel {
   border: 1px solid var(--border-dark);
-  background: var(--panel-dark);
+  /* background: var(--panel-dark); */
   box-shadow: var(--shadow-dark);
-  backdrop-filter: blur(18px);
+  /* backdrop-filter: blur(-10px); */
 }
 
 .appLight .glass-panel {
   border-color: var(--border-light);
-  background: var(--panel-light);
+  /* background: var(--panel-light); */
   box-shadow: var(--shadow-light);
 }
 
