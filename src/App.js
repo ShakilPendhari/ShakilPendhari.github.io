@@ -4,6 +4,8 @@ import Home from "./Pages/Home/Home";
 import Skill from "./Pages/Skill/Skill";
 import Project from "./Pages/Project/Project";
 import Contact from "./Pages/Contact/Contact";
+import Blog from "./Pages/Blog/Blog";
+import BlogDetail from "./Pages/Blog/BlogDetail";
 import { Box } from "@chakra-ui/react";
 import About from "./Pages/About/About";
 // import Calender from "./Pages/Calender/Calender";
@@ -26,6 +28,7 @@ function App() {
   const [isIntersection, setIsIntersection] = useState(obj);
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollYVal, setLastScrollYVal] = useState(0);
+  const [selectedBlogSlug, setSelectedBlogSlug] = useState(null);
 
   useEffect(() => {
     const handleScoll = () => {
@@ -42,6 +45,21 @@ function App() {
     setTheme(!theme);
   };
 
+  const handleSelectBlog = (slug) => {
+    setSelectedBlogSlug(slug);
+    // Scroll to top when opening detail view
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleBackFromBlogDetail = () => {
+    setSelectedBlogSlug(null);
+    // Scroll to blog section
+    const blogSection = document.getElementById("blog");
+    if (blogSection) {
+      blogSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className={`App ${!theme ? "appLight" : "appDark"}`}>
       <CanvasBackground />
@@ -53,38 +71,57 @@ function App() {
         <Navbar theme={theme} ChangeTheme={ChangeTheme} />
       </Box>
       <Box pt={{ base: "4.5rem", sm: "5.5rem" }}>
-        <Home
-          theme={theme}
-          setIsIntersection={setIsIntersection}
-          obj={obj}
-          isIntersection={isIntersection}
-        />
-        <About
-          theme={theme}
-          setIsIntersection={setIsIntersection}
-          obj={obj}
-          isIntersection={isIntersection}
-        />
-        <Skill
-          theme={theme}
-          setIsIntersection={setIsIntersection}
-          obj={obj}
-          isIntersection={isIntersection}
-        />
-        <Project
-          theme={theme}
-          setIsIntersection={setIsIntersection}
-          obj={obj}
-          isIntersection={isIntersection}
-        />
-        {/* <Calender theme={theme} />
+        {/* Show blog detail view if a blog is selected */}
+        {selectedBlogSlug ? (
+          <BlogDetail
+            slug={selectedBlogSlug}
+            onBack={handleBackFromBlogDetail}
+            theme={theme}
+          />
+        ) : (
+          <>
+            <Home
+              theme={theme}
+              setIsIntersection={setIsIntersection}
+              obj={obj}
+              isIntersection={isIntersection}
+            />
+            <About
+              theme={theme}
+              setIsIntersection={setIsIntersection}
+              obj={obj}
+              isIntersection={isIntersection}
+            />
+            <Skill
+              theme={theme}
+              setIsIntersection={setIsIntersection}
+              obj={obj}
+              isIntersection={isIntersection}
+            />
+            <Project
+              theme={theme}
+              setIsIntersection={setIsIntersection}
+              obj={obj}
+              isIntersection={isIntersection}
+            />
+            {/* Blog Section */}
+            <Blog
+              theme={theme}
+              setIsIntersection={setIsIntersection}
+              obj={obj}
+              isIntersection={isIntersection}
+              onSelectBlog={handleSelectBlog}
+            />
+            {/* <Calender theme={theme} />
         <Stats theme={theme} /> */}
-        <Contact
-          theme={theme}
-          setIsIntersection={setIsIntersection}
-          obj={obj}
-          isIntersection={isIntersection}
-        />
+            <Contact
+              theme={theme}
+              setIsIntersection={setIsIntersection}
+              obj={obj}
+              isIntersection={isIntersection}
+            />
+          </>
+        )}
       </Box>
     </div>
   );

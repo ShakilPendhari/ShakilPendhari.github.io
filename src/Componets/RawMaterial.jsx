@@ -34,6 +34,10 @@ export const styleTheme = {
     text:"Project"
   },
   {
+    to:"#blog",
+    text:"Blog"
+  },
+  {
     to:"#contact",
     text:"Contact"
   }
