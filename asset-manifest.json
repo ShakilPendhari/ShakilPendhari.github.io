@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.a9cb9962.css",
-    "main.js": "/static/js/main.e6c33a8f.js",
+    "main.css": "/static/css/main.10d9ec0e.css",
+    "main.js": "/static/js/main.98a5df8e.js",
     "static/media/Shakil-Pendhari-Resume.pdf": "/static/media/Shakil-Pendhari-Resume.a07c78706c3eb4d6a36a.pdf",
     "index.html": "/index.html",
-    "main.a9cb9962.css.map": "/static/css/main.a9cb9962.css.map",
-    "main.e6c33a8f.js.map": "/static/js/main.e6c33a8f.js.map"
+    "main.10d9ec0e.css.map": "/static/css/main.10d9ec0e.css.map",
+    "main.98a5df8e.js.map": "/static/js/main.98a5df8e.js.map"
   },
   "entrypoints": [
-    "static/css/main.a9cb9962.css",
-    "static/js/main.e6c33a8f.js"
+    "static/css/main.10d9ec0e.css",
+    "static/js/main.98a5df8e.js"
   ]
 }
