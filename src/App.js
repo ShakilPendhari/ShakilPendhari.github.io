@@ -29,6 +29,7 @@ function App() {
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollYVal, setLastScrollYVal] = useState(0);
   const [selectedBlogSlug, setSelectedBlogSlug] = useState(null);
+  const routeBlogSlug = window.location.pathname.match(/^\/blog\/([^/]+)\/?$/)?.[1];
 
   useEffect(() => {
     const handleScoll = () => {
@@ -64,15 +65,20 @@ function App() {
     <div className={`App ${!theme ? "appLight" : "appDark"}`}>
       <CanvasBackground />
       <Box
-        className={`${navbarStyle.navShow} ${
-          showNavbar ? "" : navbarStyle.navHidden
-        }`}
+        className={`${navbarStyle.navShow} ${showNavbar ? "" : navbarStyle.navHidden
+          }`}
       >
         <Navbar theme={theme} ChangeTheme={ChangeTheme} />
       </Box>
       <Box pt={{ base: "4.5rem", sm: "5.5rem" }}>
         {/* Show blog detail view if a blog is selected */}
-        {selectedBlogSlug ? (
+        {routeBlogSlug ? (
+          <BlogDetail
+            slug={decodeURIComponent(routeBlogSlug)}
+            onBack={() => window.history.back()}
+            theme={theme}
+          />
+        ) : selectedBlogSlug ? (
           <BlogDetail
             slug={selectedBlogSlug}
             onBack={handleBackFromBlogDetail}

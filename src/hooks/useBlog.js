@@ -1,12 +1,27 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+// CRA exposes REACT_APP_* while Vite exposes VITE_*; support both during the migration.
+const API_BASE_URL = (process.env.VITE_BLOG_API_URL || process.env.REACT_APP_BLOG_API_URL || "").replace(/\/$/, "") || "http://localhost:5000/api"
 
-// State management object for different async states
-const initialState = {
-  data: null,
-  loading: true,
-  error: null,
+const initialState = { data: null, loading: true, error: null };
+
+const getError = (err) => ({
+  message: err.message || "Failed to fetch blog data",
+  type: err instanceof TypeError ? "network" : "server",
+});
+
+const request = async (path, signal) => {
+  if (!API_BASE_URL) {
+    throw new Error("Blog API URL is not configured");
+  }
+
+  const response = await fetch(`${API_BASE_URL}${path}`, { signal });
+  if (!response.ok) {
+    const error = new Error(`HTTP Error: ${response.status}`);
+    error.status = response.status;
+    throw error;
+  }
+  return response.json();
 };
 
 /**
@@ -14,52 +29,60 @@ const initialState = {
  * @param {string} category - Optional category filter
  * @returns {Object} { blogs, loading, error }
  */
-export const useBlogPosts = (category = null) => {
+export const useBlogPosts = ({ category = "", search = "", page = 1, limit = 6 } = {}) => {
   const [state, setState] = useState(initialState);
 
   useEffect(() => {
+    const controller = new AbortController();
     const fetchBlogs = async () => {
       try {
         setState({ data: null, loading: true, error: null });
-
-        const url = category
-          ? `${API_BASE_URL}/blogs?category=${encodeURIComponent(category)}`
-          : `${API_BASE_URL}/blogs`;
-
-        const response = await fetch(url);
-
-        if (!response.ok) {
-          throw new Error(`HTTP Error: ${response.status}`);
-        }
-
-        const result = await response.json();
-        
-        // API returns { blogs: [...] }
+        const params = new URLSearchParams({ page: String(page), limit: String(limit) });
+        if (search) params.set("search", search);
+        if (category) params.set("category", category);
+        const result = await request(`/blogs?${params.toString()}`, controller.signal);
         setState({
-          data: result.blogs || [],
+          data: result.blogs || result.data || [],
           loading: false,
           error: null,
+          meta: result.pagination || result.meta || null,
         });
       } catch (err) {
+        if (err.name === "AbortError") return;
         setState({
           data: null,
           loading: false,
-          error: {
-            message: err.message || 'Failed to fetch blogs',
-            type: err instanceof TypeError ? 'network' : 'server',
-          },
+          error: getError(err),
         });
       }
     };
 
     fetchBlogs();
-  }, [category]);
+    return () => controller.abort();
+  }, [category, search, page, limit]);
 
   return {
     blogs: state.data,
+    pagination: state.meta,
     loading: state.loading,
     error: state.error,
   };
+};
+
+export const useLatestBlog = () => {
+  const [state, setState] = useState(initialState);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    request("/blogs/latest", controller.signal)
+      .then((result) => setState({ data: result.blog || result.data || result, loading: false, error: null }))
+      .catch((err) => {
+        if (err.name !== "AbortError") setState({ data: null, loading: false, error: getError(err) });
+      });
+    return () => controller.abort();
+  }, []);
+
+  return { blog: state.data, loading: state.loading, error: state.error };
 };
 
 /**
@@ -74,27 +97,20 @@ export const useBlogCategories = () => {
       try {
         setState({ data: null, loading: true, error: null });
 
-        const response = await fetch(`${API_BASE_URL}/blogs/categories`);
-
-        if (!response.ok) {
-          throw new Error(`HTTP Error: ${response.status}`);
-        }
-
-        const result = await response.json();
-        
-        // API returns { categories: [...] }
+        const result = await request("/blogs/categories");
         setState({
-          data: result.categories || [],
+          data: result.categories || result.data || [],
           loading: false,
           error: null,
         });
       } catch (err) {
+        if (err.name === "AbortError") return;
         setState({
           data: null,
           loading: false,
           error: {
-            message: err.message || 'Failed to fetch categories',
-            type: err instanceof TypeError ? 'network' : 'server',
+            message: err.message || "Failed to fetch categories",
+            type: err instanceof TypeError ? "network" : "server",
           },
         });
       }
@@ -128,42 +144,31 @@ export const useBlogDetail = (slug) => {
       return;
     }
 
-    const fetchBlog = async () => {
+    const fetchBlog = async (signal) => {
       try {
         setState({ data: null, loading: true, error: null });
-
-        const response = await fetch(`${API_BASE_URL}/blogs/${slug}`);
-
-        if (response.status === 404) {
-          throw new Error('Blog post not found');
-        }
-
-        if (!response.ok) {
-          throw new Error(`HTTP Error: ${response.status}`);
-        }
-
-        const result = await response.json();
-        
-        // API returns { blog: {...} }
+        const result = await request(`/blogs/${encodeURIComponent(slug)}`, signal);
         setState({
-          data: result.blog || null,
+          data: result.blog || result.data || null,
           loading: false,
           error: null,
         });
       } catch (err) {
+        if (err.name === "AbortError") return;
         setState({
           data: null,
           loading: false,
           error: {
-            message: err.message || 'Failed to fetch blog post',
-            type: err.message === 'Blog post not found' ? 'not-found' : 
-                   err instanceof TypeError ? 'network' : 'server',
+            message: err.status === 404 ? "Blog post not found" : err.message || "Failed to fetch blog post",
+            type: err.status === 404 ? "not-found" : err instanceof TypeError ? "network" : "server",
           },
         });
       }
     };
 
-    fetchBlog();
+    const controller = new AbortController();
+    fetchBlog(controller.signal);
+    return () => controller.abort();
   }, [slug]);
 
   return {

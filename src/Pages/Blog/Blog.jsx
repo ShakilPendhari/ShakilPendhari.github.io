@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Box, Flex, Heading, Text, Link } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { FaArrowRight, FaClock } from "react-icons/fa";
-import { useBlogPosts, useBlogCategories } from "../../hooks/useBlog";
+import { FaArrowRight, FaClock, FaSearch } from "react-icons/fa";
+import { useBlogPosts, useBlogCategories, useLatestBlog } from "../../hooks/useBlog";
 import style from "./Blog.module.css";
 
 const MotionFlex = motion(Flex);
@@ -14,36 +14,40 @@ const MotionBox = motion(Box);
  */
 const Blog = ({ theme, setIsIntersection, obj, isIntersection, onSelectBlog }) => {
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [search, setSearch] = useState("");
+  const [page, setPage] = useState(1);
 
-  // Fetch categories for filtering
   const { categories, loading: catLoading } = useBlogCategories();
-
-  // Fetch blog posts (with optional category filter)
-  const { blogs, loading: blogsLoading, error: blogsError } = useBlogPosts(selectedCategory);
+  const { blog: latestBlog, loading: latestLoading } = useLatestBlog();
+  const { blogs, pagination, loading: blogsLoading, error: blogsError } = useBlogPosts({
+    category: selectedCategory || "",
+    search,
+    page,
+    limit: 6,
+  });
 
   const handleCategorySelect = (category) => {
     setSelectedCategory(selectedCategory === category ? null : category);
+    setPage(1);
   };
 
-  const handleBlogClick = (slug) => {
-    if (onSelectBlog) {
-      onSelectBlog(slug);
+  const handleBlogClick = (blog) => {
+    if (blog.links?.article) {
+      window.location.href = blog.links.article;
+    } else if (onSelectBlog && blog.slug) {
+      onSelectBlog(blog.slug);
     }
   };
 
-  // Calculate read time (rough estimate: 200 words per minute)
-  const getReadTime = (content) => {
-    if (!content) return "1 min";
-    const wordCount = content.split(/\s+/).length;
-    const minutes = Math.ceil(wordCount / 200);
-    return `${minutes} min`;
-  };
-
-  // Format date
   const formatDate = (dateString) => {
+    if (!dateString) return "";
     const options = { year: "numeric", month: "short", day: "numeric" };
     return new Date(dateString).toLocaleDateString(undefined, options);
   };
+
+  const getReadTime = (blog) => blog.readingTime || "1 min";
+  const totalPages = pagination?.totalPages || pagination?.pages ||
+    (pagination?.total ? Math.ceil(pagination.total / 6) : 1);
 
   return (
     <MotionFlex
@@ -63,6 +67,40 @@ const Blog = ({ theme, setIsIntersection, obj, isIntersection, onSelectBlog }) =
         <Text className={style.blogSubtitle}>
           Insights, tutorials, and technical deep-dives about full-stack development, architecture, and SaaS platforms.
         </Text>
+      </Box>
+
+      {latestLoading ? (
+        <Box className={style.latestArticle}><Text>Loading latest article...</Text></Box>
+      ) : latestBlog && (
+        <Box className={style.latestArticle}>
+          <Box>
+            <Text className={style.latestLabel}>Latest article</Text>
+            <Text className={style.blogCardCategory}>{latestBlog.category}</Text>
+            <Heading as="h3" className={style.latestTitle}>{latestBlog.title}</Heading>
+            <Text className={style.blogCardExcerpt}>{latestBlog.excerpt}</Text>
+            <Flex className={style.latestMeta}>
+              <span>{formatDate(latestBlog.publishedAt)}</span>
+              <span>{getReadTime(latestBlog)}</span>
+            </Flex>
+            <Link className={style.primaryBlogLink} href={latestBlog.links?.article} isExternal>
+              Read more <FaArrowRight />
+            </Link>
+          </Box>
+          {latestBlog.coverImage && (
+            <img className={style.latestImage} src={latestBlog.coverImage} alt={latestBlog.title} loading="lazy" />
+          )}
+        </Box>
+      )}
+
+      <Box className={style.searchRow} as="form" onSubmit={(event) => event.preventDefault()}>
+        <FaSearch aria-hidden="true" />
+        <input
+          type="search"
+          value={search}
+          onChange={(event) => { setSearch(event.target.value); setPage(1); }}
+          placeholder="Search articles"
+          aria-label="Search articles"
+        />
       </Box>
 
       {/* Category Filter */}
@@ -152,20 +190,22 @@ const Blog = ({ theme, setIsIntersection, obj, isIntersection, onSelectBlog }) =
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              onClick={() => handleBlogClick(blog.slug)}
-              role="button"
+              onClick={() => handleBlogClick(blog)}
+              role="link"
               tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  handleBlogClick(blog.slug);
+              onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault();
+                  handleBlogClick(blog);
                 }
               }}
             >
+              {blog.coverImage && <img className={style.blogCardImage} src={blog.coverImage} alt={blog.title} loading="lazy" />}
               <Flex className={style.blogCardHeader}>
                 <Box>
                   <span className={style.blogCardCategory}>{blog.category}</span>
                 </Box>
-                <Text className={style.blogCardDate}>{formatDate(blog.createdAt)}</Text>
+                <Text className={style.blogCardDate}>{formatDate(blog.publishedAt)}</Text>
               </Flex>
 
               <Heading as="h3" className={style.blogCardTitle}>
@@ -179,9 +219,9 @@ const Blog = ({ theme, setIsIntersection, obj, isIntersection, onSelectBlog }) =
               <Flex className={style.blogCardFooter}>
                 <Flex className={style.readTime}>
                   <FaClock style={{ marginRight: "0.35rem" }} />
-                  <span>{getReadTime(blog.content)}</span>
+                  <span>{getReadTime(blog)}</span>
                 </Flex>
-                <Link className={style.readMore} display="flex" alignItems="center">
+                <Link className={style.readMore} href={blog.links?.article} onClick={(event) => event.stopPropagation()} display="flex" alignItems="center">
                   Read More
                   <FaArrowRight style={{ marginLeft: "0.5rem" }} />
                 </Link>
@@ -189,6 +229,14 @@ const Blog = ({ theme, setIsIntersection, obj, isIntersection, onSelectBlog }) =
             </MotionBox>
           ))}
         </MotionBox>
+      )}
+
+      {!blogsLoading && !blogsError && totalPages > 1 && (
+        <Flex className={style.pagination} aria-label="Blog pagination">
+          <button type="button" disabled={page === 1} onClick={() => setPage(page - 1)}>Previous</button>
+          <Text>Page {page} of {totalPages}</Text>
+          <button type="button" disabled={page >= totalPages} onClick={() => setPage(page + 1)}>Next</button>
+        </Flex>
       )}
     </MotionFlex>
   );

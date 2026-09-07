@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { FaArrowLeft, FaClock } from "react-icons/fa";
@@ -16,6 +16,47 @@ const MotionBox = motion(Box);
 const BlogDetail = ({ slug, onBack, theme }) => {
   const isLight = !theme;
   const { blog, loading, error } = useBlogDetail(slug);
+
+  useEffect(() => {
+    if (!blog) return undefined;
+    document.title = `${blog.title} | Portfolio`;
+    const description = document.querySelector('meta[name="description"]') || document.createElement("meta");
+    description.name = "description";
+    description.content = blog.excerpt || "";
+    document.head.appendChild(description);
+
+    const setMeta = (property, content) => {
+      if (!content) return;
+      const meta = document.querySelector(`meta[property="${property}"]`) || document.createElement("meta");
+      meta.setAttribute("property", property);
+      meta.content = content;
+      document.head.appendChild(meta);
+    };
+    setMeta("og:title", blog.title);
+    setMeta("og:description", blog.excerpt);
+    setMeta("og:url", blog.links?.article);
+    setMeta("og:image", blog.coverImage);
+
+    const canonical = document.querySelector('link[rel="canonical"]') || document.createElement("link");
+    canonical.rel = "canonical";
+    canonical.href = blog.links?.article || window.location.href;
+    document.head.appendChild(canonical);
+
+    const structuredData = document.createElement("script");
+    structuredData.type = "application/ld+json";
+    structuredData.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: blog.title,
+      description: blog.excerpt,
+      image: blog.coverImage ? [blog.coverImage] : undefined,
+      datePublished: blog.publishedAt,
+      mainEntityOfPage: blog.links?.article,
+    });
+    document.head.appendChild(structuredData);
+
+    return () => structuredData.remove();
+  }, [blog]);
 
   // Custom markdown component renderers for styling
   const markdownComponents = {
@@ -48,16 +89,8 @@ const BlogDetail = ({ slug, onBack, theme }) => {
     li: ({ node, children, ...props }) => <li {...props}>{children}</li>,
   };
 
-  // Calculate read time
-  const getReadTime = (content) => {
-    if (!content) return "1 min";
-    const wordCount = content.split(/\s+/).length;
-    const minutes = Math.ceil(wordCount / 200);
-    return `${minutes} min`;
-  };
-
-  // Format date
   const formatDate = (dateString) => {
+    if (!dateString) return "";
     const options = {
       year: "numeric",
       month: "long",
@@ -79,15 +112,15 @@ const BlogDetail = ({ slug, onBack, theme }) => {
       py="5rem"
     >
       {/* Back Button */}
-      <button
-        className={style.backButton}
-        onClick={onBack}
-        type="button"
-        title="Back to Blog"
-      >
+      {blog?.links?.index ? (
+        <a className={style.backButton} href={blog.links.index}>
+          <FaArrowLeft size={14} />
+          <span>Back to all blogs</span>
+        </a>
+      ) : <button className={style.backButton} onClick={onBack} type="button" title="Back to Blog">
         <FaArrowLeft size={14} />
         <span>Back to Blog</span>
-      </button>
+      </button>}
 
       {/* Loading State */}
       {loading && (
@@ -143,15 +176,22 @@ const BlogDetail = ({ slug, onBack, theme }) => {
           <Box className={style.detailHeader}>
             <Flex className={style.detailMeta} mb="1rem">
               <span className={style.detailCategory}>{blog.category}</span>
-              <span className={style.detailDate}>{formatDate(blog.createdAt)}</span>
+              <span className={style.detailDate}>{formatDate(blog.publishedAt)}</span>
               <Flex className={style.detailReadTime}>
                 <FaClock size={14} style={{ marginRight: "0.35rem" }} />
-                <span>{getReadTime(blog.content)}</span>
+                <span>{blog.readingTime || "1 min"}</span>
               </Flex>
             </Flex>
             <Heading as="h1" className={style.detailTitle}>
               {blog.title}
             </Heading>
+            {blog.coverImage && <img className={style.detailImage} src={blog.coverImage} alt={blog.title} loading="lazy" />}
+            {blog.excerpt && <Text className={style.detailExcerpt}>{blog.excerpt}</Text>}
+            {blog.tags?.length > 0 && (
+              <Flex className={style.detailTags} wrap="wrap" gap="0.5rem" mt="1.25rem">
+                {blog.tags.map((tag) => <span key={tag}>{tag}</span>)}
+              </Flex>
+            )}
           </Box>
 
           {/* Markdown Content - Safely Rendered */}
@@ -164,6 +204,13 @@ const BlogDetail = ({ slug, onBack, theme }) => {
               {blog.content}
             </ReactMarkdown>
           </Box>
+
+          {(blog.githubUrl || blog.deployedUrl) && (
+            <Flex className={style.projectLinks}>
+              {blog.githubUrl && <a href={blog.githubUrl} target="_blank" rel="noreferrer">View on GitHub</a>}
+              {blog.deployedUrl && <a href={blog.deployedUrl} target="_blank" rel="noreferrer">View deployed project</a>}
+            </Flex>
+          )}
 
           {/* Share Section - Optional */}
           <Box
