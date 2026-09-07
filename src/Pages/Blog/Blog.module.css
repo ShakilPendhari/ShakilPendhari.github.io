@@ -104,10 +104,18 @@
   font: inherit;
 }
 
-.blogCardImage {
+.blogCardImageWrap {
+  width: calc(100% + 3.5rem);
   aspect-ratio: 16 / 9;
   margin: -1.75rem -1.75rem 1.5rem;
-  width: calc(100% + 3.5rem);
+  overflow: hidden;
+}
+
+.blogCardImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .detailImage {
@@ -653,12 +661,6 @@
 @media (max-width: 768px) {
   .latestArticle {
     grid-template-columns: 1fr;
-  }
-
-  .blogCardImage {
-    margin-left: -1.25rem;
-    margin-right: -1.25rem;
-    width: calc(100% + 2.5rem);
   }
 
   .blogList {

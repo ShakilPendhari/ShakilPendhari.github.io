@@ -200,7 +200,11 @@ const Blog = ({ theme, setIsIntersection, obj, isIntersection, onSelectBlog }) =
                 }
               }}
             >
-              {blog.coverImage && <img className={style.blogCardImage} src={blog.coverImage} alt={blog.title} loading="lazy" />}
+              {blog.coverImage && (
+                <Box className={style.blogCardImageWrap}>
+                  <img className={style.blogCardImage} src={blog.coverImage} alt={blog.title} loading="lazy" />
+                </Box>
+              )}
               <Flex className={style.blogCardHeader}>
                 <Box>
                   <span className={style.blogCardCategory}>{blog.category}</span>
